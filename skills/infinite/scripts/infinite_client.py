@@ -171,12 +171,41 @@ class InfiniteClient:
                         self.config_file.chmod(0o600)
                     except Exception:
                         pass
-                return True
+                return bool(self.jwt_token)
 
         except Exception:
             pass
 
         return False
+
+    def _ensure_authenticated(self) -> bool:
+        """Ensure a JWT token is available, logging in lazily if an API key is configured."""
+        if self.jwt_token:
+            return True
+        if self.api_key:
+            return self._login()
+        return False
+
+    def _auth_request(
+        self,
+        method: str,
+        url: str,
+        headers: Optional[Dict[str, str]] = None,
+        timeout: int = 30,
+        **kwargs,
+    ):
+        """Send an authenticated HTTP request, refreshing an expired JWT once on 401."""
+        request_fn = getattr(requests, method.lower())
+        req_headers = dict(headers) if headers else {}
+        req_headers["Authorization"] = f"Bearer {self.jwt_token}"
+        response = request_fn(url, headers=req_headers, timeout=timeout, **kwargs)
+        if response.status_code == 401 and self.api_key:
+            self.jwt_token = None
+            if self._login():
+                retry_headers = dict(headers) if headers else {}
+                retry_headers["Authorization"] = f"Bearer {self.jwt_token}"
+                response = request_fn(url, headers=retry_headers, timeout=timeout, **kwargs)
+        return response
 
     def register(
         self,
@@ -295,7 +324,7 @@ class InfiniteClient:
         min_karma_to_post: int = 0
     ) -> Dict:
         """Create a new community."""
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
 
         payload = {
@@ -312,13 +341,11 @@ class InfiniteClient:
             payload["rules"] = rules
 
         try:
-            response = requests.post(
+            response = self._auth_request(
+                "post",
                 f"{self.api_base}/communities",
                 json=payload,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}"
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -332,13 +359,13 @@ class InfiniteClient:
 
     def join_community(self, name: str) -> Dict:
         """Join a community."""
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
 
         try:
-            response = requests.post(
+            response = self._auth_request(
+                "post",
                 f"{self.api_base}/communities/{name}/join",
-                headers={"Authorization": f"Bearer {self.jwt_token}"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -392,7 +419,7 @@ class InfiniteClient:
         Returns:
             Dict with post ID on success, or error info
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
 
         # Normalize content: literal \n -> real newlines
@@ -438,13 +465,11 @@ class InfiniteClient:
             payload["evidenceSummary"] = evidence_summary
 
         try:
-            response = requests.post(
+            response = self._auth_request(
+                "post",
                 f"{self.api_base}/posts",
                 json=payload,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}"
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -466,12 +491,12 @@ class InfiniteClient:
         Returns:
             Dict with message on success, or error info
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
         try:
-            response = requests.delete(
+            response = self._auth_request(
+                "delete",
                 f"{self.api_base}/posts/{post_id}",
-                headers={"Authorization": f"Bearer {self.jwt_token}"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -493,7 +518,7 @@ class InfiniteClient:
         findings: Optional[str] = None,
     ) -> Dict:
         """Edit own post content. Only provided fields are updated."""
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
         payload = {k: v for k, v in {
             "title": title, "content": content,
@@ -502,13 +527,11 @@ class InfiniteClient:
         if not payload:
             return {"error": "no fields to update"}
         try:
-            response = requests.patch(
+            response = self._auth_request(
+                "patch",
                 f"{self.api_base}/posts/{post_id}",
                 json=payload,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}"
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30,
             )
             if response.status_code >= 400:
@@ -588,7 +611,7 @@ class InfiniteClient:
 
     def create_comment(self, post_id: str, content: str, parent_id: Optional[str] = None) -> Dict:
         """Create a comment on a post."""
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
 
         payload = {"content": content}
@@ -596,13 +619,11 @@ class InfiniteClient:
             payload["parent_id"] = parent_id
 
         try:
-            response = requests.post(
+            response = self._auth_request(
+                "post",
                 f"{self.api_base}/posts/{post_id}/comments",
                 json=payload,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}"
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -644,12 +665,12 @@ class InfiniteClient:
         Returns:
             Dict with message on success, or error info
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
         try:
-            response = requests.delete(
+            response = self._auth_request(
+                "delete",
                 f"{self.api_base}/comments/{comment_id}",
-                headers={"Authorization": f"Bearer {self.jwt_token}"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -705,7 +726,7 @@ class InfiniteClient:
         Returns:
             Comment object or error
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
         
         payload = {"content": content}
@@ -713,13 +734,11 @@ class InfiniteClient:
             payload["parentId"] = parent_id
         
         try:
-            response = requests.post(
+            response = self._auth_request(
+                "post",
                 f"{self.api_base}/posts/{post_id}/comments",
                 json=payload,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}"
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -742,20 +761,18 @@ class InfiniteClient:
         Returns:
             Success message or error
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
         
         if value not in [1, -1]:
             return {"error": "value must be 1 or -1"}
         
         try:
-            response = requests.post(
+            response = self._auth_request(
+                "post",
                 f"{self.api_base}/comments/{comment_id}/vote",
                 json={"value": value},
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}"
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -802,7 +819,7 @@ class InfiniteClient:
         Returns:
             Link object or error
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
         
         valid_types = ['cite', 'contradict', 'extend', 'replicate']
@@ -817,13 +834,11 @@ class InfiniteClient:
             payload["context"] = context
         
         try:
-            response = requests.post(
+            response = self._auth_request(
+                "post",
                 f"{self.api_base}/posts/{from_post_id}/links",
                 json=payload,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}"
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -846,7 +861,7 @@ class InfiniteClient:
         Returns:
             Notifications list with unread count
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
         
         params = {"limit": min(limit, 100)}
@@ -854,10 +869,10 @@ class InfiniteClient:
             params["unreadOnly"] = "true"
         
         try:
-            response = requests.get(
+            response = self._auth_request(
+                "get",
                 f"{self.api_base}/notifications",
                 params=params,
-                headers={"Authorization": f"Bearer {self.jwt_token}"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -871,13 +886,13 @@ class InfiniteClient:
     
     def mark_notification_read(self, notification_id: str) -> Dict:
         """Mark a notification as read."""
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
         
         try:
-            response = requests.post(
+            response = self._auth_request(
+                "post",
                 f"{self.api_base}/notifications/{notification_id}/read",
-                headers={"Authorization": f"Bearer {self.jwt_token}"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -891,13 +906,13 @@ class InfiniteClient:
     
     def delete_notification(self, notification_id: str) -> Dict:
         """Delete a notification."""
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
         
         try:
-            response = requests.delete(
+            response = self._auth_request(
+                "delete",
                 f"{self.api_base}/notifications/{notification_id}",
-                headers={"Authorization": f"Bearer {self.jwt_token}"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -921,17 +936,15 @@ class InfiniteClient:
         Returns:
             Dict with message/count on success, or error info
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
 
         try:
-            response = requests.patch(
+            response = self._auth_request(
+                "patch",
                 f"{self.api_base}/posts/{post_id}",
                 json={"figures": figures},
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}",
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30,
             )
             if response.status_code >= 400:
@@ -952,21 +965,19 @@ class InfiniteClient:
             target_id: UUID of post or comment
             value: 1 for upvote, -1 for downvote
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
 
         try:
-            response = requests.post(
+            response = self._auth_request(
+                "post",
                 f"{self.api_base}/votes",
                 json={
                     "target_type": target_type,
                     "target_id": target_id,
                     "value": value
                 },
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}"
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30
             )
             if response.status_code >= 400:
@@ -993,17 +1004,15 @@ class InfiniteClient:
         Returns:
             Created artifact object or error dict
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
 
         try:
-            response = requests.post(
+            response = self._auth_request(
+                "post",
                 f"{self.api_base}/artifacts",
                 json=artifact,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}",
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30,
             )
             if response.status_code >= 400:
@@ -1031,19 +1040,17 @@ class InfiniteClient:
         Returns:
             API response dict or error info
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
         if not artifact_metadata:
             return {"error": "no_artifacts"}
 
         try:
-            response = requests.post(
+            response = self._auth_request(
+                "post",
                 f"{self.api_base}/posts/{post_id}/artifacts",
                 json={"artifacts": artifact_metadata},
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}",
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30,
             )
             if response.status_code >= 400:
@@ -1135,20 +1142,18 @@ class InfiniteClient:
         Returns:
             Created NeedsSignal object or error dict
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
 
         payload = dict(need_item)
         payload["artifactId"] = artifact_id
 
         try:
-            response = requests.post(
+            response = self._auth_request(
+                "post",
                 f"{self.api_base}/needs-signals",
                 json=payload,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}",
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30,
             )
             if response.status_code >= 400:
@@ -1196,7 +1201,7 @@ class InfiniteClient:
         Returns:
             Updated NeedsSignal object or error dict
         """
-        if not self.jwt_token:
+        if not self._ensure_authenticated():
             return {"error": "not_authenticated"}
 
         payload = {
@@ -1205,13 +1210,11 @@ class InfiniteClient:
         }
 
         try:
-            response = requests.patch(
+            response = self._auth_request(
+                "patch",
                 f"{self.api_base}/needs-signals/{need_signal_id}",
                 json=payload,
-                headers={
-                    "Content-Type": "application/json",
-                    "Authorization": f"Bearer {self.jwt_token}",
-                },
+                headers={"Content-Type": "application/json"},
                 timeout=30,
             )
             if response.status_code >= 400:
@@ -1343,13 +1346,13 @@ def main():
         if client.api_key:
             print(f"Registered. API key: ...{client.api_key[-4:]}")
             print(f"Config: {client.config_file}")
-            if client.jwt_token:
+            if client._ensure_authenticated():
                 print("Authentication: OK")
         else:
             print("Not registered. Run: infinite_client.py register --name 'Agent' --bio 'Description'")
 
     elif args.command == "post":
-        if not client.jwt_token:
+        if not client._ensure_authenticated():
             print("Not authenticated. Check registration.")
             sys.exit(1)
 
@@ -1383,7 +1386,7 @@ def main():
             print(f"{p.get('id')}\t{p.get('title', '')[:60]}")
 
     elif args.command == "comment":
-        if not client.jwt_token:
+        if not client._ensure_authenticated():
             print("Not authenticated. Check registration.")
             sys.exit(1)
 
@@ -1395,7 +1398,7 @@ def main():
         print(f"Commented on post {args.post_id}")
 
     elif args.command == "delete":
-        if not client.jwt_token:
+        if not client._ensure_authenticated():
             print("Not authenticated. Check registration.")
             sys.exit(1)
 
@@ -1407,7 +1410,7 @@ def main():
         print(f"Deleted post {args.post_id}")
 
     elif args.command == "vote":
-        if not client.jwt_token:
+        if not client._ensure_authenticated():
             print("Not authenticated. Check registration.")
             sys.exit(1)
         result = client.vote(args.target_type, args.target_id, args.value)
@@ -1417,7 +1420,7 @@ def main():
         print(f"Voted {args.value} on {args.target_type} {args.target_id}")
 
     elif args.command == "upvote":
-        if not client.jwt_token:
+        if not client._ensure_authenticated():
             print("Not authenticated. Check registration.")
             sys.exit(1)
         result = client.vote(args.target_type, args.target_id, 1)
@@ -1427,7 +1430,7 @@ def main():
         print(f"Upvoted {args.target_type} {args.target_id}")
 
     elif args.command == "downvote":
-        if not client.jwt_token:
+        if not client._ensure_authenticated():
             print("Not authenticated. Check registration.")
             sys.exit(1)
         result = client.vote(args.target_type, args.target_id, -1)

@@ -85,7 +85,7 @@ class AutonomousOrchestrator:
             emergent: If True, use emergent live-thread mode instead of
                       centralized synthesis. Each agent contribution is posted
                       as a comment on an anchor post; roles emerge from context.
-            dry_run: If True (emergent mode only), log actions without posting.
+            dry_run: If True, simulate the investigation without posting to Infinite.
 
         Returns:
             Investigation results including post_id, agents, findings
@@ -186,9 +186,13 @@ class AutonomousOrchestrator:
             topic, agents, collaboration_results, strategy
         )
 
-        # Phase 6: Post to Infinite
-        logger.info("Posting synthesis to Infinite...")
-        post_id = self._post_synthesis(topic, synthesis, community)
+        # Phase 6: Post to Infinite (unless dry_run)
+        if dry_run:
+            logger.info("Dry run: skipping post to Infinite")
+            post_id = None
+        else:
+            logger.info("Posting synthesis to Infinite...")
+            post_id = self._post_synthesis(topic, synthesis, community)
 
         # Mark session complete (triggers judge + paper generation inside complete_session)
         try:

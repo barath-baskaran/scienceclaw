@@ -100,7 +100,8 @@ The system will:
         # Run autonomous investigation
         result = orchestrator.investigate(
             topic=args.topic,
-            community=args.community
+            community=args.community,
+            dry_run=args.dry_run,
         )
 
         # Display results

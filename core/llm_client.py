@@ -60,13 +60,13 @@ class LLMClient:
         Args:
             agent_name: Name of the agent (for session tracking)
             backend: LLM backend to use (openai, anthropic, gemini, huggingface)
-                    If None, reads from LLM_BACKEND env var or defaults to openai
+                    If None, reads from LLM_BACKEND env var, ~/.scienceclaw/llm_config.json,
+                    or defaults to openai
         """
         self.agent_name = agent_name
-        self.backend = backend or os.environ.get("LLM_BACKEND", "openai")
         
-        # Load configuration
-        self._load_config()
+        # Load configuration (explicit backend > environment variables > config file > defaults)
+        self._load_config(explicit_backend=backend)
         
         # Initialize backend-specific clients
         if self.backend == "anthropic":
@@ -78,68 +78,103 @@ class LLMClient:
         elif self.backend == "huggingface":
             self._init_huggingface()
     
-    def _load_config(self):
-        """Load configuration from environment or config file."""
-        # API keys
-        self.anthropic_key = os.environ.get("ANTHROPIC_API_KEY")
-        self.openai_key = os.environ.get("OPENAI_API_KEY")
-        self.hf_key = os.environ.get("HF_API_KEY") or os.environ.get("HUGGINGFACE_API_KEY")
-        
-        # Hugging Face specific
-        self.hf_model = os.environ.get("HF_MODEL", "moonshotai/Kimi-K2.5")
-        self.hf_endpoint = os.environ.get("HF_ENDPOINT")  # For self-hosted models
-        
-        # Model names for each backend
-        self.anthropic_model = os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-6")
-        self.openai_model = os.environ.get("OPENAI_MODEL", "gpt-5.2")
-        # Optional base URL override for local/compatible servers (e.g. vLLM)
-        self.openai_base_url = os.environ.get("OPENAI_BASE_URL")
-
-        # Gemini (Google AI Studio) via the OpenAI-compatible endpoint.
-        self.gemini_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
-        self.gemini_model = os.environ.get("GEMINI_MODEL", GEMINI_DEFAULT_MODEL)
-        self.gemini_base_url = os.environ.get("GEMINI_BASE_URL", GEMINI_OPENAI_BASE_URL)
-        # Gemini "thinking" tokens count against max_tokens: a small max_tokens yields an
-        # empty answer (finish_reason=length, content=None). Reserve headroom for thinking
-        # and cap reasoning effort to keep free-tier quota usage low.
-        # reasoning_effort: low | medium | high (Gemini rejects "none"); "" disables the param.
-        self.gemini_reasoning_effort = os.environ.get("GEMINI_REASONING_EFFORT", "low")
-        self.gemini_thinking_headroom = int(os.environ.get("GEMINI_THINKING_HEADROOM", "4096"))
-        self.gemini_max_retries = int(os.environ.get("GEMINI_MAX_RETRIES", "4"))
-        self.gemini_system_prompt = os.environ.get("GEMINI_SYSTEM_PROMPT", GEMINI_SYSTEM_PROMPT)
-        
-        # Timeout (seconds) - loose defaults for slow models like Kimi-K2.5
-        timeout_env = os.environ.get("LLM_TIMEOUT")
-        self.timeout = int(timeout_env) if timeout_env else 180  # 3 min default
-        
-        # Try loading from config file
+    def _load_config(self, explicit_backend: Optional[str] = None):
+        """Load configuration with precedence: explicit arg > env vars > config file > defaults."""
+        config: Dict[str, Any] = {}
         config_file = Path.home() / ".scienceclaw" / "llm_config.json"
         if config_file.exists():
             try:
                 with open(config_file) as f:
-                    config = json.load(f)
-                    self.backend = config.get("backend", self.backend)
-                    self.anthropic_key = config.get("anthropic_api_key", self.anthropic_key)
-                    self.openai_key = config.get("openai_api_key", self.openai_key)
-                    self.hf_key = config.get("hf_api_key", self.hf_key)
-                    self.hf_model = config.get("hf_model", self.hf_model)
-                    self.hf_endpoint = config.get("hf_endpoint", self.hf_endpoint)
-                    self.anthropic_model = config.get("anthropic_model", self.anthropic_model)
-                    self.openai_model = config.get("openai_model", self.openai_model)
-                    self.openai_base_url = config.get("openai_base_url", self.openai_base_url)
-                    self.gemini_key = config.get("gemini_api_key", self.gemini_key)
-                    self.gemini_model = config.get("gemini_model", self.gemini_model)
-                    self.gemini_base_url = config.get("gemini_base_url", self.gemini_base_url)
-                    self.gemini_reasoning_effort = config.get("gemini_reasoning_effort", self.gemini_reasoning_effort)
-                    self.gemini_system_prompt = config.get("gemini_system_prompt", self.gemini_system_prompt)
-                    if "gemini_thinking_headroom" in config:
-                        self.gemini_thinking_headroom = int(config["gemini_thinking_headroom"])
-                    if "gemini_max_retries" in config:
-                        self.gemini_max_retries = int(config["gemini_max_retries"])
-                    if "timeout" in config:
-                        self.timeout = int(config["timeout"])
+                    loaded = json.load(f)
+                    if isinstance(loaded, dict):
+                        config = loaded
             except Exception:
-                pass  # Use env vars
+                pass  # Ignore malformed config file and fall back to env vars / defaults
+
+        def _int_setting(env_key: str, cfg_key: str, default: int) -> int:
+            env_val = os.environ.get(env_key)
+            if env_val is not None and env_val != "":
+                return int(env_val)
+            if cfg_key in config and config[cfg_key] is not None:
+                try:
+                    return int(config[cfg_key])
+                except (TypeError, ValueError):
+                    pass
+            return default
+
+        self.backend = (
+            explicit_backend
+            or os.environ.get("LLM_BACKEND")
+            or config.get("backend")
+            or "openai"
+        )
+
+        # API keys
+        self.anthropic_key = os.environ.get("ANTHROPIC_API_KEY") or config.get("anthropic_api_key")
+        self.openai_key = os.environ.get("OPENAI_API_KEY") or config.get("openai_api_key")
+        self.hf_key = (
+            os.environ.get("HF_API_KEY")
+            or os.environ.get("HUGGINGFACE_API_KEY")
+            or config.get("hf_api_key")
+        )
+        
+        # Hugging Face specific
+        self.hf_model = os.environ.get("HF_MODEL") or config.get("hf_model") or "moonshotai/Kimi-K2.5"
+        self.hf_endpoint = os.environ.get("HF_ENDPOINT") or config.get("hf_endpoint")  # For self-hosted models
+        
+        # Model names for each backend
+        self.anthropic_model = (
+            os.environ.get("ANTHROPIC_MODEL")
+            or config.get("anthropic_model")
+            or "claude-sonnet-4-6"
+        )
+        self.openai_model = os.environ.get("OPENAI_MODEL") or config.get("openai_model") or "gpt-5.2"
+        # Optional base URL override for local/compatible servers (e.g. vLLM)
+        self.openai_base_url = os.environ.get("OPENAI_BASE_URL") or config.get("openai_base_url")
+
+        # Gemini (Google AI Studio) via the OpenAI-compatible endpoint.
+        self.gemini_key = (
+            os.environ.get("GEMINI_API_KEY")
+            or os.environ.get("GOOGLE_API_KEY")
+            or config.get("gemini_api_key")
+        )
+        self.gemini_model = (
+            os.environ.get("GEMINI_MODEL")
+            or config.get("gemini_model")
+            or GEMINI_DEFAULT_MODEL
+        )
+        self.gemini_base_url = (
+            os.environ.get("GEMINI_BASE_URL")
+            or config.get("gemini_base_url")
+            or GEMINI_OPENAI_BASE_URL
+        )
+        # Gemini "thinking" tokens count against max_tokens: a small max_tokens yields an
+        # empty answer (finish_reason=length, content=None). Reserve headroom for thinking
+        # and cap reasoning effort to keep free-tier quota usage low.
+        # reasoning_effort: low | medium | high (Gemini rejects "none"); "" disables the param.
+        if "GEMINI_REASONING_EFFORT" in os.environ:
+            self.gemini_reasoning_effort = os.environ["GEMINI_REASONING_EFFORT"]
+        elif "gemini_reasoning_effort" in config:
+            self.gemini_reasoning_effort = config["gemini_reasoning_effort"]
+        else:
+            self.gemini_reasoning_effort = "low"
+
+        self.gemini_thinking_headroom = _int_setting(
+            "GEMINI_THINKING_HEADROOM", "gemini_thinking_headroom", 4096
+        )
+        self.gemini_max_retries = _int_setting(
+            "GEMINI_MAX_RETRIES", "gemini_max_retries", 4
+        )
+
+        if "GEMINI_SYSTEM_PROMPT" in os.environ:
+            self.gemini_system_prompt = os.environ["GEMINI_SYSTEM_PROMPT"]
+        elif "gemini_system_prompt" in config:
+            self.gemini_system_prompt = config["gemini_system_prompt"]
+        else:
+            self.gemini_system_prompt = GEMINI_SYSTEM_PROMPT
+        
+        # Timeout (seconds) - loose defaults for slow models like Kimi-K2.5
+        self.timeout = _int_setting("LLM_TIMEOUT", "timeout", 180)  # 3 min default
     
     def _init_anthropic(self):
         """Initialize Anthropic client."""
