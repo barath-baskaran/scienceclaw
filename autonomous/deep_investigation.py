@@ -594,6 +594,10 @@ IMPORTANT RULES:
                 if any(kw in _skill_md.lower() for kw in ('gpu', 'slurm', 'relaxation', 'cuda', 'timeout')):
                     _timeout = 300
 
+                _executables = skill_meta.get('executables', [])
+                _script_name = Path(_executables[0]).name if _executables else 'unknown'
+                _new_params = None
+
                 result = self.skill_executor.execute_skill(
                     skill_name=actual_skill_name,
                     skill_metadata=skill_meta,
@@ -614,9 +618,6 @@ IMPORTANT RULES:
                               end="", flush=True, file=sys.stderr)
                         from core.llm_client import get_llm_client
                         _retry_client = get_llm_client(agent_name=self.agent_name)
-                        # Identify which script was executed
-                        _executables = skill_meta.get('executables', [])
-                        _script_name = Path(_executables[0]).name if _executables else 'unknown'
 
                         # Build context from prior skill outputs
                         _prior_context = ""
@@ -779,7 +780,7 @@ IMPORTANT RULES:
                         if len(_fix_related) > 8000:
                             break
 
-                    _fix_code = _new_params.get('code', params.get('code', ''))
+                    _fix_code = (_new_params or {}).get('code', params.get('code', ''))
                     _fix_prompt = (
                         "The Python code you generated failed with this error:\n\n"
                         f"{_code_stderr[:1000]}\n\n"
