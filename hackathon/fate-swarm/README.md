@@ -64,15 +64,24 @@ against each familiarity bin's own base rate, never with accuracy (`data/hazard_
 
 | path | contents |
 |---|---|
-| `dashboard/` | The offline dashboard: open `dashboard/index.html` in a browser, no network needed |
+| `dashboard/` | The dashboard page: open `dashboard/index.html` in a browser to browse **precomputed predictions for a fixed set of example compounds**, offline. It cannot predict for a new structure on its own |
 | `tool/` | Prediction code (`tool/fatev5.py`) and model notes |
 | `paper/` | Whitepaper and review summary, every figure, and the single numbers file they are built from |
 | `analysis/` | Method notes for the splits, the physics descriptors, the spectra and the chemistry reviews |
 | `data/` | The derived result tables the paper and this README quote |
 | `tools/` | The pre-push safety scan used by `CHECKLIST.md` |
 
-**Model weights are not in this repository.** The frozen model directories are several hundred megabytes
-and are distributed separately; `tool/MODEL_NOTES.md` says what they contain and how they were frozen.
+## Can I run the tool from this repository?
+
+**Not for new structures.** This repository is the public record of the work: the paper, the result
+tables, the figures and the code. The trained models are **not** included, so the prediction code in
+`tool/` and the server in `dashboard/tool/` have nothing to run. `tool/MODEL_NOTES.md` says what the
+models contain and how they were frozen.
+
+A runnable package (models plus a local server, with launchers for Windows and macOS) exists and has
+been tested to reproduce the original predictions exactly. It is **not published yet**: it bundles
+training data and cached comparator outputs whose licence terms need review before redistribution.
+Until then it is shared on request.
 
 ## What this version corrected, and why it is worth reading first
 
@@ -129,11 +138,11 @@ the text does not match the file it is read from, the build is what is wrong, an
 recompute the numbers files from the frozen per-row prediction tables listed in `paper/sources.json`.
 Those tables are large and are not redistributed here; `data/` contains the aggregated results they
 produce. Reproducing the models themselves additionally needs the model directories, which are
-distributed separately (see `tool/MODEL_NOTES.md`). We would rather say this plainly than imply a
+not published yet (see "Can I run the tool from this repository?" above). We would rather say this plainly than imply a
 one-command reproduction that does not exist.
 
-To predict for a new structure, open `dashboard/index.html` (offline, precomputed set) or run the
-prediction code in `tool/` against a downloaded model directory.
+`dashboard/index.html` shows precomputed predictions for its example compounds only; predicting for a
+new structure needs the model package described above.
 
 ## Data and provenance
 
