@@ -1,6 +1,55 @@
-# P-009: graph-CV estimate of the physics effect (NOT tool accuracy; graph-CV models train on official calib/test compounds)
+# Does adding physics descriptors help? A graph cross-validation estimate (P-009)
 
-Source: physics_graphcv.csv, physics_graphcv_perfold.csv (eval_physics_graphcv.py). % of naive RMSE (fold-train mean); paired cluster-bootstrap (labels_v2.cluster; 1000) 95% CI; units = clusters. S = structure, SP = S + AIMNet2 physics v1, SPperm = S + physics rows permuted (capacity control). Physics transforms (element reference, robust z) are global = transductive in X only, never in y. Fixed hyper-parameters, no tuning/early stopping. Rows: one per (endpoint, skeleton), mean label (deviation from CRITIC cond. 5, which asks InChIKey-median). S on ALL rows (incl. no-physics) from eval_splits_v3 graph_all shows what the physics restriction removes.
+This note asks whether adding quantum-chemistry-derived "physics" descriptors to the structure
+descriptors makes the model more accurate, and whether any gain is larger for compounds that are far
+from the training data. It is a test of the physics effect only. **It is not an estimate of the
+tool's accuracy**: the cross-validation models here are also trained on the compounds that the
+official split sets aside for calibration and testing.
+
+The identifier in the title is the name the agents gave this pre-stated hypothesis test.
+
+## Terms used
+
+- **Graph cross-validation (graph CV)**: the compounds are divided into five folds cut on a similarity
+  graph, so that no compound in a test fold has a close neighbour in its training folds. Each fold is
+  held out in turn.
+- **S, SP, SPperm**: the three model variants compared.
+  - **S** = structure descriptors only.
+  - **SP** = S + AIMNet2 physics v1. AIMNet2 is a machine-learned interatomic potential that
+    approximates density functional theory (DFT); the physics descriptors (charges, dipole, shape,
+    surface area, energy residuals) are computed from its relaxed geometry.
+  - **SPperm** = S + the physics rows shuffled between compounds. This is a capacity control: it has
+    the same number of extra columns as SP but no real information in them. If SP beats S only
+    because it has more columns to fit, SPperm would do as well.
+- **Error**: % of naive RMSE, the root-mean-square error as a percentage of a naive guess that predicts
+  the mean of the fold's training labels. Lower is better.
+- **Bins**: the bin column groups compounds by their Tanimoto similarity to the nearest training
+  compound (on the project's Morgan fingerprints); the lower-similarity bin is the less familiar group.
+  "all" pools both bins.
+
+## Method
+
+- Source: physics_graphcv.csv and physics_graphcv_perfold.csv, produced by eval_physics_graphcv.py.
+  These are the agents' working files and are not part of this repository.
+- Confidence intervals: paired cluster bootstrap over labels_v2.cluster (1000 resamples), 95% CI. The
+  unit of resampling is the chemical-similarity cluster. "Paired" means S, SP and SPperm are compared
+  on the same resampled compounds each time.
+- The physics transforms (element reference energies, robust z-scores) are computed over all
+  compounds at once. This uses the input descriptors (X) of the test compounds, never their labels (y),
+  so no label information leaks.
+- Fixed hyper-parameters: no tuning and no early stopping.
+- One row per (endpoint, skeleton), with the mean label. This is a deviation from CRITIC condition 5
+  (CRITIC is the agent that set the test conditions and checked results), which asks for the median
+  over InChIKeys.
+- The last column, "S on all rows", is S scored on ALL rows, including compounds without physics
+  descriptors, taken from the eval_splits_v3 graph_all run. Comparing it with the S column shows what
+  restricting to compounds with physics descriptors removes.
+
+## Results
+
+"clusters" is the number of chemical-similarity clusters. "SP-S" and "SP-SPperm" are differences in
+percentage points of naive error, with their confidence intervals; negative means SP has the lower error. "folds SP<S"
+counts the folds in which SP beat S.
 
 | endpoint | bin | n | clusters | S | SP | SPperm | SP-S | SP-SPperm | folds SP<S (of 5) | S on all rows (n) |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -42,8 +91,17 @@ Source: physics_graphcv.csv, physics_graphcv_perfold.csv (eval_physics_graphcv.p
 | water_solubility | 0.3-0.4 | 6136 | 1716 | 47.0 | 45.9 | 47.3 | -1.11 [-1.68, -0.44] | -1.42 [-1.99, -0.87] |  |  |
 
 ## Verdict against the pre-stated falsification test
-- SP beats S with CI excluding 0 on 6/12 endpoints: ['bcf', 'koh_gas', 'logkow', 'melting_point', 'pka_basic', 'water_solubility']. Largest gain -2.7 points.
-- SP beats its permuted copy (capacity control) with CI excluding 0 on 8/12: ['boiling_point', 'henry', 'koh_gas', 'logkow', 'melting_point', 'pka_acidic', 'pka_basic', 'water_solubility'].
-- Physics helps by CRITIC condition 4 (SP beats S AND SP beats SPperm, both CIs excluding 0): ['koh_gas', 'logkow', 'melting_point', 'pka_basic', 'water_solubility']. Where SP beats SPperm but not S, permuted physics HURTS (noise features), so that is not evidence of a physics gain.
-- Endpoints where SP beats S by >= 10% of naive in the <0.3 bin with CI excluding 0: none.
-- => The claim SURVIVES: physics gives a small (about 1-3 points of % naive), real (beats permuted control) improvement, and it does not help disproportionately far from training. The <0.3 gains are of similar size to the 0.3-0.4 gains, with overlapping CIs; the interaction was not tested formally.
+
+- SP beats S with a CI excluding 0 on 6/12 endpoints: ['bcf', 'koh_gas', 'logkow', 'melting_point',
+  'pka_basic', 'water_solubility']. The largest gain is -2.7 points.
+- SP beats its permuted copy (the capacity control) with a CI excluding 0 on 8/12: ['boiling_point',
+  'henry', 'koh_gas', 'logkow', 'melting_point', 'pka_acidic', 'pka_basic', 'water_solubility'].
+- Physics helps by CRITIC condition 4 (SP beats S AND SP beats SPperm, both CIs excluding 0):
+  ['koh_gas', 'logkow', 'melting_point', 'pka_basic', 'water_solubility']. Where SP beats SPperm but
+  not S, the shuffled physics columns are making the model worse (they act as noise features), so
+  that is not evidence of a physics gain.
+- Endpoints where SP beats S by >= 10% of naive in the <0.3 bin with a CI excluding 0: none.
+- Conclusion: the claim SURVIVES. Physics gives a small (about 1-3 points of % naive) improvement that
+  is real (it beats the permuted control), and it does not help disproportionately far from training.
+  The <0.3 gains are of similar size to the 0.3-0.4 gains, with overlapping CIs; the interaction was
+  not tested formally.

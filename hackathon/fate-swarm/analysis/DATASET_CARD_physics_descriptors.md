@@ -1,35 +1,71 @@
-# physics_inventory_v1: AIMNet2 relaxed-geometry descriptors over the EPA DSSTox inventory
+# Dataset card: physics_inventory_v1 (AIMNet2 descriptors for the EPA DSSTox inventory)
 
-Owners: OPS-1 / OPS-2 (GPU relaxations), W-PHYSICS (descriptor definitions, table build, this card).
-Status: built from whatever shards complete during run 3. The coverage actually reached is in
-`physics_inventory_v1_coverage.json  [not redistributed; VM-internal]`, which `build_inventory_descriptors.py  [not redistributed; VM-internal]` + `inventory_coverage.py  [not redistributed; VM-internal]` generate from the table
-itself. Every count quoted below comes from those files or from the OPS prep-stats files named here; none were typed by hand.
+## What this is
 
-## What it is
-For each structure: one 3D conformer, relaxed with a machine-learned interatomic potential that reproduces
-ωB97M-D3/def2-TZVPP DFT (AIMNet2). Descriptors are then computed from the relaxed geometry and the AIMNet2 atomic partial charges.
-The descriptor code is **identical** to the training table `physics_descriptors_v1`: the same Python function,
-`compute_physics.descriptors_from_geometry`. A model trained on physics_v1 can therefore consume these rows without translation.
+physics_inventory_v1 is a table of computed "physics" descriptors (atomic charges, dipole moment,
+molecular shape, surface areas and an energy-based stability measure) for the structures in the US
+EPA DSSTox inventory. DSSTox is the EPA's curated list of chemical substances that sits behind the
+CompTox Chemicals Dashboard. The descriptors come from a geometry relaxed with AIMNet2, a
+machine-learned interatomic potential that reproduces density functional theory (DFT) at much lower
+cost.
 
-## Structure source and selection (OPS-1 `inv3_prep.py  [not redistributed; VM-internal]`; stats in gpu/inventory_v3_all/prep_stats.json)
+The table was built so that a model trained on the training-set physics descriptors
+(`physics_descriptors_v1`) can be applied to the whole inventory. The descriptor table itself is not
+part of this repository; this card records how it was built and how to read its columns. The
+coverage summary that ships with this repository is described in
+`data/DATASET_CARD_physics_inventory.md`.
+
+**Who did what.** The agents worked in named roles. OPS-1 / OPS-2 ran the GPU relaxations; W-PHYSICS
+defined the descriptors, built the table and wrote this card. Script and file names given in plain
+text below (not in code formatting) are the agents' working files, which are not part of this
+repository.
+
+**Status.** Built from whatever shards (batches of structures) completed during run 3. The coverage
+actually reached is in `physics_inventory_v1_coverage.json  [not redistributed; VM-internal]`, which
+`build_inventory_descriptors.py  [not redistributed; VM-internal]` + `inventory_coverage.py  [not redistributed; VM-internal]` generate from the
+table itself. Every count quoted below comes from those files or from the OPS prep-stats files named
+here; none were typed by hand.
+
+## How the descriptors are computed, in brief
+
+For each structure: one 3D conformer, relaxed with a machine-learned interatomic potential that
+reproduces ωB97M-D3/def2-TZVPP DFT (AIMNet2). Descriptors are then computed from the relaxed geometry
+and the AIMNet2 atomic partial charges.
+
+The descriptor code is **identical** to the code used for the training table `physics_descriptors_v1`:
+the same Python function, `compute_physics.descriptors_from_geometry`. A model trained on physics_v1
+can therefore use these rows without any conversion.
+
+## Which structures are included (OPS-1 `inv3_prep.py  [not redistributed; VM-internal]`; stats in gpu/inventory_v3_all/prep_stats.json)
+
 - Source: the public EPA DSSTox identifiers file, 2021r1. sha256 f4d6aeb4f57bc45a76508d80c67628d05dbbe7ed18a53e0b4d5770c22684096a. 906,511 substances.
-- Standardised to parent structures with RDKit 2026.09.1. Identity is the RDKit InChIKey of the parent, and every DTXSID that
+- Each substance was standardised to its parent structure with RDKit 2026.09.1. A structure's
+  identity is the RDKit InChIKey of the parent, and every DTXSID (the EPA substance identifier) that
   maps to it is kept (map.csv.gz).
-- Removed, each counted in prep_stats.json: no InChI, parse failure, radicals, isotopically labelled, no carbon,
-  unsupported element (AIMNet2 covers H B C N O F Si P S Cl As Se Br I), too large, fewer than 2 heavy atoms.
-  Duplicates sharing an InChIKey are merged. Result: 782,693 structures in 783 shards of 1,000, ordered by InChIKey.
-  Shards are therefore an unbiased-by-design (alphabetical-hash) subsample of the inventory: partial coverage is a random
-  subset, not one chosen by chemistry.
-- 14,396 structures carry a net formal charge (permanent ions, e.g. quaternary ammonium). They are relaxed with that total
-  charge; see "Charged structures" below.
+- Removed, each counted in prep_stats.json: no InChI, parse failure, radicals, isotopically labelled,
+  no carbon, unsupported element (AIMNet2 covers H B C N O F Si P S Cl As Se Br I), too large, fewer
+  than 2 heavy atoms. Duplicates sharing an InChIKey are merged.
+- Result: 782,693 structures in 783 shards of 1,000, ordered by InChIKey. An InChIKey is a hash, so
+  alphabetical order is unrelated to chemistry: by design, any set of completed shards is a random
+  subset of the inventory, not one chosen by chemistry.
+- 14,396 structures carry a net formal charge (permanent ions, e.g. quaternary ammonium). They are
+  relaxed with that total charge; see "Charged structures" below.
 
 ## Computational protocol (identical to physics_v1)
+
 RDKit `AddHs` → ETKDGv3, randomSeed 0xF00D (61453), one conformer. If embedding fails: ETKDGv3 with random coordinates,
 flagged in `embed`. Then MMFF94 optimisation (flagged if parameters are missing) → AIMNet2 `aimnet2_wb97m_d3_0` + Ewald
 long-range electrostatics (accuracy 1e-6) + DFT-D3(BJ) (s6 1.0, s8 0.3908, a1 0.566, a2 3.128) in a 30 Å periodic cubic box →
 NVIDIA ALCHEMI FIRE2 (dt 0.01). A molecule is converged when its max per-atom force is < 0.01 eV/Å; at most 3000 steps.
 
+In words: hydrogens are added, a conformer is generated (ETKDG) and pre-optimised with a classical
+force field (MMFF), then relaxed with AIMNet2 plus long-range electrostatics (Ewald) and a dispersion
+correction until the force on every atom is below the threshold.
+
 ## Columns
+
+Rows where `physics_ok` is False have no descriptors (all NaN); use only rows where it is True.
+
 | column | definition | units |
 |---|---|---|
 | inchikey, skeleton | standardised InChIKey; first block (14 chars) | – |
@@ -58,21 +94,31 @@ NVIDIA ALCHEMI FIRE2 (dt 0.01). A molecule is converged when its max per-atom fo
 | cpsa_pos_A2e, cpsa_neg_A2e, cpsa_abs_frac | Σ q_i·SASA_i over q>0 / q<0; Σ|q_i|·SASA_i / SASA | e·Å², e·Å², e |
 
 ## Charged structures
-Under periodic Ewald, a net charge implies a uniform neutralising background. The total energy then depends on the box
-and is not comparable with neutral molecules, and the dipole of an ion depends on the origin. For `charged` rows,
-energy_eV, energy_per_atom_eV, e_resid_*, dipole_D and dipole_per_heavy_D are therefore **NaN by design**. Geometry, SASA and charge
-descriptors are kept. Properties defined for the neutral species or the gas phase (logKow, VP, Henry, KOA) are
-physically undefined for permanent ions. That is a property of the chemistry, not a gap in this dataset.
+
+Under periodic Ewald, a net charge implies a uniform neutralising background. The total energy then
+depends on the box and cannot be compared with that of neutral molecules, and the dipole of an ion
+depends on the choice of origin. For `charged` rows, energy_eV, energy_per_atom_eV, e_resid_*, dipole_D
+and dipole_per_heavy_D are therefore **NaN by design**. Geometry, SASA (solvent-accessible surface
+area) and charge descriptors are kept.
+
+Properties defined for the neutral species or the gas phase (logKow, VP, Henry, KOA) are physically
+undefined for permanent ions. That is a property of the chemistry, not a gap in this dataset.
 
 ## Which columns to trust for flexible molecules (W-PHYSICS P-001 pre-test, pretest_flex_shard0.json)
-One conformer per molecule. Compared with a 1–20-conformer AIMNet2 ensemble from the same calculator (917 molecules):
+
+Only one conformer is computed per molecule. A flexible molecule can take many shapes, so some
+descriptors depend on which conformer was picked. This was tested against a 1–20-conformer AIMNet2
+ensemble from the same calculator (917 molecules):
+
 - rigid (0–1 rotatable bonds): all descriptors are identical to the ensemble's lowest conformer;
-- flexible (≥5 rotatable bonds): **dipole, kappa2, asphericity, rg and max_extent are effectively one random draw** from the
-  conformer ensemble (median deviation from the Boltzmann average 0.13–0.59 population SD). SASA, polar SASA, surface-charge
-  and atomic-charge descriptors are stable (≤0.03 SD). The seed conformer lies more than 0.1 eV above the best conformer
-  found for 50–73 % of flexible molecules, so energy-derived columns carry conformational noise of about 0.1 eV.
+- flexible (≥5 rotatable bonds): **dipole, kappa2, asphericity, rg and max_extent are effectively one
+  random draw** from the conformer ensemble (median deviation from the Boltzmann average 0.13–0.59
+  population SD). SASA, polar SASA, surface-charge and atomic-charge descriptors are stable (≤0.03 SD).
+- The seed conformer lies more than 0.1 eV above the best conformer found for 50–73 % of flexible
+  molecules, so energy-derived columns carry conformational noise of about 0.1 eV.
 
 ## Reproducibility
+
 - CPU path: `compute_physics.compute_physics(smiles, force_cpu=True)` with `AIMNET2_CKPT` set. Same protocol.
 - CPU vs GPU parity (parity_cpu_gpu_v1.json, 40 molecules): 40/40 converged; |ΔE| median 2 meV, max 43 meV; charges max
   |Δ| 0.02 e. OPS-2's independent stratified check is in OPS-2/cpu_parity_desc_summary.md. Conformation-dependent
@@ -80,6 +126,8 @@ One conformer per molecule. Compared with a 1–20-conformer AIMNet2 ensemble fr
 - Code: inv_pipeline.py (relaxation; OPS), build_inventory_descriptors.py (descriptors; W-PHYSICS), compute_physics.py.
 
 ## Licences
-AIMNet2 code MIT; weights from the AIMNet2 authors. We redistribute descriptors, not weights. NVIDIA ALCHEMI toolkit
-Apache-2.0. RDKit BSD-3. FreeSASA MIT. DSSTox identifiers: US EPA public data.
+
+AIMNet2 code MIT; weights from the AIMNet2 authors. We redistribute descriptors, not weights. NVIDIA
+ALCHEMI toolkit Apache-2.0. RDKit BSD-3. FreeSASA MIT. DSSTox identifiers: US EPA public data.
+
 Cite AIMNet2 (doi:10.1039/D4SC08572H), ETKDG (doi:10.1021/acs.jcim.5b00654), D3(BJ) (doi:10.1002/jcc.21759).

@@ -1,45 +1,116 @@
-# Q-003 note vs W-TOX rule (comparison only; no judgement on who is right)
-Sources: (internal path removed) ; W-TOX/r3/undefined_vs_gap_cells.csv (180 cells = 12 classes x 15 endpoints). Script: q003.py
+# Definedness rule vs. the expert's written answer (Q-003): a cell-by-cell comparison
+
+**What this is.** Some fate properties have no physical meaning for some kinds of compound: a permanently
+charged ion has no vapour pressure and no octanol-water partition coefficient for its neutral form, for
+example. The agents built a rule that labels every compound class x endpoint combination ("cell") as
+physically *undefined* (no measurement could exist) or *defined* (a missing value is a real data gap). A
+domain expert separately wrote a short answer to the same question (called "the note" below).
+This page compares the two cell by cell. It records where they agree and disagree; it does not judge
+which is right.
+
+**Why it matters.** An undefined cell should be reported to users as "not applicable", not predicted and
+not counted as a data need. A defined cell with no labels is a real gap that a measurement could fill. Mixing the
+two up either hides a real data need or asks for a measurement that cannot exist.
+
+**Who did what.** W-TOX is the agent that built the rule and the cell table; a separate agent wrote this
+comparison. File names starting with W-TOX/ refer to the agents' working folders, which are not part
+of this repository.
+
+## Sources
+
+- **The note:** the expert's written answer (its location on the event machine is not given here).
+- **The rule's cell table:** W-TOX/r3/undefined_vs_gap_cells.csv (180 cells = 12 classes x 15 endpoints).
+- **Comparison script:** q003.py (a working file, not included).
+- A second agent made an independent comparison of the same kind. How the two were resolved, and the
+  corrected table, are in the section "Physically undefined is not missing" and the supplementary table
+  "the corrected definedness table" of `paper/whitepaper.md`.
+
+## Result
 
 **Counts: AGREE = 14; DISAGREE = 12; NOT COVERED by the note = 154; total 180**
 
-Assumptions: the note's six undefined properties (vapour pressure, logKow, Henry, KOA, gas-phase OH rate, boiling point) are mapped to W-TOX endpoints vapor_pressure, logkow, henry, logkoa, koh_gas, boiling_point. The note names permanent cation (quaternary ammonium) and says sulfonate/sulfate salts follow the same reasoning; I mapped that to W-TOX's permanent_anion class (its SMARTS include sulfonate, sulfate ester, carboxylate). W-TOX's README says it derived the rule without being able to read the note. Zwitterions are not named in the note (the general 'permanently charged' principle might extend to them; I did not decide) so they sit in NOT COVERED.
+- **AGREE**: the note addresses the cell and gives the same verdict as the rule.
+- **DISAGREE**: the note's general principle would give a different verdict from the rule.
+- **NOT COVERED**: the note says nothing that applies to the cell.
 
-Count differences, not verdict differences: the note says zero Koc labels across 288 quat skeletons and 4 acidic-pKa labels across 470 PFAS skeletons; the W-TOX csv shows n_labelled=1 (permanent_cation x koc) and 16 (pfas x pka_acidic) on its own class definitions/compound counts. Not reconciled here.
+## How to read the verdicts
 
-Notes on the DISAGREE list: the note does not name inorganic or organometal classes; the disagreement is with its general 'non-volatile' clause. Organometal cells hold labels (e.g. vapor_pressure 216, boiling_point 298).
+| rule verdict | meaning |
+|---|---|
+| `undefined` | the property has no physical meaning for this kind of species, so no label can exist |
+| `defined` | the property is meaningful; if there is no label, that is a real data gap |
+| `defined_if_site` | (pKa only) defined where the molecule has an acidic or basic site |
+| `not_assessed` | the rule does not decide: for inorganic and metal-containing compounds the ionic and covalent drawings of the same substance give different answers; `unparsed` structures could not be read |
+| `assay_unattainable` | (receptor potency only) the compound cannot be assessed by the in-vitro receptor assays at all |
+
+`n_labelled` is the number of compounds in that cell that have an experimental label.
+
+## Assumptions made in the comparison
+
+- The note's six undefined properties (vapour pressure, logKow, Henry, KOA, gas-phase OH rate, boiling
+  point) are mapped to the rule's endpoints vapor_pressure, logkow, henry, logkoa, koh_gas, boiling_point.
+- The note names the permanent cation class (quaternary ammonium) and says sulfonate/sulfate salts follow
+  the same reasoning. The comparing agent mapped that to W-TOX's permanent_anion class, whose SMARTS
+  (substructure patterns) include sulfonate, sulfate ester and carboxylate.
+- W-TOX's README says it derived the rule without being able to read the note.
+- Zwitterions are not named in the note. The general "permanently charged" principle might extend to
+  them, but the comparing agent did not decide that, so they sit in NOT COVERED.
+
+## Count differences (not verdict differences)
+
+The note says zero Koc labels across 288 quat skeletons and 4 acidic-pKa labels across 470 PFAS
+skeletons. The W-TOX table shows n_labelled=1 (permanent_cation x koc) and 16 (pfas x pka_acidic), using
+its own class definitions and compound counts. These counts are not reconciled here.
+
+## About the DISAGREE list
+
+The note does not name inorganic or organometal classes; the disagreement is with its general
+"non-volatile" clause. Organometal cells hold labels (e.g. vapor_pressure 216, boiling_point 298).
 
 ## AGREE (14)
-- permanent_anion x henry: rule=undefined (n_labelled=0) | note: 'Sulfonate and sulfate salts fall under the same reasoning as quaternary ammonium cations'
-- permanent_cation x henry: rule=undefined (n_labelled=1) | note: listed undefined for permanent cation (table)
-- permanent_anion x vapor_pressure: rule=undefined (n_labelled=4) | note: 'Sulfonate and sulfate salts fall under the same reasoning as quaternary ammonium cations'
-- permanent_cation x vapor_pressure: rule=undefined (n_labelled=61) | note: listed undefined for permanent cation (table)
-- permanent_anion x boiling_point: rule=undefined (n_labelled=0) | note: 'Sulfonate and sulfate salts fall under the same reasoning as quaternary ammonium cations'
-- permanent_cation x boiling_point: rule=undefined (n_labelled=29) | note: listed undefined for permanent cation (table)
-- permanent_anion x koh_gas: rule=undefined (n_labelled=0) | note: 'Sulfonate and sulfate salts fall under the same reasoning as quaternary ammonium cations'
-- permanent_cation x koh_gas: rule=undefined (n_labelled=0) | note: listed undefined for permanent cation (table)
-- permanent_anion x logkoa: rule=undefined (n_labelled=0) | note: 'Sulfonate and sulfate salts fall under the same reasoning as quaternary ammonium cations'
-- permanent_cation x logkoa: rule=undefined (n_labelled=0) | note: listed undefined for permanent cation (table)
-- permanent_anion x logkow: rule=undefined (n_labelled=2) | note: 'Sulfonate and sulfate salts fall under the same reasoning as quaternary ammonium cations'
-- permanent_cation x logkow: rule=undefined (n_labelled=128) | note: listed undefined for permanent cation (table)
-- permanent_cation x koc: rule=defined (n_labelled=1) | note: Koc for quats measurable, genuine gap (rule: defined, not undefined)
-- pfas x pka_acidic: rule=defined_if_site (n_labelled=16) | note: acidic pKa for PFAS measurable, genuine gap (rule: defined_if_site, i.e. applicable where an acid site exists)
+
+| cell (class x endpoint) | rule verdict | n_labelled | what the note says |
+|---|---|---|---|
+| permanent_anion x henry | undefined | 0 | 'Sulfonate and sulfate salts fall under the same reasoning as quaternary ammonium cations' |
+| permanent_cation x henry | undefined | 1 | listed undefined for permanent cation (table) |
+| permanent_anion x vapor_pressure | undefined | 4 | 'Sulfonate and sulfate salts fall under the same reasoning as quaternary ammonium cations' |
+| permanent_cation x vapor_pressure | undefined | 61 | listed undefined for permanent cation (table) |
+| permanent_anion x boiling_point | undefined | 0 | 'Sulfonate and sulfate salts fall under the same reasoning as quaternary ammonium cations' |
+| permanent_cation x boiling_point | undefined | 29 | listed undefined for permanent cation (table) |
+| permanent_anion x koh_gas | undefined | 0 | 'Sulfonate and sulfate salts fall under the same reasoning as quaternary ammonium cations' |
+| permanent_cation x koh_gas | undefined | 0 | listed undefined for permanent cation (table) |
+| permanent_anion x logkoa | undefined | 0 | 'Sulfonate and sulfate salts fall under the same reasoning as quaternary ammonium cations' |
+| permanent_cation x logkoa | undefined | 0 | listed undefined for permanent cation (table) |
+| permanent_anion x logkow | undefined | 2 | 'Sulfonate and sulfate salts fall under the same reasoning as quaternary ammonium cations' |
+| permanent_cation x logkow | undefined | 128 | listed undefined for permanent cation (table) |
+| permanent_cation x koc | defined | 1 | Koc for quats measurable, genuine gap (rule: defined, not undefined) |
+| pfas x pka_acidic | defined_if_site | 16 | acidic pKa for PFAS measurable, genuine gap (rule: defined_if_site, i.e. applicable where an acid site exists) |
 
 ## DISAGREE (12)
-- inorganic x henry: rule=not_assessed (n_labelled=0) | note's general principle: 'undefined for a species that is permanently charged or non-volatile' (vs rule: 'ionic and covalent drawings ... give different answers; the rule refuses to decide' = not_assessed, neither undefined nor gap)
-- organometal x henry: rule=not_assessed (n_labelled=25) | note's general principle: 'undefined for a species that is permanently charged or non-volatile' (vs rule: 'ionic and covalent drawings ... give different answers; the rule refuses to decide' = not_assessed, neither undefined nor gap)
-- inorganic x vapor_pressure: rule=not_assessed (n_labelled=0) | note's general principle: 'undefined for a species that is permanently charged or non-volatile' (vs rule: 'ionic and covalent drawings ... give different answers; the rule refuses to decide' = not_assessed, neither undefined nor gap)
-- organometal x vapor_pressure: rule=not_assessed (n_labelled=216) | note's general principle: 'undefined for a species that is permanently charged or non-volatile' (vs rule: 'ionic and covalent drawings ... give different answers; the rule refuses to decide' = not_assessed, neither undefined nor gap)
-- inorganic x boiling_point: rule=not_assessed (n_labelled=0) | note's general principle: 'undefined for a species that is permanently charged or non-volatile' (vs rule: 'ionic and covalent drawings ... give different answers; the rule refuses to decide' = not_assessed, neither undefined nor gap)
-- organometal x boiling_point: rule=not_assessed (n_labelled=298) | note's general principle: 'undefined for a species that is permanently charged or non-volatile' (vs rule: 'ionic and covalent drawings ... give different answers; the rule refuses to decide' = not_assessed, neither undefined nor gap)
-- inorganic x koh_gas: rule=not_assessed (n_labelled=0) | note's general principle: 'undefined for a species that is permanently charged or non-volatile' (vs rule: 'ionic and covalent drawings ... give different answers; the rule refuses to decide' = not_assessed, neither undefined nor gap)
-- organometal x koh_gas: rule=not_assessed (n_labelled=6) | note's general principle: 'undefined for a species that is permanently charged or non-volatile' (vs rule: 'ionic and covalent drawings ... give different answers; the rule refuses to decide' = not_assessed, neither undefined nor gap)
-- inorganic x logkoa: rule=not_assessed (n_labelled=0) | note's general principle: 'undefined for a species that is permanently charged or non-volatile' (vs rule: 'ionic and covalent drawings ... give different answers; the rule refuses to decide' = not_assessed, neither undefined nor gap)
-- organometal x logkoa: rule=not_assessed (n_labelled=0) | note's general principle: 'undefined for a species that is permanently charged or non-volatile' (vs rule: 'ionic and covalent drawings ... give different answers; the rule refuses to decide' = not_assessed, neither undefined nor gap)
-- inorganic x logkow: rule=not_assessed (n_labelled=0) | note's general principle: 'undefined for a species that is permanently charged or non-volatile' (vs rule: 'ionic and covalent drawings ... give different answers; the rule refuses to decide' = not_assessed, neither undefined nor gap)
-- organometal x logkow: rule=not_assessed (n_labelled=80) | note's general principle: 'undefined for a species that is permanently charged or non-volatile' (vs rule: 'ionic and covalent drawings ... give different answers; the rule refuses to decide' = not_assessed, neither undefined nor gap)
+
+For every cell below, the note's general principle is: 'undefined for a species that is permanently
+charged or non-volatile'. The rule instead says: 'ionic and covalent drawings ... give different
+answers; the rule refuses to decide' = not_assessed, neither undefined nor gap.
+
+| cell (class x endpoint) | rule verdict | n_labelled |
+|---|---|---|
+| inorganic x henry | not_assessed | 0 |
+| organometal x henry | not_assessed | 25 |
+| inorganic x vapor_pressure | not_assessed | 0 |
+| organometal x vapor_pressure | not_assessed | 216 |
+| inorganic x boiling_point | not_assessed | 0 |
+| organometal x boiling_point | not_assessed | 298 |
+| inorganic x koh_gas | not_assessed | 0 |
+| organometal x koh_gas | not_assessed | 6 |
+| inorganic x logkoa | not_assessed | 0 |
+| organometal x logkoa | not_assessed | 0 |
+| inorganic x logkow | not_assessed | 0 |
+| organometal x logkow | not_assessed | 80 |
 
 ## NOT COVERED by the note (154)
+
+Each line gives the cell, the rule's verdict and the number of labelled compounds.
+
 - hydrolytically_labile x henry: rule=defined (n_labelled=27)
 - neutral_organic x henry: rule=defined (n_labelled=1528)
 - permanent_zwitterion x henry: rule=undefined (n_labelled=1)

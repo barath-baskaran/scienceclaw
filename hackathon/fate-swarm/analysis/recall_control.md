@@ -1,6 +1,44 @@
-# Near-neighbour recall control (eval_recall_control.py -> recall_control.csv)
+# Near-neighbour recall control
 
-Official test rows; the same structure-only LightGBM. FULL = official train; PRUNE = official train minus every compound within Tanimoto 0.40 of any test compound; RAND = the same number removed at random (3 seeds). recall effect = PRUNE - RAND (same training size). Negative control = recall effect on the leak-free rows (expected 0). % of naive points; paired cluster-bootstrap 95% CI. Replaces the graph-trained control and the "share of gap" ratio (CRITIC audit 21:18).
+Models score better on test compounds that have a close relative in the training set, because they can
+partly "recall" that relative's value. This note measures how much of the error difference between
+the full test set and the leak-free test set comes from that recall, and how much comes simply from
+having less training data. It replaces an earlier control (the graph-trained control and its "share
+of gap" ratio, see `split_evaluation.md`) that the critic agent's audit (CRITIC 21:18) found to be
+confounded.
+
+## Design
+
+All results use the official test rows and the same structure-only LightGBM (a gradient-boosted
+decision-tree model on structure descriptors). Three training sets are compared:
+
+- **FULL**: the official training set.
+- **PRUNE**: the official training set minus every compound within Tanimoto 0.40 of any test compound
+  (that is, every close structural relative of a test compound is removed).
+- **RAND**: the same number of training compounds removed at random (3 seeds, i.e. three different
+  random draws).
+
+From these:
+
+- **recall effect** = PRUNE - RAND. Both have the same training size, so the difference isolates the
+  loss of close relatives.
+- **size effect** = RAND - FULL: the effect of the smaller training set on its own.
+- **Negative control**: the recall effect on the leak-free rows, which is expected to be 0 because
+  those compounds had no close relative in training to begin with.
+
+Errors are in % of naive points: root-mean-square error as a percentage of a naive guess that always
+predicts the training mean (lower is better), and differences are in percentage points of that scale.
+Intervals are paired cluster-bootstrap 95% CIs: compounds are resampled by chemical-similarity
+cluster, and the models being compared are scored on the same resample each time.
+
+The source files, eval_recall_control.py and recall_control.csv, are the agents' working files and are
+not part of this repository.
+
+## Results
+
+Rows: "all_test" is every official test compound, "leakfree_test" the ones with no close training
+relative, "leaking_test" the ones with one. "train removed" is the share of the training set removed in
+PRUNE (and therefore in RAND).
 
 | endpoint | rows | n | train removed | FULL | PRUNE | RAND | recall effect | size effect |
 |---|---|---|---|---|---|---|---|---|
@@ -40,4 +78,9 @@ Official test rows; the same structure-only LightGBM. FULL = official train; PRU
 | water_solubility | leakfree_test | 392 | 33% | 53.6 | 54.1 | 55.3 | -1.19 [-3.03, +0.74] | +1.72 [+0.40, +3.14] |
 | water_solubility | leaking_test | 982 | 33% | 47.6 | 52.6 | 48.3 | +4.32 [+2.45, +6.30] | +0.74 [-0.17, +1.71] |
 
-Recall effect on all test rows: CI excludes 0 (positive) on 6/12 endpoints (['henry', 'koh_gas', 'logkoa', 'logkow', 'melting_point', 'water_solubility']); median 1.4 points. Negative control (leak-free rows): CI excludes 0 on 1/11 endpoints (['pka_basic']), consistent with chance at 95%.
+## Summary
+
+- Recall effect on all test rows: the CI excludes 0 (positive) on 6/12 endpoints (['henry', 'koh_gas',
+  'logkoa', 'logkow', 'melting_point', 'water_solubility']); the median is 1.4 points.
+- Negative control (leak-free rows): the CI excludes 0 on 1/11 endpoints (['pka_basic']), which is
+  consistent with chance at 95%.
