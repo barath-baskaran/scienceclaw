@@ -14,11 +14,11 @@ properties such as water solubility, vapour pressure and soil sorption) and some
 
 Each prediction comes with:
 
-- an uncertainty interval (a split-conformal interval, see [Terms used](#terms-used)). Next to it we
-  report the **empirical** coverage measured on held-out test data, not just the nominal level the
+- an uncertainty interval (a split-conformal interval, see [Terms used](#terms-used)). Next to it is
+  the **empirical** coverage measured on held-out test data, not just the nominal level the
   interval was designed for;
-- a domain flag. It separates two different problems with different answers: "far from anything we
-  trained on" and "physically undefined for this species";
+- a domain flag. It separates two different problems with different answers: "far from anything in the
+  training data" and "physically undefined for this species";
 - the EPI Suite estimate, as a comparator, wherever EPI Suite has a module for that endpoint;
 - the features that drove the prediction.
 
@@ -69,9 +69,9 @@ to the agents' working folders, which are not part of this repository. Those cit
 
 - **Endpoint**: one property being predicted, for example melting point or logKow.
 - **EPI Suite**: the US EPA's standard estimation software for physical-chemical and fate properties.
-  We use it as the comparator.
+  It is the comparator here.
 - **RMSE, % of naive**: RMSE (root-mean-square error) is the typical size of a prediction error.
-  We divide it by the RMSE of a naive guess that always predicts the average of the training data.
+  It is divided by the RMSE of a naive guess that always predicts the average of the training data.
   This shows skill independent of the endpoint's units. 100% means no skill; 50% means half the error
   of knowing nothing. Lower is better.
 - **Morgan fingerprint and Tanimoto similarity**: a Morgan fingerprint encodes a structure as the set
@@ -149,7 +149,7 @@ How to read this table:
 - "Leak-free" here means no training analogue at Tanimoto >= 0.40 **on Morgan r2/2048 fingerprints**.
   Under other fingerprints some of these compounds do have close analogues. The stricter test in the
   paper is the novel-scaffold cut. There, melting point and water solubility still beat EPI Suite and
-  survive every control we applied.
+  survive every control the agents applied.
 
 ### Spectrum only, no structure
 
@@ -188,10 +188,10 @@ knows what was taken out before reading what was left in.
   and AIMNet2 physics (31 columns), 2296 in total. The spectral models are separate runs.
 - **Comparison with EPI Suite.** "Beats EPI Suite on six endpoints" is now: better on 6 of the 9
   comparisons that could be made, 4 of which survive a Bonferroni correction, with one clear loss
-  (gas-phase OH rate constant) that we cannot explain. The difference is unresolved on 2 (bcf, henry).
+  (gas-phase OH rate constant) that the agents could not explain. The difference is unresolved on 2 (bcf, henry).
   The denominator is nine because EPI Suite has no pKa module and logkoa has 3 leak-free rows.
 - **Only two wins survive every control.** Of those four, only melting point and water solubility
-  survive every control we applied, including a one-line control that clips EPI Suite's output to the
+  survive every control the agents applied, including a one-line control that clips EPI Suite's output to the
   range of the training labels.
 - **BCF is not "at the measurement noise floor".** That claim compared two different statistics. No
   endpoint here is limited by noise in the measured labels: leak-free RMSE is 1.3x-7.6x the
@@ -269,7 +269,7 @@ python build_whitepaper.py    # -> whitepaper.md/.pdf and review_summary.md/.pdf
 
 - **Physics descriptors** (from AIMNet2 geometry relaxations) help a little and not reliably. The set of
   endpoints where the gain has a confidence interval excluding zero changed with every defensible
-  scoring choice. We report that instability rather than the best version of it.
+  scoring choice. That instability is reported, not the best version of it.
 - **Rebuilding the spectral representation** did not beat the previous one. That negative result is in
   the main text, not an appendix.
 - **Transformation chemistry.** The model predicts the property change from a parent compound to its
@@ -289,8 +289,8 @@ python build_whitepaper.py    # -> whitepaper.md/.pdf and review_summary.md/.pdf
 
   No agent settled which slice is right, so both are stated with the slice named and neither is
   promoted. A person should pick.
-- **The EPI Suite comparison favours EPI Suite.** EPI Suite's training data overlap our label source, so
-  its scores here are optimistic, while ours are leak-free. This asymmetry is stated wherever the
+- **The EPI Suite comparison favours EPI Suite.** EPI Suite's training data overlap the label source used here, so
+  its scores here are optimistic, while this model's are leak-free. This asymmetry is stated wherever the
   comparison appears.
 - **Undefined properties are refused.** Gas-phase and neutral-species properties are undefined for
   permanently charged or non-volatile species. The tool refuses those rather than predicting them.
@@ -303,7 +303,7 @@ python build_whitepaper.py    # -> whitepaper.md/.pdf and review_summary.md/.pdf
 - This folder sits inside a fork of ScienceClaw (https://github.com/lamm-mit/scienceclaw). The rest of
   that repository is upstream's work under the Apache License 2.0 (`LICENSE` at the repository root)
   and is not relicensed by this folder. See `NOTICE`.
-- The MIT grant covers our own work only. Tables in `data/` are aggregate results we computed, but the
+- The MIT licence covers only the files written for this project. Tables in `data/` are aggregate results the agents computed, but the
   measurements behind them keep their source terms (US EPA CompTox, ChEMBL CC BY-SA 3.0, NMRexp CC BY
   4.0, and the other sources named in the paper). Third-party tools named here (EPI Suite, AIMNet2,
   RDKit) are under their own licences.
