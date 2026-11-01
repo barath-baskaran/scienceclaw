@@ -1,0 +1,231 @@
+endpoint,subset,compound_class,nn_sim_bin,n,definedness,reason,test_pct_of_naive_this_bin,test_empirical_coverage_this_bin,test_n_this_bin
+rat_oral_ld50,all_comptox,hydrolytically_labile,<0.3,502,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,all_comptox,hydrolytically_labile,0.3-0.5,1788,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,all_comptox,hydrolytically_labile,0.5-0.7,1133,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,all_comptox,hydrolytically_labile,>=0.7,517,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,all_comptox,inorganic,<0.3,5743,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,92.8,0.809,324
+rat_oral_ld50,all_comptox,inorganic,0.3-0.5,364,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,81.9,0.9,1135
+rat_oral_ld50,all_comptox,inorganic,0.5-0.7,79,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,71.1,0.946,462
+rat_oral_ld50,all_comptox,neutral_organic,<0.3,33345,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,all_comptox,neutral_organic,0.3-0.5,100264,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,all_comptox,neutral_organic,0.5-0.7,47701,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,all_comptox,neutral_organic,>=0.7,20748,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,all_comptox,organometal,<0.3,1227,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,92.8,0.809,324
+rat_oral_ld50,all_comptox,organometal,0.3-0.5,2313,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,81.9,0.9,1135
+rat_oral_ld50,all_comptox,organometal,0.5-0.7,1111,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,71.1,0.946,462
+rat_oral_ld50,all_comptox,organometal,>=0.7,327,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,63.4,0.917,96
+rat_oral_ld50,all_comptox,permanent_anion,<0.3,116,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,all_comptox,permanent_anion,0.3-0.5,124,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,all_comptox,permanent_anion,0.5-0.7,33,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,all_comptox,permanent_anion,>=0.7,10,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,all_comptox,permanent_cation,<0.3,1428,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,all_comptox,permanent_cation,0.3-0.5,3908,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,all_comptox,permanent_cation,0.5-0.7,1642,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,all_comptox,permanent_cation,>=0.7,1121,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,all_comptox,permanent_zwitterion,<0.3,518,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,all_comptox,permanent_zwitterion,0.3-0.5,1058,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,all_comptox,permanent_zwitterion,0.5-0.7,334,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,all_comptox,permanent_zwitterion,>=0.7,92,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,all_comptox,pfas,<0.3,6226,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,all_comptox,pfas,0.3-0.5,12751,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,all_comptox,pfas,0.5-0.7,3604,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,all_comptox,pfas,>=0.7,848,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,all_comptox,small_volatile,<0.3,3496,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,all_comptox,small_volatile,0.3-0.5,6398,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,all_comptox,small_volatile,0.5-0.7,2760,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,all_comptox,small_volatile,>=0.7,1611,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,all_comptox,surfactant_like,<0.3,103,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,all_comptox,surfactant_like,0.3-0.5,905,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,all_comptox,surfactant_like,0.5-0.7,1771,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,all_comptox,surfactant_like,>=0.7,1135,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,all_comptox,very_hydrophobic,<0.3,1523,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,all_comptox,very_hydrophobic,0.3-0.5,4622,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,all_comptox,very_hydrophobic,0.5-0.7,2960,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,all_comptox,very_hydrophobic,>=0.7,2163,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,epa_inventory,hydrolytically_labile,<0.3,396,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,epa_inventory,hydrolytically_labile,0.3-0.5,1555,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,epa_inventory,hydrolytically_labile,0.5-0.7,1023,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,epa_inventory,hydrolytically_labile,>=0.7,450,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,epa_inventory,inorganic,<0.3,36,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,92.8,0.809,324
+rat_oral_ld50,epa_inventory,inorganic,0.3-0.5,7,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,81.9,0.9,1135
+rat_oral_ld50,epa_inventory,neutral_organic,<0.3,26251,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,epa_inventory,neutral_organic,0.3-0.5,85821,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,epa_inventory,neutral_organic,0.5-0.7,40797,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,epa_inventory,neutral_organic,>=0.7,18136,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,epa_inventory,organometal,<0.3,656,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,92.8,0.809,324
+rat_oral_ld50,epa_inventory,organometal,0.3-0.5,1302,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,81.9,0.9,1135
+rat_oral_ld50,epa_inventory,organometal,0.5-0.7,616,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,71.1,0.946,462
+rat_oral_ld50,epa_inventory,organometal,>=0.7,206,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,63.4,0.917,96
+rat_oral_ld50,epa_inventory,permanent_anion,<0.3,45,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,epa_inventory,permanent_anion,0.3-0.5,30,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,epa_inventory,permanent_anion,0.5-0.7,3,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,epa_inventory,permanent_cation,<0.3,1170,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,epa_inventory,permanent_cation,0.3-0.5,3002,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,epa_inventory,permanent_cation,0.5-0.7,1293,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,epa_inventory,permanent_cation,>=0.7,1013,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,epa_inventory,permanent_zwitterion,<0.3,383,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,epa_inventory,permanent_zwitterion,0.3-0.5,684,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,epa_inventory,permanent_zwitterion,0.5-0.7,201,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,epa_inventory,permanent_zwitterion,>=0.7,77,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,epa_inventory,pfas,<0.3,4470,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,epa_inventory,pfas,0.3-0.5,9265,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,epa_inventory,pfas,0.5-0.7,2624,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,epa_inventory,pfas,>=0.7,706,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,epa_inventory,small_volatile,<0.3,2958,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,epa_inventory,small_volatile,0.3-0.5,5617,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,epa_inventory,small_volatile,0.5-0.7,2475,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,epa_inventory,small_volatile,>=0.7,1441,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,epa_inventory,surfactant_like,<0.3,46,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,epa_inventory,surfactant_like,0.3-0.5,667,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,epa_inventory,surfactant_like,0.5-0.7,1365,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,epa_inventory,surfactant_like,>=0.7,841,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+rat_oral_ld50,epa_inventory,very_hydrophobic,<0.3,999,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",92.8,0.809,324
+rat_oral_ld50,epa_inventory,very_hydrophobic,0.3-0.5,3191,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",81.9,0.9,1135
+rat_oral_ld50,epa_inventory,very_hydrophobic,0.5-0.7,2201,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",71.1,0.946,462
+rat_oral_ld50,epa_inventory,very_hydrophobic,>=0.7,1635,defined,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",63.4,0.917,96
+er_potency,all_comptox,hydrolytically_labile,<0.3,3061,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,57.1,0.795,78
+er_potency,all_comptox,hydrolytically_labile,0.3-0.5,775,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,54.8,0.89,263
+er_potency,all_comptox,hydrolytically_labile,0.5-0.7,101,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,71.5,0.967,153
+er_potency,all_comptox,hydrolytically_labile,>=0.7,3,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,54.9,0.815,92
+er_potency,all_comptox,inorganic,<0.3,6186,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,57.1,0.795,78
+er_potency,all_comptox,neutral_organic,<0.3,136973,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",57.1,0.795,78
+er_potency,all_comptox,neutral_organic,0.3-0.5,58576,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.8,0.89,263
+er_potency,all_comptox,neutral_organic,0.5-0.7,5558,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",71.5,0.967,153
+er_potency,all_comptox,neutral_organic,>=0.7,951,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.9,0.815,92
+er_potency,all_comptox,organometal,<0.3,4251,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,57.1,0.795,78
+er_potency,all_comptox,organometal,0.3-0.5,703,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,54.8,0.89,263
+er_potency,all_comptox,organometal,0.5-0.7,23,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,71.5,0.967,153
+er_potency,all_comptox,organometal,>=0.7,1,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,54.9,0.815,92
+er_potency,all_comptox,permanent_anion,<0.3,264,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",57.1,0.795,78
+er_potency,all_comptox,permanent_anion,0.3-0.5,19,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.8,0.89,263
+er_potency,all_comptox,permanent_cation,<0.3,6640,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",57.1,0.795,78
+er_potency,all_comptox,permanent_cation,0.3-0.5,1417,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.8,0.89,263
+er_potency,all_comptox,permanent_cation,0.5-0.7,38,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",71.5,0.967,153
+er_potency,all_comptox,permanent_cation,>=0.7,4,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.9,0.815,92
+er_potency,all_comptox,permanent_zwitterion,<0.3,1751,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",57.1,0.795,78
+er_potency,all_comptox,permanent_zwitterion,0.3-0.5,225,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.8,0.89,263
+er_potency,all_comptox,permanent_zwitterion,0.5-0.7,16,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",71.5,0.967,153
+er_potency,all_comptox,permanent_zwitterion,>=0.7,10,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.9,0.815,92
+er_potency,all_comptox,pfas,<0.3,20922,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",57.1,0.795,78
+er_potency,all_comptox,pfas,0.3-0.5,2335,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.8,0.89,263
+er_potency,all_comptox,pfas,0.5-0.7,111,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",71.5,0.967,153
+er_potency,all_comptox,pfas,>=0.7,61,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.9,0.815,92
+er_potency,all_comptox,small_volatile,<0.3,12967,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,57.1,0.795,78
+er_potency,all_comptox,small_volatile,0.3-0.5,1258,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,54.8,0.89,263
+er_potency,all_comptox,small_volatile,0.5-0.7,37,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,71.5,0.967,153
+er_potency,all_comptox,small_volatile,>=0.7,3,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,54.9,0.815,92
+er_potency,all_comptox,surfactant_like,<0.3,739,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",57.1,0.795,78
+er_potency,all_comptox,surfactant_like,0.3-0.5,2066,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.8,0.89,263
+er_potency,all_comptox,surfactant_like,0.5-0.7,828,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",71.5,0.967,153
+er_potency,all_comptox,surfactant_like,>=0.7,281,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.9,0.815,92
+er_potency,all_comptox,very_hydrophobic,<0.3,6429,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,57.1,0.795,78
+er_potency,all_comptox,very_hydrophobic,0.3-0.5,4166,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,54.8,0.89,263
+er_potency,all_comptox,very_hydrophobic,0.5-0.7,638,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,71.5,0.967,153
+er_potency,all_comptox,very_hydrophobic,>=0.7,35,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,54.9,0.815,92
+er_potency,epa_inventory,hydrolytically_labile,<0.3,2660,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,57.1,0.795,78
+er_potency,epa_inventory,hydrolytically_labile,0.3-0.5,688,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,54.8,0.89,263
+er_potency,epa_inventory,hydrolytically_labile,0.5-0.7,73,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,71.5,0.967,153
+er_potency,epa_inventory,hydrolytically_labile,>=0.7,3,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,54.9,0.815,92
+er_potency,epa_inventory,inorganic,<0.3,43,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,57.1,0.795,78
+er_potency,epa_inventory,neutral_organic,<0.3,115840,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",57.1,0.795,78
+er_potency,epa_inventory,neutral_organic,0.3-0.5,50141,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.8,0.89,263
+er_potency,epa_inventory,neutral_organic,0.5-0.7,4265,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",71.5,0.967,153
+er_potency,epa_inventory,neutral_organic,>=0.7,759,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.9,0.815,92
+er_potency,epa_inventory,organometal,<0.3,2439,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,57.1,0.795,78
+er_potency,epa_inventory,organometal,0.3-0.5,322,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,54.8,0.89,263
+er_potency,epa_inventory,organometal,0.5-0.7,18,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,71.5,0.967,153
+er_potency,epa_inventory,organometal,>=0.7,1,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,54.9,0.815,92
+er_potency,epa_inventory,permanent_anion,<0.3,75,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",57.1,0.795,78
+er_potency,epa_inventory,permanent_anion,0.3-0.5,3,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.8,0.89,263
+er_potency,epa_inventory,permanent_cation,<0.3,5205,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",57.1,0.795,78
+er_potency,epa_inventory,permanent_cation,0.3-0.5,1238,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.8,0.89,263
+er_potency,epa_inventory,permanent_cation,0.5-0.7,32,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",71.5,0.967,153
+er_potency,epa_inventory,permanent_cation,>=0.7,3,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.9,0.815,92
+er_potency,epa_inventory,permanent_zwitterion,<0.3,1181,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",57.1,0.795,78
+er_potency,epa_inventory,permanent_zwitterion,0.3-0.5,145,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.8,0.89,263
+er_potency,epa_inventory,permanent_zwitterion,0.5-0.7,11,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",71.5,0.967,153
+er_potency,epa_inventory,permanent_zwitterion,>=0.7,8,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.9,0.815,92
+er_potency,epa_inventory,pfas,<0.3,15114,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",57.1,0.795,78
+er_potency,epa_inventory,pfas,0.3-0.5,1820,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.8,0.89,263
+er_potency,epa_inventory,pfas,0.5-0.7,84,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",71.5,0.967,153
+er_potency,epa_inventory,pfas,>=0.7,47,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.9,0.815,92
+er_potency,epa_inventory,small_volatile,<0.3,11388,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,57.1,0.795,78
+er_potency,epa_inventory,small_volatile,0.3-0.5,1065,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,54.8,0.89,263
+er_potency,epa_inventory,small_volatile,0.5-0.7,37,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,71.5,0.967,153
+er_potency,epa_inventory,small_volatile,>=0.7,1,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,54.9,0.815,92
+er_potency,epa_inventory,surfactant_like,<0.3,501,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",57.1,0.795,78
+er_potency,epa_inventory,surfactant_like,0.3-0.5,1567,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.8,0.89,263
+er_potency,epa_inventory,surfactant_like,0.5-0.7,629,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",71.5,0.967,153
+er_potency,epa_inventory,surfactant_like,>=0.7,222,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",54.9,0.815,92
+er_potency,epa_inventory,very_hydrophobic,<0.3,4486,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,57.1,0.795,78
+er_potency,epa_inventory,very_hydrophobic,0.3-0.5,3034,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,54.8,0.89,263
+er_potency,epa_inventory,very_hydrophobic,0.5-0.7,474,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,71.5,0.967,153
+er_potency,epa_inventory,very_hydrophobic,>=0.7,32,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,54.9,0.815,92
+ar_potency,all_comptox,hydrolytically_labile,<0.3,3532,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,95.1,0.921,38
+ar_potency,all_comptox,hydrolytically_labile,0.3-0.5,386,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,83.5,0.894,170
+ar_potency,all_comptox,hydrolytically_labile,0.5-0.7,20,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,81.8,0.884,146
+ar_potency,all_comptox,hydrolytically_labile,>=0.7,2,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,62.6,0.898,108
+ar_potency,all_comptox,inorganic,<0.3,6186,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,95.1,0.921,38
+ar_potency,all_comptox,neutral_organic,<0.3,162220,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",95.1,0.921,38
+ar_potency,all_comptox,neutral_organic,0.3-0.5,35851,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",83.5,0.894,170
+ar_potency,all_comptox,neutral_organic,0.5-0.7,3111,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",81.8,0.884,146
+ar_potency,all_comptox,neutral_organic,>=0.7,876,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",62.6,0.898,108
+ar_potency,all_comptox,organometal,<0.3,4835,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,95.1,0.921,38
+ar_potency,all_comptox,organometal,0.3-0.5,136,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,83.5,0.894,170
+ar_potency,all_comptox,organometal,0.5-0.7,7,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,81.8,0.884,146
+ar_potency,all_comptox,permanent_anion,<0.3,264,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",95.1,0.921,38
+ar_potency,all_comptox,permanent_anion,0.3-0.5,19,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",83.5,0.894,170
+ar_potency,all_comptox,permanent_cation,<0.3,7666,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",95.1,0.921,38
+ar_potency,all_comptox,permanent_cation,0.3-0.5,432,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",83.5,0.894,170
+ar_potency,all_comptox,permanent_cation,0.5-0.7,1,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",81.8,0.884,146
+ar_potency,all_comptox,permanent_zwitterion,<0.3,1981,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",95.1,0.921,38
+ar_potency,all_comptox,permanent_zwitterion,0.3-0.5,19,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",83.5,0.894,170
+ar_potency,all_comptox,permanent_zwitterion,0.5-0.7,2,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",81.8,0.884,146
+ar_potency,all_comptox,pfas,<0.3,19710,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",95.1,0.921,38
+ar_potency,all_comptox,pfas,0.3-0.5,3504,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",83.5,0.894,170
+ar_potency,all_comptox,pfas,0.5-0.7,132,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",81.8,0.884,146
+ar_potency,all_comptox,pfas,>=0.7,83,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",62.6,0.898,108
+ar_potency,all_comptox,small_volatile,<0.3,13826,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,95.1,0.921,38
+ar_potency,all_comptox,small_volatile,0.3-0.5,437,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,83.5,0.894,170
+ar_potency,all_comptox,small_volatile,0.5-0.7,2,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,81.8,0.884,146
+ar_potency,all_comptox,surfactant_like,<0.3,3764,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",95.1,0.921,38
+ar_potency,all_comptox,surfactant_like,0.3-0.5,146,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",83.5,0.894,170
+ar_potency,all_comptox,surfactant_like,0.5-0.7,3,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",81.8,0.884,146
+ar_potency,all_comptox,surfactant_like,>=0.7,1,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",62.6,0.898,108
+ar_potency,all_comptox,very_hydrophobic,<0.3,9943,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,95.1,0.921,38
+ar_potency,all_comptox,very_hydrophobic,0.3-0.5,1176,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,83.5,0.894,170
+ar_potency,all_comptox,very_hydrophobic,0.5-0.7,120,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,81.8,0.884,146
+ar_potency,all_comptox,very_hydrophobic,>=0.7,29,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,62.6,0.898,108
+ar_potency,epa_inventory,hydrolytically_labile,<0.3,3068,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,95.1,0.921,38
+ar_potency,epa_inventory,hydrolytically_labile,0.3-0.5,347,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,83.5,0.894,170
+ar_potency,epa_inventory,hydrolytically_labile,0.5-0.7,7,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,81.8,0.884,146
+ar_potency,epa_inventory,hydrolytically_labile,>=0.7,2,assay_unattainable,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested,62.6,0.898,108
+ar_potency,epa_inventory,inorganic,<0.3,43,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,95.1,0.921,38
+ar_potency,epa_inventory,neutral_organic,<0.3,136734,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",95.1,0.921,38
+ar_potency,epa_inventory,neutral_organic,0.3-0.5,31301,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",83.5,0.894,170
+ar_potency,epa_inventory,neutral_organic,0.5-0.7,2276,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",81.8,0.884,146
+ar_potency,epa_inventory,neutral_organic,>=0.7,694,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",62.6,0.898,108
+ar_potency,epa_inventory,organometal,<0.3,2694,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,95.1,0.921,38
+ar_potency,epa_inventory,organometal,0.3-0.5,80,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,83.5,0.894,170
+ar_potency,epa_inventory,organometal,0.5-0.7,6,not_assessed,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide,81.8,0.884,146
+ar_potency,epa_inventory,permanent_anion,<0.3,73,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",95.1,0.921,38
+ar_potency,epa_inventory,permanent_anion,0.3-0.5,5,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",83.5,0.894,170
+ar_potency,epa_inventory,permanent_cation,<0.3,6081,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",95.1,0.921,38
+ar_potency,epa_inventory,permanent_cation,0.3-0.5,397,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",83.5,0.894,170
+ar_potency,epa_inventory,permanent_zwitterion,<0.3,1325,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",95.1,0.921,38
+ar_potency,epa_inventory,permanent_zwitterion,0.3-0.5,18,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",83.5,0.894,170
+ar_potency,epa_inventory,permanent_zwitterion,0.5-0.7,2,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",81.8,0.884,146
+ar_potency,epa_inventory,pfas,<0.3,14055,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",95.1,0.921,38
+ar_potency,epa_inventory,pfas,0.3-0.5,2818,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",83.5,0.894,170
+ar_potency,epa_inventory,pfas,0.5-0.7,119,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",81.8,0.884,146
+ar_potency,epa_inventory,pfas,>=0.7,73,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",62.6,0.898,108
+ar_potency,epa_inventory,small_volatile,<0.3,12113,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,95.1,0.921,38
+ar_potency,epa_inventory,small_volatile,0.3-0.5,376,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,83.5,0.894,170
+ar_potency,epa_inventory,small_volatile,0.5-0.7,2,assay_unattainable,evaporates from an open microplate; nominal concentration is not delivered,81.8,0.884,146
+ar_potency,epa_inventory,surfactant_like,<0.3,2795,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",95.1,0.921,38
+ar_potency,epa_inventory,surfactant_like,0.3-0.5,123,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",83.5,0.894,170
+ar_potency,epa_inventory,surfactant_like,0.5-0.7,1,defined,"in-vitro potency is defined for any substance deliverable in assay medium, ions included",81.8,0.884,146
+ar_potency,epa_inventory,very_hydrophobic,<0.3,7043,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,95.1,0.921,38
+ar_potency,epa_inventory,very_hydrophobic,0.3-0.5,877,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,83.5,0.894,170
+ar_potency,epa_inventory,very_hydrophobic,0.5-0.7,88,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,81.8,0.884,146
+ar_potency,epa_inventory,very_hydrophobic,>=0.7,18,assay_unattainable,clogP > 7: above its aqueous solubility at the usual test concentrations,62.6,0.898,108

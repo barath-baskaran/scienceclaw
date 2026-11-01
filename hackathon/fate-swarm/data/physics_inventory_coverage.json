@@ -1,0 +1,23 @@
+{
+ "n_structures_in_inventory": 782693,
+ "n_shards_total": 783,
+ "n_shards_built": 777,
+ "n_rows": 747764,
+ "n_physics_ok": 745468,
+ "frac_inventory_with_physics_ok": 0.9524398455077534,
+ "n_charged": 13690,
+ "qc_issue_counts": {
+  "": 745468,
+  "bond_broken": 1381,
+  "not_converged": 890,
+  "new_close_contact": 19,
+  "bond_broken;new_close_contact": 6
+ },
+ "embed_counts": {
+  "etkdg": 733885,
+  "etkdg+mmff_missing_params": 12607,
+  "random_coords": 1221,
+  "random_coords+mmff_missing_params": 51
+ },
+ "n_atoms_median": 32.0
+}

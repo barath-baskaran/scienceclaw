@@ -1,0 +1,89 @@
+{
+ "pairs": {
+  "familiar (in) text | somewhat new (edge) text": {
+   "normal": 87.0,
+   "protanopia": 80.1,
+   "deuteranopia": 88.2,
+   "tritanopia": 55.4,
+   "redundant_cue": "\u25cf + word vs \u25b2 + word"
+  },
+  "familiar (in) text | new (out) text": {
+   "normal": 99.7,
+   "protanopia": 77.0,
+   "deuteranopia": 92.0,
+   "tritanopia": 91.9,
+   "redundant_cue": "\u25cf + word vs \u2716 + word"
+  },
+  "familiar (in) text | undefined text": {
+   "normal": 35.0,
+   "protanopia": 33.0,
+   "deuteranopia": 37.5,
+   "tritanopia": 26.9,
+   "redundant_cue": "\u25cf + word vs \u2298 + dashed border + word"
+  },
+  "somewhat new (edge) text | new (out) text": {
+   "normal": 32.1,
+   "protanopia": 4.8,
+   "deuteranopia": 4.2,
+   "tritanopia": 36.6,
+   "redundant_cue": "\u25b2 + word vs \u2716 + word"
+  },
+  "somewhat new (edge) text | undefined text": {
+   "normal": 54.8,
+   "protanopia": 50.5,
+   "deuteranopia": 53.3,
+   "tritanopia": 33.8,
+   "redundant_cue": "\u25b2 + word vs \u2298 + dashed border + word"
+  },
+  "new (out) text | undefined text": {
+   "normal": 70.4,
+   "protanopia": 46.6,
+   "deuteranopia": 57.3,
+   "tritanopia": 68.6,
+   "redundant_cue": "\u2716 + word vs \u2298 + dashed border + word"
+  },
+  "structure share | physics share": {
+   "normal": 120.2,
+   "protanopia": 109.5,
+   "deuteranopia": 121.7,
+   "tritanopia": 79.1,
+   "redundant_cue": "solid fill + label vs diagonal hatch + label"
+  },
+  "structure share | spectrum share": {
+   "normal": 53.6,
+   "protanopia": 22.7,
+   "deuteranopia": 42.6,
+   "tritanopia": 69.2,
+   "redundant_cue": "solid fill + label vs dot pattern + label"
+  },
+  "physics share | spectrum share": {
+   "normal": 88.6,
+   "protanopia": 87.7,
+   "deuteranopia": 80.9,
+   "tritanopia": 17.2,
+   "redundant_cue": "diagonal hatch + label vs dot pattern + label"
+  },
+  "familiar tag background | somewhat new tag background": {
+   "normal": 20.0,
+   "protanopia": 19.1,
+   "deuteranopia": 20.7,
+   "tritanopia": 13.9,
+   "redundant_cue": "\u25cf vs \u25b2"
+  },
+  "familiar tag background | new tag background (filled, white text)": {
+   "normal": 89.9,
+   "protanopia": 77.0,
+   "deuteranopia": 75.4,
+   "tritanopia": 91.0,
+   "redundant_cue": "\u25cf vs \u2716"
+  },
+  "somewhat new tag background | new tag background (filled, white text)": {
+   "normal": 78.7,
+   "protanopia": 67.5,
+   "deuteranopia": 63.5,
+   "tritanopia": 81.0,
+   "redundant_cue": "\u25b2 vs \u2716"
+  }
+ },
+ "note": "dE76 in CIELAB; <10 = confusable by colour alone. Every meaning also has a shape/word (column redundancy)."
+}

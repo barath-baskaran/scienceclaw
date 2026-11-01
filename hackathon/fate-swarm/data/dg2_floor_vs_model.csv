@@ -1,0 +1,13 @@
+endpoint,units,n_repl_compounds,sigma_noise,naive_rmse_full,SP_rmse_full,naive_rmse_leakfree,SP_rmse_leakfree,label_SNR_trainsd_over_sigma,floor_pct_of_naive_full,SP_pct_naive_full,SP_pct_naive_leakfree,SP_rmse_over_sigma_full,SP_rmse_over_sigma_leakfree
+pka_acidic,log10,7,1.657,3.35,2.158,3.3566,3.2649,1.94,49.5,64.4,97.3,1.3,1.97
+bcf,log10_L_per_kg_linear,888,0.616,1.1835,0.8513,1.2743,1.1225,2.23,52.0,71.9,88.1,1.38,1.82
+logkow,log10,2577,0.809,2.1296,0.8816,2.0812,1.071,2.69,38.0,41.4,51.5,1.09,1.32
+water_solubility,log10_mol_per_L,2601,0.736,2.2499,1.0231,2.2368,1.1329,3.29,32.7,45.5,50.6,1.39,1.54
+logkoa,log10,1,0.82,3.744,0.5465,5.1662,1.1274,3.33,21.9,14.6,21.8,0.67,1.37
+henry,log10_atm_m3_per_mol,1327,0.763,2.9919,1.3836,3.4323,1.789,3.55,25.5,46.2,52.1,1.81,2.34
+boiling_point,degC,2240,24.844,96.4899,49.3972,106.7016,57.0758,3.59,25.7,51.2,53.5,1.99,2.3
+vapor_pressure,log10_mmHg,3149,0.881,3.6856,1.5945,3.6655,1.6539,3.74,23.9,43.3,45.1,1.81,1.88
+melting_point,degC,6747,21.495,97.3817,47.6469,103.8463,55.1118,4.46,22.1,48.9,53.1,2.22,2.56
+koc,log10_L_per_kg_linear,0,,1.1057,0.6042,1.1016,0.5697,,,54.6,51.7,,
+koh_gas,log10_cm3_per_molecule_s,0,,1.4287,0.6836,1.253,0.7223,,,47.8,57.6,,
+pka_basic,log10,0,,3.2948,2.1345,3.3292,2.4572,,,64.8,73.8,,

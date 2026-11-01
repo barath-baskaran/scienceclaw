@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+*.log
+
+# This folder sits inside the ScienceClaw fork, whose root .gitignore ignores *.csv, *.pdf and *.png.
+# The tables, papers and figures here are part of this bundle, so re-include them for this folder only.
+!*.csv
+!*.pdf
+!*.png

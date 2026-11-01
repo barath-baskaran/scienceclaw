@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Environmental fate &amp; hazard estimator (Plata lab swarm, v3)</title>
+<style>
+/* Palette: Okabe-Ito (colour-blind safe). Meaning is NEVER carried by colour alone:
+   every state also has a shape symbol and a word. */
+:root{--bg:#f7f7f5;--card:#fff;--fg:#1a1a1a;--muted:#555;--line:#d9d9d4;--accent:#0072B2;--accent-soft:#e3f0f8;
+--in:#005a8c;--in-soft:#e3f0f8;--edge:#8a6100;--edge-soft:#fdf1d6;--out:#b34700;--out-soft:#fbe6da;--und:#444;--und-soft:#ececec;
+--s:#0072B2;--p:#E69F00;--m:#CC79A7;--r:10px;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px 60px}
+header{padding:18px 0 4px}h1{font-size:1.55rem;margin:0 0 2px}h2{font-size:1.2rem;margin:26px 0 8px}h3{font-size:1.02rem;margin:0}
+.sub{color:var(--muted);margin:2px 0 0;font-size:.95rem}
+.modes{display:flex;gap:10px;margin:16px 0 4px;flex-wrap:wrap}
+.modes button{flex:1 1 220px;text-align:left;background:var(--card);color:var(--fg);border:2px solid var(--line);border-radius:var(--r);padding:12px 14px;margin:0;font-weight:600}
+.modes button small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+.modes button.on{border-color:var(--accent);background:var(--accent-soft)}
+.minor{display:flex;gap:16px;margin:6px 0 10px;font-size:.9rem;flex-wrap:wrap}
+.minor a{color:var(--accent);cursor:pointer;text-decoration:underline}.minor a.on{font-weight:700;text-decoration:none;color:var(--fg)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin:10px 0}
+label{display:block;font-weight:600;margin:10px 0 4px;font-size:.92rem}
+.hint{font-weight:400;color:var(--muted);font-size:.85rem}
+input,select,textarea{font:inherit;color:var(--fg);background:#fff;border:1px solid #9a9a95;border-radius:8px;padding:9px 11px;width:100%}
+input:focus,select:focus,textarea:focus,button:focus,a:focus,summary:focus{outline:3px solid #56B4E9;outline-offset:1px}
+#smi{font-family:var(--mono);font-size:1.05rem}
+textarea{font-family:var(--mono);font-size:.88rem;min-height:120px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.go{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}
+button{font:inherit;font-weight:700;border:0;border-radius:8px;padding:10px 20px;background:var(--accent);color:#fff;cursor:pointer}
+button.sec{background:#e9e9e4;color:var(--fg);font-weight:600}
+button:disabled{opacity:.5;cursor:wait}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chip{background:#eef3f7;border:1px solid var(--line);color:var(--fg);border-radius:999px;padding:3px 11px;font-size:.85rem;font-weight:500;cursor:pointer}
+.check{display:flex;gap:8px;align-items:flex-start;font-weight:400;font-size:.92rem;margin-top:10px}.check input{width:auto;margin-top:4px}
+.alert{border-radius:var(--r);padding:12px 14px;margin:10px 0;border:2px solid}
+.alert.err{background:var(--out-soft);border-color:var(--out)}.alert.warn{background:var(--edge-soft);border-color:var(--edge)}
+.alert.info{background:var(--accent-soft);border-color:var(--accent)}
+.alert b:first-child{display:block;margin-bottom:2px}
+.log{font-family:var(--mono);font-size:.82rem;background:#fafaf8;border:1px solid var(--line);border-radius:8px;padding:8px;max-height:180px;overflow:auto;white-space:pre-wrap;margin-top:10px}
+.idbox{display:grid;grid-template-columns:330px 1fr;gap:16px;align-items:start}
+@media (max-width:760px){.idbox{grid-template-columns:1fr}}
+@media (max-width:560px){.kv{grid-template-columns:1fr}.kv dd{min-width:0;overflow-wrap:anywhere;margin-bottom:4px}.kv dt{font-weight:600}}
+.mol svg{max-width:100%;height:auto}.mol{min-width:0;overflow:hidden}.kv dd{min-width:0;overflow-wrap:anywhere}
+.mol{background:#fff;border:1px solid var(--line);border-radius:var(--r);color:#222;display:flex;justify-content:center}
+.kv{display:grid;grid-template-columns:max-content 1fr;gap:3px 12px;font-size:.92rem}.kv dt{color:var(--muted)}.kv dd{margin:0}
+.mono{font-family:var(--mono);font-size:.85rem;word-break:break-all}
+/* results table */
+table.res{border-collapse:collapse;width:100%;font-size:.93rem}
+table.res th{font-size:.8rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);text-align:left;border-bottom:2px solid var(--line);padding:6px 8px;vertical-align:bottom}
+table.res td{border-bottom:1px solid var(--line);padding:8px 8px;vertical-align:top}
+table.res tr.main{cursor:pointer}table.res tr.main:hover{background:#fafaf6}
+td.prop b{display:block}td.prop .hint{display:block}
+.v{font-weight:700;font-size:1.08rem;white-space:nowrap}.u{color:var(--muted);font-size:.8rem;white-space:nowrap}
+.nat{color:var(--muted);font-size:.82rem}
+.rng{white-space:nowrap}
+svg.rb{display:block;margin-top:3px}
+.tag{display:inline-block;border-radius:6px;padding:1px 8px;font-size:.84rem;font-weight:600;border:1.5px solid;white-space:nowrap}
+.t-in{color:var(--in);background:var(--in-soft);border-color:var(--in)}
+.t-edge{color:var(--edge);background:var(--edge-soft);border-color:var(--edge)}
+.t-out{color:#fff;background:#a33a00;border-color:#a33a00}
+.t-und{color:var(--und);background:var(--und-soft);border-color:var(--und);border-style:dashed}
+.t-na{color:#555;background:#f2f2f2;border-color:#999;border-style:dotted}
+td.undef{color:var(--und)}
+tr.det td{background:#fbfbf9;padding:12px 14px}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.dgrid h4{margin:0 0 4px;font-size:.9rem}
+.bar{display:flex;height:16px;border-radius:4px;overflow:hidden;border:1px solid #888;background:#fff;max-width:340px}
+.bar span{display:block;height:100%}
+.k-s{background:var(--s)}
+.k-p{background:repeating-linear-gradient(45deg,var(--p) 0 4px,#fff3d6 4px 7px)}
+.k-m{background:radial-gradient(circle,#7a3f66 1.3px,var(--m) 1.6px) 0 0/6px 6px}
+.sw{display:inline-block;width:14px;height:12px;border:1px solid #666;vertical-align:-1px;margin-right:4px}
+ul.drv{margin:4px 0;padding-left:18px;font-size:.88rem}
+.small{font-size:.84rem;color:var(--muted)}
+details>summary{cursor:pointer;color:var(--accent);font-size:.9rem}
+.expand{color:var(--accent);font-size:.82rem;white-space:nowrap}
+.hid{display:none!important}
+.legend{font-size:.85rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:14px;margin:6px 0}
+table.sk{border-collapse:collapse;font-size:.86rem;width:100%}table.sk td,table.sk th{border-bottom:1px solid var(--line);padding:4px 6px;text-align:right}
+table.sk th:first-child,table.sk td:first-child{text-align:left}
+.foot{margin-top:30px;font-size:.82rem;color:var(--muted)}
+.specplot{background:#fff;border:1px solid var(--line);border-radius:8px}
+.nospin{font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body><div class="wrap">
+<header>
+<h1>What happens to this chemical in the environment?</h1>
+<p class="sub">Paste a structure (or an MS/MS spectrum) and get estimates of up to 12 environmental-fate properties (some are refused where the property does not exist for the compound) and 3 screening-level hazard calls. Each estimate comes with a likely range, how often that range held in testing, how new the chemical is to the model, and the EPI Suite estimate for comparison.</p>
+</header>
+
+<div class="modes" role="tablist">
+<button id="m-struct" class="on" role="tab" aria-selected="true">I have a structure<small>SMILES (optionally with a measured MS/MS spectrum)</small></button>
+<button id="m-spec" role="tab" aria-selected="false">I only have an MS/MS spectrum<small>unknown compound: no structure</small></button>
+</div>
+<div class="minor"><a id="m-batch">Many structures (batch)</a><a id="m-good">How good is it? (test results)</a><a id="m-about">What is behind it</a></div>
+<div id="modeline"></div>
+
+<!-- ============ STRUCTURE ============ -->
+<section id="s-struct">
+<div class="panel">
+<label for="smi">Structure as SMILES <span class="hint">— e.g. <span class="mono">CCOC(=O)c1ccc(O)cc1</span>. Salts: include the counter-ion with "." if that is what you have.</span></label>
+<input id="smi" autocomplete="off" spellcheck="false" placeholder="paste a SMILES string here">
+<div class="chips" id="exchips" aria-label="examples"></div>
+<label class="check"><input type="checkbox" id="usephys"> <span>Also compute quantum-chemistry (AIMNet2) descriptors for this structure. <span class="hint">Adds about 1 minute. <span id="physnote"></span></span></span></label>
+<details id="addspec"><summary>Add a measured MS/MS spectrum of this compound (optional)</summary>
+<p class="small" style="margin:6px 0"><b>Read this first:</b> the shipped property model (frozen_v5) uses structure and quantum-chemistry inputs only and has no spectral features, so a spectrum added here <b>does not change any property estimate</b>. Each card says so. To see what a spectrum alone can tell you, use the <i>I only have an MS/MS spectrum</i> tab.</p><div id="specform1"></div></details>
+<div class="go"><button id="go">Estimate properties</button><button class="sec" id="loadbtn" title="Open a predictions file written by the command-line tool">Open results file…</button><input type="file" id="loadfile" class="hid" accept=".json"></div>
+<div id="runlog" class="log hid" aria-live="polite"></div>
+<div id="msg" aria-live="polite"></div>
+</div>
+<div id="out"></div>
+</section>
+
+<!-- ============ SPECTRUM ONLY ============ -->
+<section id="s-spec" class="hid">
+<div class="panel">
+<div class="alert info"><b>Spectrum only: for a feature you have measured but not identified.</b>No structure is used anywhere. The estimate comes from the spectrum and its measured precursor m/z alone, so expect it to be less precise than with a known structure. The panel below shows the test results for this mode (or says plainly that none exist yet).</div>
+<div id="specform2"></div>
+<div class="chips" id="specchips"></div>
+<div class="go"><button id="u_go">Estimate from spectrum</button></div>
+<div id="u_log" class="log hid" aria-live="polite"></div><div id="u_msg" aria-live="polite"></div>
+</div>
+<div id="u_out"></div>
+<div id="u_good"></div>
+</section>
+
+<!-- ============ BATCH ============ -->
+<section id="s-batch" class="hid">
+<div class="panel">
+<label for="b_text">One SMILES per line <span class="hint">(or choose a .smi / .csv file with a "smiles" column)</span></label>
+<textarea id="b_text"></textarea><input type="file" id="b_file" accept=".smi,.txt,.csv,.tsv" style="margin-top:8px">
+<div class="go"><button id="b_go">Estimate all</button><button class="sec" id="b_csv">Download table (CSV)</button></div>
+<div id="b_log" class="log hid"></div><div id="b_msg"></div>
+</div>
+<div class="panel" style="overflow-x:auto" id="b_table"></div>
+</section>
+
+<section id="s-good" class="hid"><div id="good"></div></section>
+<section id="s-about" class="hid"><div id="about"></div></section>
+
+<div class="foot" id="foot"></div>
+</div>

@@ -1,0 +1,174 @@
+{
+ "n_compounds": 2105,
+ "n_train": 1541,
+ "n_calib": 219,
+ "n_test": 345,
+ "subset": "compounds with a quality-selected HR ESI+ MS/MS spectrum (W-SPECTRA v31 spec_pos_FULL)",
+ "units": "log10 mmol/kg bw",
+ "naive_rmse_this_subset": 0.8372,
+ "naive_mu": 0.6567,
+ "arms": {
+  "mass_only": {
+   "rmse": 0.8823,
+   "pct_of_naive": 105.4,
+   "nominal_coverage": 0.9,
+   "empirical_coverage": 0.858,
+   "interval_width": 2.296,
+   "by_nn_sim_bin": {
+    "<0.3": {
+     "n": 65,
+     "rmse": 1.0713,
+     "naive_rmse": 1.0516,
+     "pct_of_naive": 101.9,
+     "empirical_coverage": 0.769
+    },
+    "0.3-0.5": {
+     "n": 198,
+     "rmse": 0.8465,
+     "naive_rmse": 0.7812,
+     "pct_of_naive": 108.3,
+     "empirical_coverage": 0.874
+    },
+    "0.5-0.7": {
+     "n": 66,
+     "rmse": 0.8514,
+     "naive_rmse": 0.8179,
+     "pct_of_naive": 104.1,
+     "empirical_coverage": 0.864
+    }
+   }
+  },
+  "mass_plus_adduct": {
+   "rmse": 0.8785,
+   "pct_of_naive": 104.9,
+   "nominal_coverage": 0.9,
+   "empirical_coverage": 0.861,
+   "interval_width": 2.238,
+   "by_nn_sim_bin": {
+    "<0.3": {
+     "n": 65,
+     "rmse": 1.0805,
+     "naive_rmse": 1.0516,
+     "pct_of_naive": 102.7,
+     "empirical_coverage": 0.769
+    },
+    "0.3-0.5": {
+     "n": 198,
+     "rmse": 0.8465,
+     "naive_rmse": 0.7812,
+     "pct_of_naive": 108.3,
+     "empirical_coverage": 0.879
+    },
+    "0.5-0.7": {
+     "n": 66,
+     "rmse": 0.821,
+     "naive_rmse": 0.8179,
+     "pct_of_naive": 100.4,
+     "empirical_coverage": 0.864
+    }
+   }
+  },
+  "full_spectrum": {
+   "rmse": 0.8017,
+   "pct_of_naive": 95.8,
+   "nominal_coverage": 0.9,
+   "empirical_coverage": 0.867,
+   "interval_width": 2.053,
+   "by_nn_sim_bin": {
+    "<0.3": {
+     "n": 65,
+     "rmse": 1.0254,
+     "naive_rmse": 1.0516,
+     "pct_of_naive": 97.5,
+     "empirical_coverage": 0.769
+    },
+    "0.3-0.5": {
+     "n": 198,
+     "rmse": 0.7365,
+     "naive_rmse": 0.7812,
+     "pct_of_naive": 94.3,
+     "empirical_coverage": 0.904
+    },
+    "0.5-0.7": {
+     "n": 66,
+     "rmse": 0.7907,
+     "naive_rmse": 0.8179,
+     "pct_of_naive": 96.7,
+     "empirical_coverage": 0.848
+    }
+   }
+  },
+  "structure": {
+   "rmse": 0.6836,
+   "pct_of_naive": 81.6,
+   "nominal_coverage": 0.9,
+   "empirical_coverage": 0.887,
+   "interval_width": 1.909,
+   "by_nn_sim_bin": {
+    "<0.3": {
+     "n": 65,
+     "rmse": 0.938,
+     "naive_rmse": 1.0516,
+     "pct_of_naive": 89.2,
+     "empirical_coverage": 0.815
+    },
+    "0.3-0.5": {
+     "n": 198,
+     "rmse": 0.6306,
+     "naive_rmse": 0.7812,
+     "pct_of_naive": 80.7,
+     "empirical_coverage": 0.894
+    },
+    "0.5-0.7": {
+     "n": 66,
+     "rmse": 0.5518,
+     "naive_rmse": 0.8179,
+     "pct_of_naive": 67.5,
+     "empirical_coverage": 0.939
+    }
+   }
+  },
+  "structure_plus_spectrum": {
+   "rmse": 0.7066,
+   "pct_of_naive": 84.4,
+   "nominal_coverage": 0.9,
+   "empirical_coverage": 0.852,
+   "interval_width": 1.737,
+   "by_nn_sim_bin": {
+    "<0.3": {
+     "n": 65,
+     "rmse": 0.9441,
+     "naive_rmse": 1.0516,
+     "pct_of_naive": 89.8,
+     "empirical_coverage": 0.738
+    },
+    "0.3-0.5": {
+     "n": 198,
+     "rmse": 0.6608,
+     "naive_rmse": 0.7812,
+     "pct_of_naive": 84.6,
+     "empirical_coverage": 0.879
+    },
+    "0.5-0.7": {
+     "n": 66,
+     "rmse": 0.6014,
+     "naive_rmse": 0.8179,
+     "pct_of_naive": 73.5,
+     "empirical_coverage": 0.894
+    }
+   }
+  }
+ },
+ "delta_pct_of_naive_full_minus_massadduct_95CI": [
+  -17.77,
+  -2.9
+ ],
+ "delta_pct_of_naive_full_minus_structure_95CI": [
+  5.03,
+  21.52
+ ],
+ "delta_pct_of_naive_structspec_minus_structure_95CI": [
+  -1.68,
+  7.45
+ ]
+}

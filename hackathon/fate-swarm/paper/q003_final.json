@@ -1,0 +1,103 @@
+{
+ "source_cells": "CRITIC/undefined_vs_gap_cells_q003.csv",
+ "source_compare_primary": "S-7/q003_vs_wtox.md",
+ "source_compare_second": "S-1/q003_vs_wtox.md",
+ "n_cells": 195,
+ "n_cells_base": 180,
+ "new_class_label": "sulfonate_sulfate_salt (Q-003; labelled-set denominator)",
+ "n_cells_new_class": 15,
+ "verdicts_before": {
+  "defined": 108,
+  "not_assessed": 45,
+  "undefined": 18,
+  "defined_if_site": 18,
+  "assay_unattainable": 6
+ },
+ "verdicts_after": {
+  "defined": 102,
+  "not_assessed": 45,
+  "undefined": 24,
+  "defined_if_site": 18,
+  "assay_unattainable": 6
+ },
+ "n_changed": 6,
+ "changed_cells": [
+  {
+   "endpoint": "boiling_point",
+   "class": "sulfonate_sulfate_salt (Q-003; labelled-set denominator)",
+   "from": "defined (before Q-003; classified under neutral_organic/surfactant_like/etc. after Uncharger)",
+   "to": "undefined",
+   "n_inventory": 678,
+   "n_labelled": 34
+  },
+  {
+   "endpoint": "henry",
+   "class": "sulfonate_sulfate_salt (Q-003; labelled-set denominator)",
+   "from": "defined (before Q-003; classified under neutral_organic/surfactant_like/etc. after Uncharger)",
+   "to": "undefined",
+   "n_inventory": 678,
+   "n_labelled": 1
+  },
+  {
+   "endpoint": "koh_gas",
+   "class": "sulfonate_sulfate_salt (Q-003; labelled-set denominator)",
+   "from": "defined (before Q-003; classified under neutral_organic/surfactant_like/etc. after Uncharger)",
+   "to": "undefined",
+   "n_inventory": 678,
+   "n_labelled": 0
+  },
+  {
+   "endpoint": "logkoa",
+   "class": "sulfonate_sulfate_salt (Q-003; labelled-set denominator)",
+   "from": "defined (before Q-003; classified under neutral_organic/surfactant_like/etc. after Uncharger)",
+   "to": "undefined",
+   "n_inventory": 678,
+   "n_labelled": 0
+  },
+  {
+   "endpoint": "logkow",
+   "class": "sulfonate_sulfate_salt (Q-003; labelled-set denominator)",
+   "from": "defined (before Q-003; classified under neutral_organic/surfactant_like/etc. after Uncharger)",
+   "to": "undefined",
+   "n_inventory": 678,
+   "n_labelled": 176
+  },
+  {
+   "endpoint": "vapor_pressure",
+   "class": "sulfonate_sulfate_salt (Q-003; labelled-set denominator)",
+   "from": "defined (before Q-003; classified under neutral_organic/surfactant_like/etc. after Uncharger)",
+   "to": "undefined",
+   "n_inventory": 678,
+   "n_labelled": 40
+  }
+ ],
+ "changed_endpoints": [
+  "boiling_point",
+  "henry",
+  "koh_gas",
+  "logkoa",
+  "logkow",
+  "vapor_pressure"
+ ],
+ "n_skeletons_new_class": 678,
+ "n_labelled_in_changed_cells": 251,
+ "compare": {
+  "agree": 14,
+  "disagree": 12,
+  "not_covered": 154,
+  "total": 180,
+  "disagree_classes": [
+   "inorganic",
+   "organometal"
+  ],
+  "disagree_endpoints": [
+   "boiling_point",
+   "henry",
+   "koh_gas",
+   "logkoa",
+   "logkow",
+   "vapor_pressure"
+  ],
+  "disagree_resolution": "left as not_assessed (CRITIC/PRINCIPAL): the note's non-volatile clause cannot be applied from a structure drawing"
+ }
+}

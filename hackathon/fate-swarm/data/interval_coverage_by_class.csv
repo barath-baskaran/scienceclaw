@@ -1,0 +1,7 @@
+variant,interval,cells,under,min_cov
+S,global,178,16,0.4375
+S,mondrian,178,11,0.47368421052631576
+S,normmondrian,178,1,0.65625
+SP,global,178,11,0.3125
+SP,mondrian,178,14,0.3125
+SP,normmondrian,178,0,0.6875

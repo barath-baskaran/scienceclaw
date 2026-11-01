@@ -1,0 +1,13 @@
+endpoint,n_raw_rows_dropped_range_or_T,p75_within_sd_distinct,units,n_label_compounds,n_compounds_multi_rows,frac_multi_that_are_copies_only,n_compounds_distinct_replicates,pooled_within_sd_distinct,median_within_sd_distinct,pooled_within_sd_all_multi,train_sd,noise_floor_pct_naive_distinct,noise_floor_pct_naive_median,noise_floor_pct_naive_all_multi
+bcf,72,0.684,log10_L_per_kg_linear,1297,941,0.056,888,0.616,0.356,0.573,1.376,44.804,25.9,41.681
+boiling_point,18,4.115,degC,8157,3354,0.332,2240,24.844,1.414,18.66,89.154,27.866,1.586,20.93
+henry,5,0.591,log10_atm_m3_per_mol,2586,1670,0.205,1327,0.763,0.271,0.643,2.711,28.134,9.995,23.702
+koc,0,,log10_L_per_kg_linear,635,0,0.0,0,,,,1.277,,,
+koh_gas,0,,log10_cm3_per_molecule_s,610,0,0.0,0,,,,1.237,,,
+logkoa,0,0.82,log10,252,1,0.0,1,0.82,0.82,0.82,2.729,30.057,30.057,30.057
+logkow,361,0.587,log10,10642,7279,0.646,2577,0.809,0.24,0.42,2.173,37.246,11.064,19.318
+melting_point,14,4.661,degC,20878,11034,0.389,6747,21.495,1.414,13.044,95.928,22.407,1.474,13.597
+pka_acidic,0,0.979,log10,1029,7,0.0,7,1.657,0.813,1.657,3.216,51.532,25.287,51.532
+pka_basic,0,,log10,1264,0,0.0,0,,,,3.275,,,
+vapor_pressure,10,0.539,log10_mmHg,6835,3950,0.203,3149,0.881,0.207,0.726,3.295,26.731,6.293,22.036
+water_solubility,7,0.558,log10_mol_per_L,9243,6237,0.583,2601,0.736,0.193,0.392,2.42,30.405,7.977,16.218

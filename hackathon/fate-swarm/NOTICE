@@ -1,0 +1,7 @@
+This folder (hackathon/fate-swarm/) contains Plata lab hackathon work on environmental fate and
+toxicity. It is licensed under the MIT License; see LICENSE in this folder.
+
+It is distributed inside a fork of ScienceClaw (https://github.com/lamm-mit/scienceclaw).
+All files outside this folder are ScienceClaw's, licensed under the Apache License 2.0 (see LICENSE at
+the repository root), and are not covered by the MIT License above. This folder contains no
+ScienceClaw source files and does not modify any.

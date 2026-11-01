@@ -1,0 +1,18 @@
+{
+ "note": "Run 3 frozen models, priority order: W-MODEL frozen_v5 (12 fate endpoints, S / SP), W-SPECTRA spectrum_only_v31 (spectrum-only mode), W-TOX hazard. Older models excluded.",
+ "models": [
+  "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+  "<TEAM_ROOT>/agents/work/W-SPECTRA/spectrum_only_v31",
+  "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3"
+ ],
+ "exclude": [
+  "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v3",
+  "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v2_prelim_smartscounts",
+  "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v2",
+  "<TEAM_ROOT>/agents/work/W-LADDER/models/ladder_v2_struct",
+  "<TEAM_ROOT>/agents/work/W-UNKNOWN/model_spectra_only_v1",
+  "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v4",
+  "<TEAM_ROOT>/agents/work/W-TOX/model_frozen"
+ ],
+ "no_autodiscovery": true
+}

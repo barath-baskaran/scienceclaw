@@ -1,0 +1,1082 @@
+{
+ "schema": "wtool_predictions/v2",
+ "created_utc": "2026-11-01T05:44:39Z",
+ "seconds_total": 5.46,
+ "models": [
+  {
+   "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+   "model_id": "W-MODEL_frozen_v5",
+   "endpoints": [
+    "logkoa",
+    "koh_gas",
+    "koc",
+    "pka_acidic",
+    "bcf",
+    "pka_basic",
+    "henry",
+    "vapor_pressure",
+    "boiling_point",
+    "water_solubility",
+    "logkow",
+    "melting_point"
+   ],
+   "feature_blocks": [
+    "struct",
+    "physics"
+   ],
+   "kind": "api",
+   "api_file": "fatev5.py",
+   "owner": "W-MODEL"
+  },
+  {
+   "model_dir": "<TEAM_ROOT>/agents/work/W-SPECTRA/spectrum_only_v31",
+   "model_id": "wspectra_spectrum_only_v31",
+   "endpoints": [],
+   "feature_blocks": [
+    "spectrum"
+   ],
+   "kind": "spectra_api",
+   "owner": "W-SPECTRA"
+  },
+  {
+   "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+   "model_id": "wtox_model_frozen_v3",
+   "endpoints": [
+    "rat_oral_ld50",
+    "er_potency",
+    "er_active",
+    "ar_potency",
+    "ar_active"
+   ],
+   "feature_blocks": [
+    "struct"
+   ],
+   "kind": "tox_api",
+   "owner": "W-TOX"
+  }
+ ],
+ "records": [
+  {
+   "input": {
+    "smiles": "C[N+](C)(C)CCCCCCCCCCOc1ccc(F)cc1.[Cl-]",
+    "has_spectrum": false,
+    "inchikey": "GPXVVFBWBCEVJB-UHFFFAOYSA-M",
+    "canonical_smiles": "C[N+](C)(C)CCCCCCCCCCOc1ccc(F)cc1.[Cl-]",
+    "n_heavy": 23,
+    "formula": "C19H33ClFNO",
+    "mw": 345.93,
+    "n_fragments": 2,
+    "formal_charge": 0,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 220\" width=\"320\" height=\"220\" role=\"img\" aria-label=\"2D structure of C[N+](C)(C)CCCCCCCCCCOc1ccc(F)cc1.[Cl-]\"><g stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"><line x1=\"49.2\" y1=\"97.6\" x2=\"42.4\" y2=\"109.5\"/><line x1=\"36.2\" y1=\"109.5\" x2=\"29.3\" y2=\"97.6\"/><line x1=\"33.9\" y1=\"118.0\" x2=\"22.0\" y2=\"124.8\"/><line x1=\"44.6\" y1=\"118.0\" x2=\"56.5\" y2=\"124.9\"/><line x1=\"56.5\" y1=\"124.9\" x2=\"73.8\" y2=\"114.9\"/><line x1=\"73.8\" y1=\"114.9\" x2=\"91.0\" y2=\"124.9\"/><line x1=\"91.0\" y1=\"124.9\" x2=\"108.2\" y2=\"114.9\"/><line x1=\"108.2\" y1=\"114.9\" x2=\"125.5\" y2=\"124.9\"/><line x1=\"125.5\" y1=\"124.9\" x2=\"142.7\" y2=\"115.0\"/><line x1=\"142.7\" y1=\"115.0\" x2=\"160.0\" y2=\"124.9\"/><line x1=\"160.0\" y1=\"124.9\" x2=\"177.2\" y2=\"115.0\"/><line x1=\"177.2\" y1=\"115.0\" x2=\"194.5\" y2=\"125.0\"/><line x1=\"194.5\" y1=\"125.0\" x2=\"211.7\" y2=\"115.0\"/><line x1=\"211.7\" y1=\"115.0\" x2=\"223.6\" y2=\"121.9\"/><line x1=\"234.3\" y1=\"121.9\" x2=\"246.2\" y2=\"115.1\"/><line x1=\"246.2\" y1=\"115.1\" x2=\"263.5\" y2=\"125.0\"/><line x1=\"263.5\" y1=\"125.0\" x2=\"280.7\" y2=\"115.1\"/><line x1=\"263.8\" y1=\"120.7\" x2=\"276.9\" y2=\"113.2\"/><line x1=\"280.7\" y1=\"115.1\" x2=\"280.7\" y2=\"95.2\"/><line x1=\"280.7\" y1=\"95.2\" x2=\"292.6\" y2=\"88.3\"/><line x1=\"280.7\" y1=\"95.2\" x2=\"263.5\" y2=\"85.2\"/><line x1=\"276.9\" y1=\"97.1\" x2=\"263.8\" y2=\"89.5\"/><line x1=\"263.5\" y1=\"85.2\" x2=\"246.2\" y2=\"95.1\"/><line x1=\"246.2\" y1=\"95.1\" x2=\"246.2\" y2=\"115.1\"/><line x1=\"249.8\" y1=\"97.5\" x2=\"249.8\" y2=\"112.7\"/></g><g font-family=\"Helvetica,Arial,sans-serif\" font-weight=\"600\" text-anchor=\"middle\" dominant-baseline=\"central\"><text x=\"39.3\" y=\"114.9\" font-size=\"10.0\" fill=\"#0050A0\">N<tspan dy=\"-4.5\" font-size=\"7.5\">+</tspan></text><text x=\"229.0\" y=\"125.0\" font-size=\"10.0\" fill=\"#B03A00\">O</text><text x=\"298.0\" y=\"85.2\" font-size=\"10.0\" fill=\"#2E6B30\">F</text><text x=\"39.3\" y=\"134.8\" font-size=\"10.0\" fill=\"#2E6B30\">Cl<tspan dy=\"-4.5\" font-size=\"7.5\">\u2212</tspan></text></g></svg>",
+    "model_smiles": "C[N+](C)(C)CCCCCCCCCCOc1ccc(F)cc1"
+   },
+   "created_utc": "2026-11-01T05:44:34Z",
+   "stages": [
+    {
+     "stage": "physics",
+     "status": "failed",
+     "detail": "charged_or_radical_not_supported",
+     "seconds": 0.0,
+     "n_features": 0,
+     "converged": null,
+     "source": null,
+     "fmax_eV_A": null,
+     "relax_wall_s": null,
+     "n_steps": null,
+     "n_rotatable": 12,
+     "notes": [],
+     "parity": "CPU vs GPU table: median |dE| 2 meV, 40/40 converged (W-PHYSICS parity_cpu_gpu_v1.json); descriptors within 3% of training SD for <=3 rotatable bonds (OPS-2 cpu_parity_desc_summary.md)"
+    }
+   ],
+   "endpoints": {
+    "logkoa": {
+     "status": "undefined",
+     "kind": "physically_undefined",
+     "headline": "Not physically defined for this compound class",
+     "reason": "UNDEFINED: K_OA is the octanol/air concentration ratio of the species, and the organic component is a permanent cation (positive charge on an atom with no removable proton), which has no gas-phase form (an ion is non-volatile). This is not missing data. What is measurable instead: nothing in the gas phase; aqueous-phase quantities (solubility, sorption Kd/Koc, BCF) remain defined.",
+     "category": "A",
+     "subtype": "permanent_charge:permanent_cation",
+     "rule_source": "W-SPACE domain_rules.category (derived rule, BB expert note Q-003)",
+     "withheld_model_output": {
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": {
+      "value": 13.8870210647583,
+      "units": "log10",
+      "module": "KOAWIN",
+      "epi_has_experimental": false
+     }
+    },
+    "koh_gas": {
+     "status": "undefined",
+     "kind": "physically_undefined",
+     "headline": "Not physically defined for this compound class",
+     "reason": "UNDEFINED: kOH here is a gas-phase reaction rate constant, and the organic component is a permanent cation (positive charge on an atom with no removable proton), which has no gas-phase form (an ion is non-volatile). This is not missing data. What is measurable instead: nothing in the gas phase; aqueous-phase quantities (solubility, sorption Kd/Koc, BCF) remain defined.",
+     "category": "A",
+     "subtype": "permanent_charge:permanent_cation",
+     "rule_source": "W-SPACE domain_rules.category (derived rule, BB expert note Q-003)",
+     "withheld_model_output": {
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": {
+      "value": -10.370011540054943,
+      "units": "log10 cm3/(molecule s)",
+      "module": "AOPWIN",
+      "epi_has_experimental": false
+     }
+    },
+    "koc": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 3.649300871327648,
+     "units": "log10_L_per_kg_linear",
+     "interval": [
+      1.830300434813018,
+      5.468301307842278
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.484,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "out",
+     "flags": [
+      "no_physics",
+      "NO_PHYSICS: structure-only model used because quantum-chemistry descriptors could not be computed for this structure",
+      "PHYSICS_NOT_APPLICABLE: charged / multi-component species; AIMNet2 physics covers neutral single molecules only (0 ions in the physics training set). Structure-only model trained on all defined rows.",
+      "FAR_FROM_KOC_TRAINING (endpoint-specific nn_sim 0.23 < 0.3)",
+      "interval_wider_than_typical"
+     ],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 3.579,
+     "variant_used": "struct_only",
+     "domain_flag_model": "OUT_OF_DOMAIN",
+     "physics_source": "none (structure-only model, explicit opt-in)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.231,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.8301886792452831,
+      "n": 53,
+      "median_width": 2.1907732738122156,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.3-0.5, variant struct_only"
+     },
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_MolLogP",
+       "block": "structure",
+       "shap": 0.4419490377804942,
+       "note": "Crippen logP (structure-based estimate)"
+      },
+      {
+       "name": "d_Chi3v",
+       "block": "structure",
+       "shap": 0.09229295159931616,
+       "note": ""
+      },
+      {
+       "name": "d_SlogP_VSA2",
+       "block": "structure",
+       "shap": -0.07292396573463326,
+       "note": ""
+      },
+      {
+       "name": "d_FpDensityMorgan1",
+       "block": "structure",
+       "shap": 0.06812243282977229,
+       "note": ""
+      },
+      {
+       "name": "d_BCUT2D_MWLOW",
+       "block": "structure",
+       "shap": 0.0667438421724401,
+       "note": ""
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 105,
+       "rmse": 0.6133985744082037,
+       "rmse_naive": 1.10014198007713,
+       "pct": 55.756310141460006,
+       "coverage": 0.8666666666666667,
+       "median_width": 2.6339633715248008,
+       "rmse_pct_naive": 55.756310141460006,
+       "empirical_coverage": 0.8666666666666667
+      },
+      "this_bin": {
+       "n": 53,
+       "rmse": 0.6269245568770161,
+       "rmse_naive": 0.9781090692887225,
+       "pct": 64.09556731059793,
+       "coverage": 0.8301886792452831,
+       "median_width": 2.1907732738122156,
+       "rmse_pct_naive": 64.09556731059793,
+       "empirical_coverage": 0.8301886792452831
+      },
+      "leak_free": {
+       "n": 28,
+       "rmse": 0.5924993044199938,
+       "rmse_naive": 1.0799462106147366,
+       "pct": 54.86377919532919,
+       "coverage": 0.7857142857142857,
+       "median_width": 1.7410607005611052,
+       "rmse_pct_naive": 54.86377919532919,
+       "empirical_coverage": 0.7857142857142857
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+      "variant": "struct_only"
+     },
+     "epi": {
+      "value": 4.528921127319336,
+      "units": "log10 L/kg",
+      "module": "KOCWIN",
+      "epi_has_experimental": false
+     },
+     "caveat": {
+      "headline": "Depends strongly on test conditions for a permanent ion",
+      "reason": "DEFINED AND MEASURABLE: sorption to organic carbon is defined for dissolved ions and neutrals alike. Caveat: for a permanent ion the value is matrix- and pH-dependent (Koc: cation exchange on clay/CEC dominates, so f_oc normalisation is weak; BCF: ion trapping); report the test conditions.",
+      "category": "C",
+      "subtype": "defined_measurable",
+      "flags": [
+       "ionic_condition_specific"
+      ],
+      "source": "W-SPACE domain_rules.category"
+     },
+     "domain_similarity": "edge",
+     "domain_reason": "similarity alone says somewhat new, but the model's own applicability check says OUT_OF_DOMAIN; the stricter is shown",
+     "width_ratio_to_typical": 1.660601266464553
+    },
+    "pka_acidic": {
+     "status": "undefined",
+     "kind": "not_applicable",
+     "headline": "Does not apply: no acidic ionisable site found (rule of thumb)",
+     "reason": "NOT MEASURABLE BY THE STANDARD (AQUEOUS) PROTOCOL (heuristic): no acidic ionisable site found by the heuristic SMARTS list (aqueous pKa range); NOT the same as physically undefined. Every molecule has some extreme acidity/basicity, but outside roughly pKa -2..14 the aqueous value can only be extrapolated, so such labels are not comparable with titrated values",
+     "category": "B",
+     "subtype": "no_site_in_aqueous_window(heuristic)",
+     "rule_source": "W-SPACE domain_rules.category (no_site heuristic); withheld per S-1 usability review",
+     "withheld_model_output": {
+      "value": 10.82834918744927,
+      "interval": [
+       7.30770049157206,
+       14.34899788332648
+      ],
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": null
+    },
+    "bcf": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 2.1745442853080754,
+     "units": "log10_L_per_kg_linear",
+     "interval": [
+      0.8448996053851987,
+      3.504188965230952
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.484,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [
+      "no_physics",
+      "NO_PHYSICS: structure-only model used because quantum-chemistry descriptors could not be computed for this structure",
+      "PHYSICS_NOT_APPLICABLE: charged / multi-component species; AIMNet2 physics covers neutral single molecules only (0 ions in the physics training set). Structure-only model trained on all defined rows."
+     ],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 3.579,
+     "variant_used": "struct_only",
+     "domain_flag_model": "EXTRAPOLATING",
+     "physics_source": "none (structure-only model, explicit opt-in)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.355,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.9509803921568627,
+      "n": 102,
+      "median_width": 3.9384155614789345,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.3-0.5, variant struct_only"
+     },
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_MolLogP",
+       "block": "structure",
+       "shap": 0.2057023641040229,
+       "note": "Crippen logP (structure-based estimate)"
+      },
+      {
+       "name": "d_TPSA",
+       "block": "structure",
+       "shap": 0.17881980718307178,
+       "note": "topological polar surface area, A^2"
+      },
+      {
+       "name": "d_SlogP_VSA2",
+       "block": "structure",
+       "shap": -0.07311988632094553,
+       "note": ""
+      },
+      {
+       "name": "d_PEOE_VSA1",
+       "block": "structure",
+       "shap": -0.04139969272198725,
+       "note": ""
+      },
+      {
+       "name": "d_NumHDonors",
+       "block": "structure",
+       "shap": 0.03293107325692701,
+       "note": "H-bond donors"
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 209,
+       "rmse": 0.8727538135331403,
+       "rmse_naive": 1.1818081341544038,
+       "pct": 73.84902746143348,
+       "coverage": 0.9186602870813397,
+       "median_width": 3.303334324813331,
+       "rmse_pct_naive": 73.84902746143348,
+       "empirical_coverage": 0.9186602870813397
+      },
+      "this_bin": {
+       "n": 102,
+       "rmse": 1.0252798336155922,
+       "rmse_naive": 1.2003609549168932,
+       "pct": 85.41429387684285,
+       "coverage": 0.9509803921568627,
+       "median_width": 3.9384155614789345,
+       "rmse_pct_naive": 85.41429387684285,
+       "empirical_coverage": 0.9509803921568627
+      },
+      "leak_free": {
+       "n": 55,
+       "rmse": 1.110155100202122,
+       "rmse_naive": 1.2627000757715892,
+       "pct": 87.9191441818634,
+       "coverage": 0.9636363636363636,
+       "median_width": 4.184778296799878,
+       "rmse_pct_naive": 87.9191441818634,
+       "empirical_coverage": 0.9636363636363636
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+      "variant": "struct_only"
+     },
+     "epi": {
+      "value": 0.5,
+      "units": "log10 L/kg wet-wt",
+      "module": "BCFBAF (regression)",
+      "epi_has_experimental": false
+     },
+     "caveat": {
+      "headline": "Depends strongly on test conditions for a permanent ion",
+      "reason": "DEFINED AND MEASURABLE: bioconcentration is defined for dissolved ions and neutrals alike. Caveat: for a permanent ion the value is matrix- and pH-dependent (Koc: cation exchange on clay/CEC dominates, so f_oc normalisation is weak; BCF: ion trapping); report the test conditions.",
+      "category": "C",
+      "subtype": "defined_measurable",
+      "flags": [
+       "ionic_condition_specific"
+      ],
+      "source": "W-SPACE domain_rules.category"
+     },
+     "domain_similarity": "edge",
+     "width_ratio_to_typical": 0.6752180714132539
+    },
+    "pka_basic": {
+     "status": "undefined",
+     "kind": "not_applicable",
+     "headline": "Does not apply: no basic ionisable site found (rule of thumb)",
+     "reason": "NOT MEASURABLE BY THE STANDARD (AQUEOUS) PROTOCOL (heuristic): no basic ionisable site found by the heuristic SMARTS list (aqueous pKa range); NOT the same as physically undefined. Every molecule has some extreme acidity/basicity, but outside roughly pKa -2..14 the aqueous value can only be extrapolated, so such labels are not comparable with titrated values",
+     "category": "B",
+     "subtype": "no_site_in_aqueous_window(heuristic)",
+     "rule_source": "W-SPACE domain_rules.category (no_site heuristic); withheld per S-1 usability review",
+     "withheld_model_output": {
+      "value": 6.800402101650093,
+      "interval": [
+       2.693473409795966,
+       10.907330793504219
+      ],
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": null
+    },
+    "henry": {
+     "status": "undefined",
+     "kind": "physically_undefined",
+     "headline": "Not physically defined for this compound class",
+     "reason": "UNDEFINED: K_H relates the gas-phase partial pressure of the species to its aqueous concentration, and the organic component is a permanent cation (positive charge on an atom with no removable proton), which has no gas-phase form (an ion is non-volatile). This is not missing data. What is measurable instead: nothing in the gas phase; aqueous-phase quantities (solubility, sorption Kd/Koc, BCF) remain defined.",
+     "category": "A",
+     "subtype": "permanent_charge:permanent_cation",
+     "rule_source": "W-SPACE domain_rules.category (derived rule, BB expert note Q-003)",
+     "withheld_model_output": {
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": {
+      "value": -12.568664436211122,
+      "units": "log10 atm m3/mol",
+      "module": "HENRYWIN",
+      "epi_has_experimental": false
+     }
+    },
+    "vapor_pressure": {
+     "status": "undefined",
+     "kind": "physically_undefined",
+     "headline": "Not physically defined for this compound class",
+     "reason": "UNDEFINED: vapour pressure is the pressure of the species in the gas phase over its condensed phase, and the organic component is a permanent cation (positive charge on an atom with no removable proton), which has no gas-phase form (an ion is non-volatile). This is not missing data. What is measurable instead: nothing in the gas phase; aqueous-phase quantities (solubility, sorption Kd/Koc, BCF) remain defined.",
+     "category": "A",
+     "subtype": "permanent_charge:permanent_cation",
+     "rule_source": "W-SPACE domain_rules.category (derived rule, BB expert note Q-003)",
+     "withheld_model_output": {
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": {
+      "value": -9.787276349427053,
+      "units": "log10 mmHg",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     }
+    },
+    "boiling_point": {
+     "status": "undefined",
+     "kind": "physically_undefined",
+     "headline": "Not physically defined for this compound class",
+     "reason": "UNDEFINED: the boiling point is where the vapour pressure of the species reaches 1 atm, and the organic component is a permanent cation (positive charge on an atom with no removable proton), which has no gas-phase form (an ion is non-volatile). This is not missing data. What is measurable instead: nothing in the gas phase; aqueous-phase quantities (solubility, sorption Kd/Koc, BCF) remain defined.",
+     "category": "A",
+     "subtype": "permanent_charge:permanent_cation",
+     "rule_source": "W-SPACE domain_rules.category (derived rule, BB expert note Q-003)",
+     "withheld_model_output": {
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": {
+      "value": 507.4733581542969,
+      "units": "degC",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     }
+    },
+    "water_solubility": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": -3.592051608515321,
+     "units": "log10_mol_per_L",
+     "interval": [
+      -8.660528447392052,
+      1.4764252303614103
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.484,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [
+      "no_physics",
+      "NO_PHYSICS: structure-only model used because quantum-chemistry descriptors could not be computed for this structure",
+      "PHYSICS_NOT_APPLICABLE: charged / multi-component species; AIMNet2 physics covers neutral single molecules only (0 ions in the physics training set). Structure-only model trained on all defined rows.",
+      "CAVEAT: DEFINED BUT NON-EQUIVALENT / NOT MEASURABLE BY THE STANDARD PROTOCOL (heuristic): surface-active: solubility above the CMC is micellar, not molecular",
+      "interval_wider_than_typical"
+     ],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 3.579,
+     "variant_used": "struct_only",
+     "domain_flag_model": "EXTRAPOLATING",
+     "physics_source": "none (structure-only model, explicit opt-in)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.382,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.9151599443671766,
+      "n": 719,
+      "median_width": 3.238214538022877,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.3-0.5, variant struct_only"
+     },
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_MolLogP",
+       "block": "structure",
+       "shap": -0.6014274429425988,
+       "note": "Crippen logP (structure-based estimate)"
+      },
+      {
+       "name": "d_LabuteASA",
+       "block": "structure",
+       "shap": -0.24213447566276727,
+       "note": ""
+      },
+      {
+       "name": "d_SMR_VSA6",
+       "block": "structure",
+       "shap": 0.2280454894619283,
+       "note": ""
+      },
+      {
+       "name": "d_SlogP_VSA2",
+       "block": "structure",
+       "shap": 0.21250373016852817,
+       "note": ""
+      },
+      {
+       "name": "mc628",
+       "block": "structure",
+       "shap": 0.2030431931802897,
+       "note": "Morgan count bit; in this molecule: C[N+]"
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 1443,
+       "rmse": 1.0889534739906697,
+       "rmse_naive": 2.2535732359712872,
+       "pct": 48.32119305505206,
+       "coverage": 0.9272349272349273,
+       "median_width": 3.378898693724277,
+       "rmse_pct_naive": 48.32119305505206,
+       "empirical_coverage": 0.9272349272349273
+      },
+      "this_bin": {
+       "n": 719,
+       "rmse": 1.0935370752200477,
+       "rmse_naive": 2.1876523597734563,
+       "pct": 49.98678470711359,
+       "coverage": 0.9151599443671766,
+       "median_width": 3.238214538022877,
+       "rmse_pct_naive": 49.98678470711359,
+       "empirical_coverage": 0.9151599443671766
+      },
+      "leak_free": {
+       "n": 418,
+       "rmse": 1.1595679644328323,
+       "rmse_naive": 2.2313326653458243,
+       "pct": 51.96750724093021,
+       "coverage": 0.916267942583732,
+       "median_width": 3.6840877727824095,
+       "rmse_pct_naive": 51.96750724093021,
+       "empirical_coverage": 0.916267942583732
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+      "variant": "struct_only"
+     },
+     "epi": {
+      "value": -3.9664251693903987,
+      "units": "log10 mol/L",
+      "module": "WSKOWWIN",
+      "epi_has_experimental": false
+     },
+     "caveat": {
+      "headline": "Read with care",
+      "reason": "DEFINED BUT NON-EQUIVALENT / NOT MEASURABLE BY THE STANDARD PROTOCOL (heuristic): surface-active: solubility above the CMC is micellar, not molecular",
+      "category": "B",
+      "subtype": "surfactant",
+      "flags": [],
+      "source": "W-SPACE domain_rules.category"
+     },
+     "domain_similarity": "edge",
+     "width_ratio_to_typical": 3.130414479561529
+    },
+    "logkow": {
+     "status": "undefined",
+     "kind": "physically_undefined",
+     "headline": "Not physically defined for this compound class",
+     "reason": "UNDEFINED: K_OW is defined for the neutral (un-ionised) species, and the organic component is a permanent cation (positive charge on an atom with no removable proton), which has no uncharged microspecies. This is not missing data. What is measurable instead: the distribution ratio logD at a stated pH, or an ion-pair partition coefficient with a named counter-ion.",
+     "category": "A",
+     "subtype": "permanent_charge:permanent_cation",
+     "rule_source": "W-SPACE domain_rules.category (derived rule, BB expert note Q-003)",
+     "withheld_model_output": {
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": {
+      "value": 2.9299006,
+      "units": "log10",
+      "module": "KOWWIN",
+      "epi_has_experimental": false
+     }
+    },
+    "melting_point": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 123.35581323130123,
+     "units": "degC",
+     "interval": [
+      19.09902214232268,
+      227.6126043202798
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.484,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [
+      "no_physics",
+      "NO_PHYSICS: structure-only model used because quantum-chemistry descriptors could not be computed for this structure",
+      "PHYSICS_NOT_APPLICABLE: charged / multi-component species; AIMNet2 physics covers neutral single molecules only (0 ions in the physics training set). Structure-only model trained on all defined rows."
+     ],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 3.579,
+     "variant_used": "struct_only",
+     "domain_flag_model": "EXTRAPOLATING",
+     "physics_source": "none (structure-only model, explicit opt-in)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.484,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.8934108527131783,
+      "n": 1548,
+      "median_width": 168.51434773095156,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.3-0.5, variant struct_only"
+     },
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "mc628",
+       "block": "structure",
+       "shap": 20.26574323971522,
+       "note": "Morgan count bit; in this molecule: C[N+]"
+      },
+      {
+       "name": "d_fr_quatN",
+       "block": "structure",
+       "shap": 13.758756631048916,
+       "note": ""
+      },
+      {
+       "name": "d_TPSA",
+       "block": "structure",
+       "shap": -9.766891404112803,
+       "note": "topological polar surface area, A^2"
+      },
+      {
+       "name": "d_BCUT2D_MRLOW",
+       "block": "structure",
+       "shap": 8.139067734177763,
+       "note": ""
+      },
+      {
+       "name": "d_NHOHCount",
+       "block": "structure",
+       "shap": -6.8203566526899015,
+       "note": ""
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 3334,
+       "rmse": 50.12522247474408,
+       "rmse_naive": 97.83994572912248,
+       "pct": 51.231858420608354,
+       "coverage": 0.8875224955008998,
+       "median_width": 144.65310529982713,
+       "rmse_pct_naive": 51.231858420608354,
+       "empirical_coverage": 0.8875224955008998
+      },
+      "this_bin": {
+       "n": 1548,
+       "rmse": 54.33390011006188,
+       "rmse_naive": 101.4234456695649,
+       "pct": 53.57134117399285,
+       "coverage": 0.8934108527131783,
+       "median_width": 168.51434773095156,
+       "rmse_pct_naive": 53.57134117399285,
+       "empirical_coverage": 0.8934108527131783
+      },
+      "leak_free": {
+       "n": 849,
+       "rmse": 59.09107542240635,
+       "rmse_naive": 104.98746132278731,
+       "pct": 56.28393588900006,
+       "coverage": 0.8987043580683156,
+       "median_width": 177.9480198597763,
+       "rmse_pct_naive": 56.28393588900006,
+       "empirical_coverage": 0.8987043580683156
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+      "variant": "struct_only"
+     },
+     "epi": {
+      "value": 216.0894317626953,
+      "units": "degC",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "edge",
+     "width_ratio_to_typical": 1.237363969214467
+    },
+    "rat_oral_ld50": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "log10 mmol/kg bw",
+     "familiarity": 0.407,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.252,
+     "label_provenance": "MEASURED rat oral LD50 (CompTox hazards table, swarm copy), median over records; MW recomputed from the standardised structure; acute lethality only.",
+     "compound_class": "permanent_cation",
+     "definedness_reason": "defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "value": 0.144,
+     "interval": [
+      -0.774,
+      1.062
+     ],
+     "interval_level": 0.9,
+     "coverage": {
+      "empirical_coverage": 0.9,
+      "n": 1135,
+      "scope": "test, familiarity bin 0.3-0.5",
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/*_meta.json"
+     },
+     "skill_naive": {
+      "this_bin": {
+       "rmse_pct_naive": 81.9,
+       "n": 1135
+      },
+      "overall": {
+       "rmse_pct_naive": 81.8,
+       "n": 2017
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/rat_oral_ld50_meta.json measured_test_performance"
+     },
+     "caveat": {
+      "headline": "Dose refers to the salt as tested; the model sees the organic ion only",
+      "reason": "defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",
+      "flags": [
+       "species_mismatch"
+      ],
+      "source": "W-TOX model definedness_reason"
+     }
+    },
+    "er_potency": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "p_activity = -log10(M)",
+     "familiarity": 0.386,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.252,
+     "label_provenance": "MEASURED receptor potency, ChEMBL REST (CC BY-SA 3.0), primary literature; IC50/Ki/EC50/AC50/Kd pooled as p_activity = -log10(M). In-vitro potency only - not an in-vivo endocrine hazard call, and nothing about exposure or dose. NOT an OPERA consensus call.",
+     "compound_class": "permanent_cation",
+     "definedness_reason": "in-vitro potency is defined for any substance deliverable in assay medium, ions included",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "value": 5.49,
+     "interval": [
+      3.912,
+      7.068
+     ],
+     "interval_level": 0.9,
+     "coverage": {
+      "empirical_coverage": 0.89,
+      "n": 263,
+      "scope": "test, familiarity bin 0.3-0.5",
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/*_meta.json"
+     },
+     "skill_naive": {
+      "this_bin": {
+       "rmse_pct_naive": 54.8,
+       "n": 263
+      },
+      "overall": {
+       "rmse_pct_naive": 58.4,
+       "n": 586
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/er_potency_meta.json measured_test_performance"
+     }
+    },
+    "er_active": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "binary: active = measured p_activity >= 6.0 (<= 1 uM)",
+     "familiarity": 0.386,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.252,
+     "label_provenance": "MEASURED receptor potency, ChEMBL REST (CC BY-SA 3.0), primary literature; IC50/Ki/EC50/AC50/Kd pooled as p_activity = -log10(M). In-vitro potency only - not an in-vivo endocrine hazard call, and nothing about exposure or dose. NOT an OPERA consensus call.",
+     "compound_class": "permanent_cation",
+     "definedness_reason": "in-vitro potency is defined for any substance deliverable in assay medium, ions included",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "kind": "classifier",
+     "value": 0.004,
+     "interval": null,
+     "probability": 0.004,
+     "threshold": 0.09,
+     "call": "inactive",
+     "base_rate": 0.232,
+     "pr_auc": 0.761,
+     "note": "rare-positive label: judge PR-AUC against the base rate; accuracy is not skill",
+     "coverage": {
+      "empirical_coverage": null,
+      "scope": "classifier: no interval"
+     }
+    },
+    "ar_potency": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "p_activity = -log10(M)",
+     "familiarity": 0.306,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.252,
+     "label_provenance": "MEASURED receptor potency, ChEMBL REST (CC BY-SA 3.0), primary literature; IC50/Ki/EC50/AC50/Kd pooled as p_activity = -log10(M). In-vitro potency only - not an in-vivo endocrine hazard call, and nothing about exposure or dose. NOT an OPERA consensus call.",
+     "compound_class": "permanent_cation",
+     "definedness_reason": "in-vitro potency is defined for any substance deliverable in assay medium, ions included",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "value": 5.861,
+     "interval": [
+      4.405,
+      7.316
+     ],
+     "interval_level": 0.9,
+     "coverage": {
+      "empirical_coverage": 0.894,
+      "n": 170,
+      "scope": "test, familiarity bin 0.3-0.5",
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/*_meta.json"
+     },
+     "skill_naive": {
+      "this_bin": {
+       "rmse_pct_naive": 83.5,
+       "n": 170
+      },
+      "overall": {
+       "rmse_pct_naive": 80.4,
+       "n": 462
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/ar_potency_meta.json measured_test_performance"
+     }
+    },
+    "ar_active": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "binary: active = measured p_activity >= 6.0 (<= 1 uM)",
+     "familiarity": 0.306,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.252,
+     "label_provenance": "MEASURED receptor potency, ChEMBL REST (CC BY-SA 3.0), primary literature; IC50/Ki/EC50/AC50/Kd pooled as p_activity = -log10(M). In-vitro potency only - not an in-vivo endocrine hazard call, and nothing about exposure or dose. NOT an OPERA consensus call.",
+     "compound_class": "permanent_cation",
+     "definedness_reason": "in-vitro potency is defined for any substance deliverable in assay medium, ions included",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "kind": "classifier",
+     "value": 0.0,
+     "interval": null,
+     "probability": 0.0,
+     "threshold": 0.07,
+     "call": "inactive",
+     "base_rate": 0.4,
+     "pr_auc": 0.79,
+     "note": "rare-positive label: judge PR-AUC against the base rate; accuracy is not skill",
+     "coverage": {
+      "empirical_coverage": null,
+      "scope": "classifier: no interval"
+     }
+    }
+   },
+   "errors": [],
+   "species": {
+    "input": "C[N+](C)(C)CCCCCCCCCCOc1ccc(F)cc1.[Cl-]",
+    "species_class": "permanent_cation",
+    "parent_smiles": "C[N+](C)(C)CCCCCCCCCCOc1ccc(F)cc1",
+    "removed_fragments": [
+     "[Cl-]"
+    ],
+    "net_charge": 1,
+    "n_permanent_pos": 1,
+    "n_permanent_neg": 0,
+    "notes": [],
+    "plain": "permanent cation (no neutral form)"
+   },
+   "parent_note": "Estimates are for C[N+](C)(C)CCCCCCCCCCOc1ccc(F)cc1 (counter-ion(s) [Cl-] removed). The salt as drawn can differ, especially in melting point and water solubility.",
+   "physics": {
+    "status": "failed",
+    "detail": "charged_or_radical_not_supported",
+    "seconds": 0.0,
+    "n_features": 0,
+    "converged": null,
+    "source": null,
+    "fmax_eV_A": null,
+    "relax_wall_s": null,
+    "n_steps": null,
+    "n_rotatable": 12,
+    "notes": [],
+    "parity": "CPU vs GPU table: median |dE| 2 meV, 40/40 converged (W-PHYSICS parity_cpu_gpu_v1.json); descriptors within 3% of training SD for <=3 rotatable bonds (OPS-2 cpu_parity_desc_summary.md)"
+   },
+   "epi": {
+    "status": "ok",
+    "fetched_now": false,
+    "cache": "<TEAM_ROOT>/agents/work/W-TOOL/epi_cache_wtool/CCALLKHRZOIDDC-UHFFFAOYSA-N.json",
+    "returned_smiles": "C[N+](C)(C)CCCCCCCCCCOc1ccc(F)cc1",
+    "stereo_exact": true,
+    "values": {
+     "logkow": {
+      "value": 2.9299006,
+      "units": "log10",
+      "module": "KOWWIN",
+      "epi_has_experimental": false
+     },
+     "melting_point": {
+      "value": 216.0894317626953,
+      "units": "degC",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "boiling_point": {
+      "value": 507.4733581542969,
+      "units": "degC",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "vapor_pressure": {
+      "value": -9.787276349427053,
+      "units": "log10 mmHg",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "water_solubility": {
+      "value": -3.9664251693903987,
+      "units": "log10 mol/L",
+      "module": "WSKOWWIN",
+      "epi_has_experimental": false
+     },
+     "henry": {
+      "value": -12.568664436211122,
+      "units": "log10 atm m3/mol",
+      "module": "HENRYWIN",
+      "epi_has_experimental": false
+     },
+     "koc": {
+      "value": 4.528921127319336,
+      "units": "log10 L/kg",
+      "module": "KOCWIN",
+      "epi_has_experimental": false
+     },
+     "logkoa": {
+      "value": 13.8870210647583,
+      "units": "log10",
+      "module": "KOAWIN",
+      "epi_has_experimental": false
+     },
+     "koh_gas": {
+      "value": -10.370011540054943,
+      "units": "log10 cm3/(molecule s)",
+      "module": "AOPWIN",
+      "epi_has_experimental": false
+     },
+     "bcf": {
+      "value": 0.5,
+      "units": "log10 L/kg wet-wt",
+      "module": "BCFBAF (regression)",
+      "epi_has_experimental": false
+     }
+    },
+    "note": "EPI estimated values only; EPI training sets overlap CompTox data, so its errors on known compounds are optimistic"
+   },
+   "rule_source": "W-SPACE domain_rules.category",
+   "seconds_total": 5.46
+  }
+ ]
+}

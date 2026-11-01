@@ -1,0 +1,3 @@
+# Keep line-ending conversion away from binary files in this folder
+*.pdf binary
+*.png binary

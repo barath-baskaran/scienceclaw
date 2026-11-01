@@ -1,0 +1,618 @@
+{
+ "generated": "2026-10-31T20:41:30-0400",
+ "label_provenance": {
+  "er_*/ar_*": "MEASURED potency, ChEMBL REST (CC BY-SA 3.0), primary literature; p_activity = -log10(M)",
+  "rat_oral_ld50": "MEASURED rat oral LD50, CompTox hazards table (swarm copy), log10 mmol/kg bw"
+ },
+ "endpoints": {
+  "er_potency": {
+   "kind": "regression",
+   "n_train": 3648,
+   "n_calib": 313,
+   "n_test": 586,
+   "naive_predictor": "train mean",
+   "naive_mu": 7.2119,
+   "mondrian_bins_calibrated": [
+    "0.3-0.5",
+    "0.5-0.7",
+    "<0.3",
+    ">=0.7"
+   ],
+   "global_q90": 1.555,
+   "overall": {
+    "n": 586,
+    "rmse": 0.9985,
+    "naive_rmse": 1.7111,
+    "pct_of_naive": 58.4,
+    "mae": 0.7488,
+    "r2": 0.551,
+    "nominal_coverage": 0.9,
+    "empirical_coverage": 0.886,
+    "coverage_95CI": [
+     0.857,
+     0.91
+    ],
+    "median_interval_width": 3.156,
+    "rmse_95CI_cluster_bootstrap": [
+     0.8792,
+     1.1196
+    ]
+   },
+   "by_nn_sim_bin": {
+    "<0.3": {
+     "n": 78,
+     "rmse": 1.239,
+     "naive_rmse": 2.168,
+     "pct_of_naive": 57.1,
+     "mae": 0.901,
+     "r2": 0.08,
+     "nominal_coverage": 0.9,
+     "empirical_coverage": 0.795,
+     "coverage_95CI": [
+      0.688,
+      0.878
+     ],
+     "median_interval_width": 2.764
+    },
+    "0.3-0.5": {
+     "n": 263,
+     "rmse": 1.0089,
+     "naive_rmse": 1.8412,
+     "pct_of_naive": 54.8,
+     "mae": 0.7491,
+     "r2": 0.438,
+     "nominal_coverage": 0.9,
+     "empirical_coverage": 0.89,
+     "coverage_95CI": [
+      0.845,
+      0.925
+     ],
+     "median_interval_width": 3.156
+    },
+    "0.5-0.7": {
+     "n": 153,
+     "rmse": 0.9679,
+     "naive_rmse": 1.3531,
+     "pct_of_naive": 71.5,
+     "mae": 0.778,
+     "r2": 0.47,
+     "nominal_coverage": 0.9,
+     "empirical_coverage": 0.967,
+     "coverage_95CI": [
+      0.925,
+      0.989
+     ],
+     "median_interval_width": 4.003
+    },
+    ">=0.7": {
+     "n": 92,
+     "rmse": 0.7621,
+     "naive_rmse": 1.3889,
+     "pct_of_naive": 54.9,
+     "mae": 0.5707,
+     "r2": 0.696,
+     "nominal_coverage": 0.9,
+     "empirical_coverage": 0.815,
+     "coverage_95CI": [
+      0.721,
+      0.889
+     ],
+     "median_interval_width": 2.024
+    }
+   },
+   "units": "p_activity = -log10(M)",
+   "label_noise_floor_median_within_compound_spread": 0.9,
+   "assay_type_mix_by_split": {
+    "('calib', 'IC50')": 0.556,
+    "('calib', 'EC50')": 0.32,
+    "('calib', 'AC50')": 0.063,
+    "('calib', 'Ki')": 0.06,
+    "('calib', 'Kd')": NaN,
+    "('test', 'IC50')": 0.599,
+    "('test', 'EC50')": 0.254,
+    "('test', 'AC50')": 0.037,
+    "('test', 'Ki')": 0.094,
+    "('test', 'Kd')": 0.016,
+    "('train', 'IC50')": 0.693,
+    "('train', 'EC50')": 0.175,
+    "('train', 'AC50')": 0.012,
+    "('train', 'Ki')": 0.113,
+    "('train', 'Kd')": 0.007
+   }
+  },
+  "er_active": {
+   "kind": "classification",
+   "label": "active = measured p_activity >= 6.0 (<= 1 uM)",
+   "n_train": 4704,
+   "n_calib": 780,
+   "n_test": 1192,
+   "threshold_rule": "max balanced accuracy on calib",
+   "threshold": 0.09,
+   "overall": {
+    "n": 1192,
+    "positives": 317,
+    "base_rate": 0.266,
+    "base_rate_train": 0.611,
+    "pr_auc": 0.845,
+    "pr_auc_baseline_is_base_rate": 0.266,
+    "roc_auc": 0.945,
+    "threshold": 0.09,
+    "balanced_accuracy": 0.876,
+    "precision": 0.709,
+    "recall": 0.883,
+    "conformal_sets_nominal": 0.9,
+    "conformal_set_empirical_coverage": 0.861,
+    "conformal_set_coverage_95CI": [
+     0.84,
+     0.88
+    ],
+    "mean_set_size": 0.997,
+    "frac_empty_set": 0.003,
+    "frac_both_labels": 0.0,
+    "pr_auc_95CI_cluster_bootstrap": [
+     0.7568,
+     0.9076
+    ]
+   },
+   "by_nn_sim_bin": {
+    "<0.3": {
+     "n": 342,
+     "positives": 16,
+     "base_rate": 0.047,
+     "base_rate_train": 0.611,
+     "pr_auc": 0.329,
+     "pr_auc_baseline_is_base_rate": 0.047,
+     "roc_auc": 0.875,
+     "threshold": 0.09,
+     "balanced_accuracy": 0.685,
+     "precision": 0.241,
+     "recall": 0.438,
+     "conformal_sets_nominal": 0.9,
+     "conformal_set_empirical_coverage": 0.895,
+     "conformal_set_coverage_95CI": [
+      0.857,
+      0.925
+     ],
+     "mean_set_size": 1.0,
+     "frac_empty_set": 0.0,
+     "frac_both_labels": 0.0
+    },
+    "0.3-0.5": {
+     "n": 508,
+     "positives": 118,
+     "base_rate": 0.232,
+     "base_rate_train": 0.611,
+     "pr_auc": 0.761,
+     "pr_auc_baseline_is_base_rate": 0.232,
+     "roc_auc": 0.931,
+     "threshold": 0.09,
+     "balanced_accuracy": 0.864,
+     "precision": 0.669,
+     "recall": 0.856,
+     "conformal_sets_nominal": 0.9,
+     "conformal_set_empirical_coverage": 0.856,
+     "conformal_set_coverage_95CI": [
+      0.823,
+      0.886
+     ],
+     "mean_set_size": 0.994,
+     "frac_empty_set": 0.006,
+     "frac_both_labels": 0.0
+    },
+    "0.5-0.7": {
+     "n": 220,
+     "positives": 109,
+     "base_rate": 0.495,
+     "base_rate_train": 0.611,
+     "pr_auc": 0.836,
+     "pr_auc_baseline_is_base_rate": 0.495,
+     "roc_auc": 0.876,
+     "threshold": 0.09,
+     "balanced_accuracy": 0.81,
+     "precision": 0.748,
+     "recall": 0.927,
+     "conformal_sets_nominal": 0.9,
+     "conformal_set_empirical_coverage": 0.809,
+     "conformal_set_coverage_95CI": [
+      0.751,
+      0.859
+     ],
+     "mean_set_size": 1.0,
+     "frac_empty_set": 0.0,
+     "frac_both_labels": 0.0
+    },
+    ">=0.7": {
+     "n": 122,
+     "positives": 74,
+     "base_rate": 0.607,
+     "base_rate_train": 0.611,
+     "pr_auc": 0.966,
+     "pr_auc_baseline_is_base_rate": 0.607,
+     "roc_auc": 0.962,
+     "threshold": 0.09,
+     "balanced_accuracy": 0.886,
+     "precision": 0.887,
+     "recall": 0.959,
+     "conformal_sets_nominal": 0.9,
+     "conformal_set_empirical_coverage": 0.877,
+     "conformal_set_coverage_95CI": [
+      0.805,
+      0.93
+     ],
+     "mean_set_size": 0.992,
+     "frac_empty_set": 0.008,
+     "frac_both_labels": 0.0
+    }
+   },
+   "label_source_mix": {
+    "calib": {
+     "censored_inactive": 0.599,
+     "exact": 0.401
+    },
+    "test": {
+     "censored_inactive": 0.508,
+     "exact": 0.492
+    },
+    "train": {
+     "censored_inactive": 0.224,
+     "exact": 0.776
+    }
+   }
+  },
+  "ar_potency": {
+   "kind": "regression",
+   "n_train": 2275,
+   "n_calib": 282,
+   "n_test": 462,
+   "naive_predictor": "train mean",
+   "naive_mu": 6.6635,
+   "mondrian_bins_calibrated": [
+    "0.3-0.5",
+    "0.5-0.7",
+    "<0.3",
+    ">=0.7"
+   ],
+   "global_q90": 1.344,
+   "overall": {
+    "n": 462,
+    "rmse": 0.8825,
+    "naive_rmse": 1.098,
+    "pct_of_naive": 80.4,
+    "mae": 0.6956,
+    "r2": 0.353,
+    "nominal_coverage": 0.9,
+    "empirical_coverage": 0.894,
+    "coverage_95CI": [
+     0.862,
+     0.921
+    ],
+    "median_interval_width": 2.796,
+    "rmse_95CI_cluster_bootstrap": [
+     0.79,
+     0.9725
+    ]
+   },
+   "by_nn_sim_bin": {
+    "<0.3": {
+     "n": 38,
+     "rmse": 1.0966,
+     "naive_rmse": 1.1525,
+     "pct_of_naive": 95.1,
+     "mae": 0.7804,
+     "r2": -0.189,
+     "nominal_coverage": 0.9,
+     "empirical_coverage": 0.921,
+     "coverage_95CI": [
+      0.786,
+      0.983
+     ],
+     "median_interval_width": 4.496
+    },
+    "0.3-0.5": {
+     "n": 170,
+     "rmse": 0.934,
+     "naive_rmse": 1.1186,
+     "pct_of_naive": 83.5,
+     "mae": 0.7666,
+     "r2": 0.291,
+     "nominal_coverage": 0.9,
+     "empirical_coverage": 0.894,
+     "coverage_95CI": [
+      0.838,
+      0.936
+     ],
+     "median_interval_width": 2.911
+    },
+    "0.5-0.7": {
+     "n": 146,
+     "rmse": 0.9154,
+     "naive_rmse": 1.1192,
+     "pct_of_naive": 81.8,
+     "mae": 0.7422,
+     "r2": 0.33,
+     "nominal_coverage": 0.9,
+     "empirical_coverage": 0.884,
+     "coverage_95CI": [
+      0.82,
+      0.931
+     ],
+     "median_interval_width": 2.796
+    },
+    ">=0.7": {
+     "n": 108,
+     "rmse": 0.6346,
+     "naive_rmse": 1.0132,
+     "pct_of_naive": 62.6,
+     "mae": 0.4913,
+     "r2": 0.595,
+     "nominal_coverage": 0.9,
+     "empirical_coverage": 0.898,
+     "coverage_95CI": [
+      0.825,
+      0.948
+     ],
+     "median_interval_width": 2.136
+    }
+   },
+   "units": "p_activity = -log10(M)",
+   "label_noise_floor_median_within_compound_spread": 0.521,
+   "assay_type_mix_by_split": {
+    "('calib', 'IC50')": 0.657,
+    "('calib', 'EC50')": 0.157,
+    "('calib', 'Ki')": 0.154,
+    "('calib', 'AC50')": 0.03,
+    "('calib', 'Kd')": 0.003,
+    "('test', 'IC50')": 0.625,
+    "('test', 'EC50')": 0.081,
+    "('test', 'Ki')": 0.276,
+    "('test', 'AC50')": 0.013,
+    "('test', 'Kd')": 0.005,
+    "('train', 'IC50')": 0.595,
+    "('train', 'EC50')": 0.138,
+    "('train', 'Ki')": 0.243,
+    "('train', 'AC50')": 0.017,
+    "('train', 'Kd')": 0.007
+   }
+  },
+  "ar_active": {
+   "kind": "classification",
+   "label": "active = measured p_activity >= 6.0 (<= 1 uM)",
+   "n_train": 3041,
+   "n_calib": 508,
+   "n_test": 771,
+   "threshold_rule": "max balanced accuracy on calib",
+   "threshold": 0.07,
+   "overall": {
+    "n": 771,
+    "positives": 323,
+    "base_rate": 0.419,
+    "base_rate_train": 0.545,
+    "pr_auc": 0.823,
+    "pr_auc_baseline_is_base_rate": 0.419,
+    "roc_auc": 0.892,
+    "threshold": 0.07,
+    "balanced_accuracy": 0.824,
+    "precision": 0.704,
+    "recall": 0.929,
+    "conformal_sets_nominal": 0.9,
+    "conformal_set_empirical_coverage": 0.894,
+    "conformal_set_coverage_95CI": [
+     0.87,
+     0.915
+    ],
+    "mean_set_size": 1.17,
+    "frac_empty_set": 0.0,
+    "frac_both_labels": 0.17,
+    "pr_auc_95CI_cluster_bootstrap": [
+     0.7181,
+     0.8934
+    ]
+   },
+   "by_nn_sim_bin": {
+    "<0.3": {
+     "n": 185,
+     "positives": 21,
+     "base_rate": 0.114,
+     "base_rate_train": 0.545,
+     "pr_auc": 0.497,
+     "pr_auc_baseline_is_base_rate": 0.114,
+     "roc_auc": 0.893,
+     "threshold": 0.07,
+     "balanced_accuracy": 0.861,
+     "precision": 0.45,
+     "recall": 0.857,
+     "conformal_sets_nominal": 0.9,
+     "conformal_set_empirical_coverage": 0.946,
+     "conformal_set_coverage_95CI": [
+      0.903,
+      0.974
+     ],
+     "mean_set_size": 1.146,
+     "frac_empty_set": 0.0,
+     "frac_both_labels": 0.146
+    },
+    "0.3-0.5": {
+     "n": 290,
+     "positives": 116,
+     "base_rate": 0.4,
+     "base_rate_train": 0.545,
+     "pr_auc": 0.79,
+     "pr_auc_baseline_is_base_rate": 0.4,
+     "roc_auc": 0.887,
+     "threshold": 0.07,
+     "balanced_accuracy": 0.809,
+     "precision": 0.687,
+     "recall": 0.888,
+     "conformal_sets_nominal": 0.9,
+     "conformal_set_empirical_coverage": 0.903,
+     "conformal_set_coverage_95CI": [
+      0.863,
+      0.935
+     ],
+     "mean_set_size": 1.228,
+     "frac_empty_set": 0.0,
+     "frac_both_labels": 0.228
+    },
+    "0.5-0.7": {
+     "n": 177,
+     "positives": 104,
+     "base_rate": 0.588,
+     "base_rate_train": 0.545,
+     "pr_auc": 0.788,
+     "pr_auc_baseline_is_base_rate": 0.588,
+     "roc_auc": 0.784,
+     "threshold": 0.07,
+     "balanced_accuracy": 0.729,
+     "precision": 0.733,
+     "recall": 0.952,
+     "conformal_sets_nominal": 0.9,
+     "conformal_set_empirical_coverage": 0.825,
+     "conformal_set_coverage_95CI": [
+      0.761,
+      0.878
+     ],
+     "mean_set_size": 1.119,
+     "frac_empty_set": 0.0,
+     "frac_both_labels": 0.119
+    },
+    ">=0.7": {
+     "n": 119,
+     "positives": 82,
+     "base_rate": 0.689,
+     "base_rate_train": 0.545,
+     "pr_auc": 0.934,
+     "pr_auc_baseline_is_base_rate": 0.689,
+     "roc_auc": 0.867,
+     "threshold": 0.07,
+     "balanced_accuracy": 0.704,
+     "precision": 0.792,
+     "recall": 0.976,
+     "conformal_sets_nominal": 0.9,
+     "conformal_set_empirical_coverage": 0.891,
+     "conformal_set_coverage_95CI": [
+      0.82,
+      0.941
+     ],
+     "mean_set_size": 1.143,
+     "frac_empty_set": 0.0,
+     "frac_both_labels": 0.143
+    }
+   },
+   "label_source_mix": {
+    "calib": {
+     "censored_inactive": 0.445,
+     "exact": 0.555
+    },
+    "test": {
+     "censored_inactive": 0.401,
+     "exact": 0.599
+    },
+    "train": {
+     "censored_inactive": 0.252,
+     "exact": 0.748
+    }
+   }
+  },
+  "rat_oral_ld50": {
+   "kind": "regression",
+   "n_train": 7859,
+   "n_calib": 1339,
+   "n_test": 2017,
+   "naive_predictor": "train mean",
+   "naive_mu": 0.5752,
+   "mondrian_bins_calibrated": [
+    "0.3-0.5",
+    "0.5-0.7",
+    "<0.3",
+    ">=0.7"
+   ],
+   "global_q90": 0.934,
+   "overall": {
+    "n": 2017,
+    "rmse": 0.6505,
+    "naive_rmse": 0.7957,
+    "pct_of_naive": 81.8,
+    "mae": 0.4541,
+    "r2": 0.331,
+    "nominal_coverage": 0.9,
+    "empirical_coverage": 0.896,
+    "coverage_95CI": [
+     0.882,
+     0.909
+    ],
+    "median_interval_width": 1.836,
+    "rmse_95CI_cluster_bootstrap": [
+     0.5991,
+     0.7159
+    ]
+   },
+   "by_nn_sim_bin": {
+    "<0.3": {
+     "n": 324,
+     "rmse": 0.9103,
+     "naive_rmse": 0.9812,
+     "pct_of_naive": 92.8,
+     "mae": 0.6232,
+     "r2": 0.126,
+     "nominal_coverage": 0.9,
+     "empirical_coverage": 0.809,
+     "coverage_95CI": [
+      0.762,
+      0.85
+     ],
+     "median_interval_width": 2.013
+    },
+    "0.3-0.5": {
+     "n": 1135,
+     "rmse": 0.6063,
+     "naive_rmse": 0.7401,
+     "pct_of_naive": 81.9,
+     "mae": 0.4401,
+     "r2": 0.329,
+     "nominal_coverage": 0.9,
+     "empirical_coverage": 0.9,
+     "coverage_95CI": [
+      0.881,
+      0.916
+     ],
+     "median_interval_width": 1.836
+    },
+    "0.5-0.7": {
+     "n": 462,
+     "rmse": 0.5625,
+     "naive_rmse": 0.7914,
+     "pct_of_naive": 71.1,
+     "mae": 0.3957,
+     "r2": 0.495,
+     "nominal_coverage": 0.9,
+     "empirical_coverage": 0.946,
+     "coverage_95CI": [
+      0.921,
+      0.965
+     ],
+     "median_interval_width": 2.046
+    },
+    ">=0.7": {
+     "n": 96,
+     "rmse": 0.4754,
+     "naive_rmse": 0.7496,
+     "pct_of_naive": 63.4,
+     "mae": 0.3284,
+     "r2": 0.578,
+     "nominal_coverage": 0.9,
+     "empirical_coverage": 0.917,
+     "coverage_95CI": [
+      0.842,
+      0.963
+     ],
+     "median_interval_width": 1.552
+    }
+   },
+   "units": "log10 mmol/kg bw",
+   "label_noise_floor_median_within_compound_IQR": 0.1,
+   "label_noise_floor_median_within_compound_range": 0.222
+  }
+ },
+ "chembl_featurisation_failures": 0,
+ "runtime_s": 497.5
+}

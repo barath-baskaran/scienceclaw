@@ -1,0 +1,1658 @@
+{
+ "schema": "wtool_predictions/v2",
+ "created_utc": "2026-11-01T05:44:27Z",
+ "seconds_total": 38.29,
+ "models": [
+  {
+   "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+   "model_id": "W-MODEL_frozen_v5",
+   "endpoints": [
+    "logkoa",
+    "koh_gas",
+    "koc",
+    "pka_acidic",
+    "bcf",
+    "pka_basic",
+    "henry",
+    "vapor_pressure",
+    "boiling_point",
+    "water_solubility",
+    "logkow",
+    "melting_point"
+   ],
+   "feature_blocks": [
+    "struct",
+    "physics"
+   ],
+   "kind": "api",
+   "api_file": "fatev5.py",
+   "owner": "W-MODEL"
+  },
+  {
+   "model_dir": "<TEAM_ROOT>/agents/work/W-SPECTRA/spectrum_only_v31",
+   "model_id": "wspectra_spectrum_only_v31",
+   "endpoints": [],
+   "feature_blocks": [
+    "spectrum"
+   ],
+   "kind": "spectra_api",
+   "owner": "W-SPECTRA"
+  },
+  {
+   "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+   "model_id": "wtox_model_frozen_v3",
+   "endpoints": [
+    "rat_oral_ld50",
+    "er_potency",
+    "er_active",
+    "ar_potency",
+    "ar_active"
+   ],
+   "feature_blocks": [
+    "struct"
+   ],
+   "kind": "tox_api",
+   "owner": "W-TOX"
+  }
+ ],
+ "records": [
+  {
+   "input": {
+    "smiles": "COc1cc(C(=O)OCC2CCCO2)ccc1Cl",
+    "has_spectrum": false,
+    "inchikey": "TYOFWEJCGQUZJM-UHFFFAOYSA-N",
+    "canonical_smiles": "COc1cc(C(=O)OCC2CCCO2)ccc1Cl",
+    "n_heavy": 18,
+    "formula": "C13H15ClO4",
+    "mw": 270.712,
+    "n_fragments": 1,
+    "formal_charge": 0,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 220\" width=\"320\" height=\"220\" role=\"img\" aria-label=\"2D structure of COc1cc(C(=O)OCC2CCCO2)ccc1Cl\"><g stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"><line x1=\"298.0\" y1=\"110.3\" x2=\"277.3\" y2=\"98.2\"/><line x1=\"262.7\" y1=\"98.2\" x2=\"241.8\" y2=\"110.1\"/><line x1=\"241.8\" y1=\"110.1\" x2=\"213.8\" y2=\"93.8\"/><line x1=\"213.8\" y1=\"93.8\" x2=\"185.7\" y2=\"109.9\"/><line x1=\"213.3\" y1=\"100.8\" x2=\"192.0\" y2=\"113.0\"/><line x1=\"185.7\" y1=\"109.9\" x2=\"157.7\" y2=\"93.6\"/><line x1=\"160.6\" y1=\"93.6\" x2=\"160.7\" y2=\"69.6\"/><line x1=\"154.7\" y1=\"93.6\" x2=\"154.8\" y2=\"69.6\"/><line x1=\"157.7\" y1=\"93.6\" x2=\"136.8\" y2=\"105.5\"/><line x1=\"122.2\" y1=\"105.5\" x2=\"101.5\" y2=\"93.4\"/><line x1=\"101.5\" y1=\"93.4\" x2=\"73.3\" y2=\"109.5\"/><line x1=\"73.3\" y1=\"109.5\" x2=\"43.8\" y2=\"96.2\"/><line x1=\"43.8\" y1=\"96.2\" x2=\"22.0\" y2=\"120.2\"/><line x1=\"22.0\" y1=\"120.2\" x2=\"38.1\" y2=\"148.4\"/><line x1=\"38.1\" y1=\"148.4\" x2=\"61.6\" y2=\"143.5\"/><line x1=\"185.7\" y1=\"109.9\" x2=\"185.6\" y2=\"142.3\"/><line x1=\"185.6\" y1=\"142.3\" x2=\"213.6\" y2=\"158.6\"/><line x1=\"191.9\" y1=\"139.2\" x2=\"213.2\" y2=\"151.6\"/><line x1=\"213.6\" y1=\"158.6\" x2=\"241.7\" y2=\"142.5\"/><line x1=\"241.7\" y1=\"142.5\" x2=\"262.4\" y2=\"154.6\"/><line x1=\"241.7\" y1=\"142.5\" x2=\"241.8\" y2=\"110.1\"/><line x1=\"235.9\" y1=\"138.6\" x2=\"236.0\" y2=\"114.0\"/><line x1=\"70.8\" y1=\"133.3\" x2=\"73.3\" y2=\"109.5\"/></g><g font-family=\"Helvetica,Arial,sans-serif\" font-weight=\"600\" text-anchor=\"middle\" dominant-baseline=\"central\"><text x=\"270.0\" y=\"94.0\" font-size=\"13.6\" fill=\"#B03A00\">O</text><text x=\"157.8\" y=\"61.2\" font-size=\"13.6\" fill=\"#B03A00\">O</text><text x=\"129.5\" y=\"109.7\" font-size=\"13.6\" fill=\"#B03A00\">O</text><text x=\"69.9\" y=\"141.7\" font-size=\"13.6\" fill=\"#B03A00\">O</text><text x=\"269.7\" y=\"158.8\" font-size=\"13.6\" fill=\"#2E6B30\">Cl</text></g></svg>"
+   },
+   "created_utc": "2026-11-01T05:43:49Z",
+   "stages": [
+    {
+     "stage": "physics",
+     "status": "ok",
+     "detail": "<TEAM_ROOT>/agents/work/W-PHYSICS/compute_physics.py",
+     "seconds": 32.81,
+     "n_features": 32,
+     "converged": true,
+     "source": "cpu_relax",
+     "fmax_eV_A": 0.009102437645196915,
+     "relax_wall_s": 32.81,
+     "n_steps": 196,
+     "n_rotatable": 4,
+     "notes": [
+      "physics approximate: flexible molecule (4 rotatable bonds), dipole/shape descriptors depend on the conformer found (OPS-2 CPU-vs-GPU parity: 12/18 molecules with >=4 rotatable bonds differed by >10% of training SD on these descriptors)"
+     ],
+     "parity": "CPU vs GPU table: median |dE| 2 meV, 40/40 converged (W-PHYSICS parity_cpu_gpu_v1.json); descriptors within 3% of training SD for <=3 rotatable bonds (OPS-2 cpu_parity_desc_summary.md)"
+    }
+   ],
+   "endpoints": {
+    "logkoa": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 8.068349550690575,
+     "units": "log10",
+     "interval": [
+      3.2309525069136855,
+      12.905746594467466
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.583,
+     "familiarity_bin": "0.5-0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "out",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)",
+      "FAR_FROM_LOGKOA_TRAINING (endpoint-specific nn_sim 0.24 < 0.3)",
+      "interval_wider_than_typical"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.975,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "OUT_OF_DOMAIN",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.235,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 1.0,
+      "n": 18,
+      "median_width": 3.9504895000049345,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.5-0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.8140357275942111,
+      "physics": 0.18596427240578894,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_Ipc",
+       "block": "structure",
+       "shap": 0.36188257637512683,
+       "note": ""
+      },
+      {
+       "name": "d_VSA_EState1",
+       "block": "structure",
+       "shap": -0.2998958895293797,
+       "note": ""
+      },
+      {
+       "name": "d_Chi0",
+       "block": "structure",
+       "shap": 0.2866696965051474,
+       "note": ""
+      },
+      {
+       "name": "d_Chi1",
+       "block": "structure",
+       "shap": 0.18772429531534485,
+       "note": ""
+      },
+      {
+       "name": "d_Chi4v",
+       "block": "structure",
+       "shap": -0.15833032748583462,
+       "note": ""
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 36,
+       "rmse": 0.5465312775167547,
+       "rmse_naive": 3.7440411997825365,
+       "pct": 14.597362805422618,
+       "coverage": 0.9722222222222222,
+       "median_width": 3.7955710555212225,
+       "rmse_pct_naive": 14.597362805422618,
+       "empirical_coverage": 0.9722222222222222
+      },
+      "this_bin": {
+       "n": 18,
+       "rmse": 0.45627869813055366,
+       "rmse_naive": 3.4268026223631685,
+       "pct": 13.314997927015062,
+       "coverage": 1.0,
+       "median_width": 3.9504895000049345,
+       "rmse_pct_naive": 13.314997927015062,
+       "empirical_coverage": 1.0
+      },
+      "leak_free": {
+       "n": 3,
+       "rmse_pct_naive": null,
+       "too_few": true
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": 10.099781036376953,
+      "units": "log10",
+      "module": "KOAWIN",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "domain_reason": "similarity alone says familiar, but the model's own applicability check says OUT_OF_DOMAIN; the stricter is shown",
+     "width_ratio_to_typical": 2.4490114674502226
+    },
+    "koh_gas": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": -11.181645921650292,
+     "units": "log10_cm3_per_molecule_s",
+     "interval": [
+      -12.08013745683414,
+      -10.283154386466443
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.583,
+     "familiarity_bin": "0.5-0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "out",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)",
+      "FAR_FROM_KOH_GAS_TRAINING (endpoint-specific nn_sim 0.21 < 0.3)",
+      "OUTSIDE_TRAINING_DESCRIPTOR_RANGE: heavy atoms 18, Crippen logP 2.7; koh_gas training 1st-99th percentile is 3-17 heavy atoms, Crippen logP -0.4 to 6.2. Similarity does not capture this; treat as extrapolation."
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.975,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "OUT_OF_DOMAIN",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.208,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 1.0,
+      "n": 37,
+      "median_width": 2.5739503998076003,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.5-0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.6008777292950056,
+      "physics": 0.3991222707049945,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "phys_cpsa_pos_A2e",
+       "block": "physics",
+       "shap": 0.23341076760381907,
+       "note": "charge-weighted positive surface area, e*A^2"
+      },
+      {
+       "name": "phys_q_halo_min_e",
+       "block": "physics",
+       "shap": -0.11065416210065927,
+       "note": "most negative halogen charge, e"
+      },
+      {
+       "name": "d_BCUT2D_MWHI",
+       "block": "structure",
+       "shap": -0.09249192867441225,
+       "note": ""
+      },
+      {
+       "name": "phys_q_hetero_max_e",
+       "block": "physics",
+       "shap": -0.08957480182893511,
+       "note": "most positive heteroatom charge, e"
+      },
+      {
+       "name": "phys_energy_per_atom_eV",
+       "block": "structure",
+       "shap": -0.04546762205928473,
+       "note": "AIMNet2 energy per atom: mostly element composition, not physics"
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 101,
+       "rmse": 0.6836161019249574,
+       "rmse_naive": 1.4288815901758565,
+       "pct": 47.84273984808096,
+       "coverage": 0.9603960396039604,
+       "median_width": 2.4793946687001984,
+       "rmse_pct_naive": 47.84273984808096,
+       "empirical_coverage": 0.9603960396039604
+      },
+      "this_bin": {
+       "n": 37,
+       "rmse": 0.5707119605204267,
+       "rmse_naive": 1.745563102205368,
+       "pct": 32.69500597253583,
+       "coverage": 1.0,
+       "median_width": 2.5739503998076003,
+       "rmse_pct_naive": 32.69500597253583,
+       "empirical_coverage": 1.0
+      },
+      "leak_free": {
+       "n": 30,
+       "rmse": 0.7223122003905817,
+       "rmse_naive": 1.2527331006208977,
+       "pct": 57.658905957907464,
+       "coverage": 0.9333333333333333,
+       "median_width": 3.2254888065144733,
+       "rmse_pct_naive": 57.658905957907464,
+       "empirical_coverage": 0.9333333333333333
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": -10.628788979976404,
+      "units": "log10 cm3/(molecule s)",
+      "module": "AOPWIN",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "domain_reason": "similarity alone says familiar, but the model's own applicability check says OUT_OF_DOMAIN; the stricter is shown",
+     "width_ratio_to_typical": 0.6981420739506171
+    },
+    "koc": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 2.65771410752649,
+     "units": "log10_L_per_kg_linear",
+     "interval": [
+      2.084817046235086,
+      3.2306111688178936
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.583,
+     "familiarity_bin": "0.5-0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "out",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)",
+      "FAR_FROM_KOC_TRAINING (endpoint-specific nn_sim 0.29 < 0.3)"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.975,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "OUT_OF_DOMAIN",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.289,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 1.0,
+      "n": 39,
+      "median_width": 2.9512493618644515,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.5-0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.805303207561421,
+      "physics": 0.19469679243857893,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_PEOE_VSA6",
+       "block": "structure",
+       "shap": -0.13179959343171663,
+       "note": ""
+      },
+      {
+       "name": "d_MolLogP",
+       "block": "structure",
+       "shap": -0.07955755404144473,
+       "note": "Crippen logP (structure-based estimate)"
+      },
+      {
+       "name": "d_Chi3v",
+       "block": "structure",
+       "shap": 0.049923250516075345,
+       "note": ""
+      },
+      {
+       "name": "d_FpDensityMorgan1",
+       "block": "structure",
+       "shap": -0.0443245915690898,
+       "note": ""
+      },
+      {
+       "name": "d_SMR_VSA7",
+       "block": "structure",
+       "shap": -0.04011520473004256,
+       "note": ""
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 104,
+       "rmse": 0.6042015477938838,
+       "rmse_naive": 1.1053879758780054,
+       "pct": 54.65968157596149,
+       "coverage": 0.8653846153846154,
+       "median_width": 2.476677434950458,
+       "rmse_pct_naive": 54.65968157596149,
+       "empirical_coverage": 0.8653846153846154
+      },
+      "this_bin": {
+       "n": 39,
+       "rmse": 0.5174286457584841,
+       "rmse_naive": 1.1491233644390693,
+       "pct": 45.02811984952205,
+       "coverage": 1.0,
+       "median_width": 2.9512493618644515,
+       "rmse_pct_naive": 45.02811984952205,
+       "empirical_coverage": 1.0
+      },
+      "leak_free": {
+       "n": 27,
+       "rmse": 0.5697122575016839,
+       "rmse_naive": 1.099645320175737,
+       "pct": 51.808728418963014,
+       "coverage": 0.8518518518518519,
+       "median_width": 2.050506263797131,
+       "rmse_pct_naive": 51.808728418963014,
+       "empirical_coverage": 0.8518518518518519
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": 2.2888805866241455,
+      "units": "log10 L/kg",
+      "module": "KOCWIN",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "domain_reason": "similarity alone says familiar, but the model's own applicability check says OUT_OF_DOMAIN; the stricter is shown",
+     "width_ratio_to_typical": 0.3882403626709985
+    },
+    "pka_acidic": {
+     "status": "undefined",
+     "kind": "not_applicable",
+     "headline": "Does not apply: no acidic ionisable site found (rule of thumb)",
+     "reason": "NOT MEASURABLE BY THE STANDARD (AQUEOUS) PROTOCOL (heuristic): no acidic ionisable site found by the heuristic SMARTS list (aqueous pKa range); NOT the same as physically undefined. Every molecule has some extreme acidity/basicity, but outside roughly pKa -2..14 the aqueous value can only be extrapolated, so such labels are not comparable with titrated values",
+     "category": "B",
+     "subtype": "no_site_in_aqueous_window(heuristic)",
+     "rule_source": "W-SPACE domain_rules.category (no_site heuristic); withheld per S-1 usability review",
+     "withheld_model_output": {
+      "value": 9.370929462204712,
+      "interval": [
+       3.9794704119666955,
+       14.76238851244273
+      ],
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": null
+    },
+    "bcf": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 1.3185301227564026,
+     "units": "log10_L_per_kg_linear",
+     "interval": [
+      -0.3594453679128764,
+      2.996505613425682
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.583,
+     "familiarity_bin": "0.5-0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.975,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "EXTRAPOLATING",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.302,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.875,
+      "n": 72,
+      "median_width": 2.906345463233693,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.5-0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.6299426368530624,
+      "physics": 0.37005736314693766,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_MolLogP",
+       "block": "structure",
+       "shap": -0.1525618008633322,
+       "note": "Crippen logP (structure-based estimate)"
+      },
+      {
+       "name": "phys_q_hetero_min_e",
+       "block": "physics",
+       "shap": -0.11939069360550032,
+       "note": "most negative heteroatom charge, e"
+      },
+      {
+       "name": "phys_sasa_polar_frac",
+       "block": "physics",
+       "shap": -0.09799834319188461,
+       "note": "polar fraction of the solvent-accessible surface"
+      },
+      {
+       "name": "phys_q_min_e",
+       "block": "physics",
+       "shap": -0.08188684063921267,
+       "note": "most negative AIMNet2 atomic charge, e"
+      },
+      {
+       "name": "d_SlogP_VSA2",
+       "block": "structure",
+       "shap": -0.07558498445598844,
+       "note": ""
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 206,
+       "rmse": 0.8512998312725133,
+       "rmse_naive": 1.1842024430289817,
+       "pct": 71.88803200701376,
+       "coverage": 0.883495145631068,
+       "median_width": 3.2019480187311573,
+       "rmse_pct_naive": 71.88803200701376,
+       "empirical_coverage": 0.883495145631068
+      },
+      "this_bin": {
+       "n": 72,
+       "rmse": 0.6188104728946879,
+       "rmse_naive": 1.1130603599501143,
+       "pct": 55.59541020061321,
+       "coverage": 0.875,
+       "median_width": 2.906345463233693,
+       "rmse_pct_naive": 55.59541020061321,
+       "empirical_coverage": 0.875
+      },
+      "leak_free": {
+       "n": 52,
+       "rmse": 1.1225237800147607,
+       "rmse_naive": 1.2760335317949063,
+       "pct": 87.96977133005163,
+       "coverage": 0.9230769230769231,
+       "median_width": 3.7115259296390315,
+       "rmse_pct_naive": 87.96977133005163,
+       "empirical_coverage": 0.9230769230769231
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": 1.7,
+      "units": "log10 L/kg wet-wt",
+      "module": "BCFBAF (regression)",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "domain_reason": "similarity alone says familiar, but the model's own applicability check says EXTRAPOLATING; the stricter is shown",
+     "width_ratio_to_typical": 1.1546978925225975
+    },
+    "pka_basic": {
+     "status": "undefined",
+     "kind": "not_applicable",
+     "headline": "Does not apply: no basic ionisable site found (rule of thumb)",
+     "reason": "NOT MEASURABLE BY THE STANDARD (AQUEOUS) PROTOCOL (heuristic): no basic ionisable site found by the heuristic SMARTS list (aqueous pKa range); NOT the same as physically undefined. Every molecule has some extreme acidity/basicity, but outside roughly pKa -2..14 the aqueous value can only be extrapolated, so such labels are not comparable with titrated values",
+     "category": "B",
+     "subtype": "no_site_in_aqueous_window(heuristic)",
+     "rule_source": "W-SPACE domain_rules.category (no_site heuristic); withheld per S-1 usability review",
+     "withheld_model_output": {
+      "value": 6.858314953970137,
+      "interval": [
+       2.3327179974379186,
+       11.383911910502356
+      ],
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": null
+    },
+    "henry": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": -7.508689064948776,
+     "units": "log10_atm_m3_per_mol",
+     "interval": [
+      -9.388169602894406,
+      -5.6292085270031444
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.583,
+     "familiarity_bin": "0.5-0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.975,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "EXTRAPOLATING",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.34,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.9423076923076923,
+      "n": 156,
+      "median_width": 3.260253965797806,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.5-0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.7174440553220176,
+      "physics": 0.2825559446779824,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_TPSA",
+       "block": "structure",
+       "shap": -0.8939794473089476,
+       "note": "topological polar surface area, A^2"
+      },
+      {
+       "name": "d_PEOE_VSA1",
+       "block": "structure",
+       "shap": -0.3078646526145226,
+       "note": ""
+      },
+      {
+       "name": "phys_sasa_polar_A2",
+       "block": "physics",
+       "shap": -0.30672617564058186,
+       "note": "polar (N, O, polar-H) SASA of the relaxed geometry, A^2"
+      },
+      {
+       "name": "phys_sasa_polar_frac",
+       "block": "physics",
+       "shap": -0.24148757992063632,
+       "note": "polar fraction of the solvent-accessible surface"
+      },
+      {
+       "name": "d_NOCount",
+       "block": "structure",
+       "shap": -0.2023898972354701,
+       "note": ""
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 431,
+       "rmse": 1.3835577029972548,
+       "rmse_naive": 2.9845946708035953,
+       "pct": 46.35663651522687,
+       "coverage": 0.9396751740139211,
+       "median_width": 4.1519900723974,
+       "rmse_pct_naive": 46.35663651522687,
+       "empirical_coverage": 0.9396751740139211
+      },
+      "this_bin": {
+       "n": 156,
+       "rmse": 1.0967751681788462,
+       "rmse_naive": 2.4937153990987175,
+       "pct": 43.98156937135827,
+       "coverage": 0.9423076923076923,
+       "median_width": 3.260253965797806,
+       "rmse_pct_naive": 43.98156937135827,
+       "empirical_coverage": 0.9423076923076923
+      },
+      "leak_free": {
+       "n": 123,
+       "rmse": 1.7889785558647742,
+       "rmse_naive": 3.425053471150589,
+       "pct": 52.23213508733331,
+       "coverage": 0.9512195121951219,
+       "median_width": 5.606338585293116,
+       "rmse_pct_naive": 52.23213508733331,
+       "empirical_coverage": 0.9512195121951219
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": -8.635824573107213,
+      "units": "log10 atm m3/mol",
+      "module": "HENRYWIN",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "domain_reason": "similarity alone says familiar, but the model's own applicability check says EXTRAPOLATING; the stricter is shown",
+     "width_ratio_to_typical": 1.152965724549443
+    },
+    "vapor_pressure": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": -5.239741546269252,
+     "units": "log10_mmHg",
+     "interval": [
+      -7.640636654763273,
+      -2.8388464377752305
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.583,
+     "familiarity_bin": "0.5-0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)",
+      "interval_wider_than_typical"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.975,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "EXTRAPOLATING",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.431,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.8801020408163265,
+      "n": 392,
+      "median_width": 2.8379954995378696,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.5-0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.8626863313031735,
+      "physics": 0.1373136686968265,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_Ipc",
+       "block": "structure",
+       "shap": -0.537420536903707,
+       "note": ""
+      },
+      {
+       "name": "d_AvgIpc",
+       "block": "structure",
+       "shap": -0.24503006015752712,
+       "note": ""
+      },
+      {
+       "name": "d_HeavyAtomCount",
+       "block": "structure",
+       "shap": -0.23699177604871716,
+       "note": ""
+      },
+      {
+       "name": "d_Chi1",
+       "block": "structure",
+       "shap": -0.23614524007152196,
+       "note": ""
+      },
+      {
+       "name": "d_BertzCT",
+       "block": "structure",
+       "shap": -0.20943111937267278,
+       "note": ""
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 1076,
+       "rmse": 1.594524147325742,
+       "rmse_naive": 3.6866124907885305,
+       "pct": 43.251742658331004,
+       "coverage": 0.8977695167286245,
+       "median_width": 3.710883806851156,
+       "rmse_pct_naive": 43.251742658331004,
+       "empirical_coverage": 0.8977695167286245
+      },
+      "this_bin": {
+       "n": 392,
+       "rmse": 1.4623812480137695,
+       "rmse_naive": 3.451170571639641,
+       "pct": 42.373485101867814,
+       "coverage": 0.8801020408163265,
+       "median_width": 2.8379954995378696,
+       "rmse_pct_naive": 42.373485101867814,
+       "empirical_coverage": 0.8801020408163265
+      },
+      "leak_free": {
+       "n": 305,
+       "rmse": 1.653937517127921,
+       "rmse_naive": 3.6653893471328614,
+       "pct": 45.12310591019923,
+       "coverage": 0.9049180327868852,
+       "median_width": 4.066414508655183,
+       "rmse_pct_naive": 45.12310591019923,
+       "empirical_coverage": 0.9049180327868852
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": -4.859636220195378,
+      "units": "log10 mmHg",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "domain_reason": "similarity alone says familiar, but the model's own applicability check says EXTRAPOLATING; the stricter is shown",
+     "width_ratio_to_typical": 1.6919654093073617
+    },
+    "boiling_point": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 332.61528323936335,
+     "units": "degC",
+     "interval": [
+      136.1209315693982,
+      529.1096349093285
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.583,
+     "familiarity_bin": "0.5-0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)",
+      "interval_wider_than_typical"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.975,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "EXTRAPOLATING",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.431,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.8740740740740741,
+      "n": 540,
+      "median_width": 57.19252425985496,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.5-0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.9020456098838554,
+      "physics": 0.09795439011614451,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_Ipc",
+       "block": "structure",
+       "shap": 20.84154651953511,
+       "note": ""
+      },
+      {
+       "name": "d_MolMR",
+       "block": "structure",
+       "shap": 19.071003096472626,
+       "note": ""
+      },
+      {
+       "name": "d_Chi1",
+       "block": "structure",
+       "shap": 9.726419037098742,
+       "note": ""
+      },
+      {
+       "name": "d_AvgIpc",
+       "block": "structure",
+       "shap": 8.583174577777708,
+       "note": ""
+      },
+      {
+       "name": "d_PEOE_VSA9",
+       "block": "structure",
+       "shap": 4.266406841688863,
+       "note": ""
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 1326,
+       "rmse": 49.39718964554786,
+       "rmse_naive": 96.58382396980704,
+       "pct": 51.14437140218207,
+       "coverage": 0.8989441930618401,
+       "median_width": 73.26308509591959,
+       "rmse_pct_naive": 51.14437140218207,
+       "empirical_coverage": 0.8989441930618401
+      },
+      "this_bin": {
+       "n": 540,
+       "rmse": 41.13110560530056,
+       "rmse_naive": 88.97198937473182,
+       "pct": 46.22927495985817,
+       "coverage": 0.8740740740740741,
+       "median_width": 57.19252425985496,
+       "rmse_pct_naive": 46.22927495985817,
+       "empirical_coverage": 0.8740740740740741
+      },
+      "leak_free": {
+       "n": 368,
+       "rmse": 57.0757971393758,
+       "rmse_naive": 106.77902161847756,
+       "pct": 53.45225707658959,
+       "coverage": 0.9320652173913043,
+       "median_width": 101.8036036220666,
+       "rmse_pct_naive": 53.45225707658959,
+       "empirical_coverage": 0.9320652173913043
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": 355.4549865722656,
+      "units": "degC",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "domain_reason": "similarity alone says familiar, but the model's own applicability check says EXTRAPOLATING; the stricter is shown",
+     "width_ratio_to_typical": 6.871329923372173
+    },
+    "water_solubility": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": -2.94582840249965,
+     "units": "log10_mol_per_L",
+     "interval": [
+      -4.034841507806529,
+      -1.8568152971927707
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.583,
+     "familiarity_bin": "0.5-0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "in",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.975,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "IN_DOMAIN",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.583,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.916015625,
+      "n": 512,
+      "median_width": 2.8176021611131965,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.5-0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.854854662476594,
+      "physics": 0.14514533752340594,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_MolMR",
+       "block": "structure",
+       "shap": -0.16089740995480203,
+       "note": ""
+      },
+      {
+       "name": "d_PEOE_VSA6",
+       "block": "structure",
+       "shap": 0.1474017410828433,
+       "note": ""
+      },
+      {
+       "name": "d_SlogP_VSA2",
+       "block": "structure",
+       "shap": 0.13473607493319398,
+       "note": ""
+      },
+      {
+       "name": "d_SMR_VSA6",
+       "block": "structure",
+       "shap": 0.09826634938238893,
+       "note": ""
+      },
+      {
+       "name": "mc428",
+       "block": "structure",
+       "shap": 0.0736331295204304,
+       "note": "Morgan count bit; in this molecule: cc(C)cc(c)O"
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 1408,
+       "rmse": 1.023138490560405,
+       "rmse_naive": 2.2434924187578353,
+       "pct": 45.604722441045325,
+       "coverage": 0.9190340909090909,
+       "median_width": 3.119085045158976,
+       "rmse_pct_naive": 45.604722441045325,
+       "empirical_coverage": 0.9190340909090909
+      },
+      "this_bin": {
+       "n": 512,
+       "rmse": 0.9384591427248556,
+       "rmse_naive": 2.2719449633182487,
+       "pct": 41.30642061655428,
+       "coverage": 0.916015625,
+       "median_width": 2.8176021611131965,
+       "rmse_pct_naive": 41.30642061655428,
+       "empirical_coverage": 0.916015625
+      },
+      "leak_free": {
+       "n": 405,
+       "rmse": 1.1329160239076481,
+       "rmse_naive": 2.23237640911474,
+       "pct": 50.7493279037522,
+       "coverage": 0.9111111111111111,
+       "median_width": 3.379750802738487,
+       "rmse_pct_naive": 50.7493279037522,
+       "empirical_coverage": 0.9111111111111111
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": -3.801281313584008,
+      "units": "log10 mol/L",
+      "module": "WSKOWWIN",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "width_ratio_to_typical": 0.7730070059831476
+    },
+    "logkow": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 2.7675979841759144,
+     "units": "log10",
+     "interval": [
+      1.6839376529928685,
+      3.8512583153589603
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.583,
+     "familiarity_bin": "0.5-0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.975,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "EXTRAPOLATING",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.431,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.9014084507042254,
+      "n": 639,
+      "median_width": 1.770089730965418,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.5-0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.7948448159831505,
+      "physics": 0.20515518401684968,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_MolLogP",
+       "block": "structure",
+       "shap": 0.15618794160500413,
+       "note": "Crippen logP (structure-based estimate)"
+      },
+      {
+       "name": "d_PEOE_VSA6",
+       "block": "structure",
+       "shap": -0.15134473937990853,
+       "note": ""
+      },
+      {
+       "name": "phys_q_std_e",
+       "block": "physics",
+       "shap": 0.10574235585943659,
+       "note": "spread (SD) of AIMNet2 atomic charges, e"
+      },
+      {
+       "name": "mc145",
+       "block": "structure",
+       "shap": 0.06600802088213374,
+       "note": "Morgan count bit; in this molecule: cC(=O)O"
+      },
+      {
+       "name": "d_SlogP_VSA2",
+       "block": "structure",
+       "shap": -0.053590241978897446,
+       "note": ""
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 1670,
+       "rmse": 0.881601772741954,
+       "rmse_naive": 2.125802014784486,
+       "pct": 41.47149012987133,
+       "coverage": 0.8988023952095808,
+       "median_width": 2.1630370653775866,
+       "rmse_pct_naive": 41.47149012987133,
+       "empirical_coverage": 0.8988023952095808
+      },
+      "this_bin": {
+       "n": 639,
+       "rmse": 0.7487050236285152,
+       "rmse_naive": 2.0825562952189545,
+       "pct": 35.95125017015679,
+       "coverage": 0.9014084507042254,
+       "median_width": 1.770089730965418,
+       "rmse_pct_naive": 35.95125017015679,
+       "empirical_coverage": 0.9014084507042254
+      },
+      "leak_free": {
+       "n": 454,
+       "rmse": 1.0709854288041376,
+       "rmse_naive": 2.0740682746376002,
+       "pct": 51.63694184518925,
+       "coverage": 0.8634361233480177,
+       "median_width": 2.544154124397635,
+       "rmse_pct_naive": 51.63694184518925,
+       "empirical_coverage": 0.8634361233480177
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": 3.0754998,
+      "units": "log10",
+      "module": "KOWWIN",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "domain_reason": "similarity alone says familiar, but the model's own applicability check says EXTRAPOLATING; the stricter is shown",
+     "width_ratio_to_typical": 1.2244128783143788
+    },
+    "melting_point": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 57.22282312203822,
+     "units": "degC",
+     "interval": [
+      -2.8518662908975685,
+      117.297512534974
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.583,
+     "familiarity_bin": "0.5-0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.975,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "EXTRAPOLATING",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.431,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.9002976190476191,
+      "n": 1344,
+      "median_width": 121.57915571787741,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin 0.5-0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.8074958600223563,
+      "physics": 0.1925041399776437,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_NumHDonors",
+       "block": "structure",
+       "shap": -8.358765806050975,
+       "note": "H-bond donors"
+      },
+      {
+       "name": "phys_q_H_max_e",
+       "block": "physics",
+       "shap": -5.65187545218942,
+       "note": "most positive H, e"
+      },
+      {
+       "name": "d_NHOHCount",
+       "block": "structure",
+       "shap": -5.074992884733749,
+       "note": ""
+      },
+      {
+       "name": "phys_sasa_polar_A2",
+       "block": "physics",
+       "shap": -4.954058802833452,
+       "note": "polar (N, O, polar-H) SASA of the relaxed geometry, A^2"
+      },
+      {
+       "name": "mc147",
+       "block": "structure",
+       "shap": -4.926173597237924,
+       "note": "Morgan count bit; in this molecule: COC"
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 3253,
+       "rmse": 47.646933803852136,
+       "rmse_naive": 97.30875468766229,
+       "pct": 48.964693831287164,
+       "coverage": 0.8970181371042115,
+       "median_width": 140.4738032476679,
+       "rmse_pct_naive": 48.964693831287164,
+       "empirical_coverage": 0.8970181371042115
+      },
+      "this_bin": {
+       "n": 1344,
+       "rmse": 42.40071605377386,
+       "rmse_naive": 91.38176765874535,
+       "pct": 46.3995358594008,
+       "coverage": 0.9002976190476191,
+       "median_width": 121.57915571787741,
+       "rmse_pct_naive": 46.3995358594008,
+       "empirical_coverage": 0.9002976190476191
+      },
+      "leak_free": {
+       "n": 822,
+       "rmse": 55.11178198891257,
+       "rmse_naive": 103.75601453363049,
+       "pct": 53.11671061830267,
+       "coverage": 0.8978102189781022,
+       "median_width": 167.0344387767176,
+       "rmse_pct_naive": 53.11671061830267,
+       "empirical_coverage": 0.8978102189781022
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": 111.43218231201172,
+      "units": "degC",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "domain_reason": "similarity alone says familiar, but the model's own applicability check says EXTRAPOLATING; the stricter is shown",
+     "width_ratio_to_typical": 0.9882399504786525
+    },
+    "rat_oral_ld50": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "log10 mmol/kg bw",
+     "familiarity": 0.392,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.266,
+     "label_provenance": "MEASURED rat oral LD50 (CompTox hazards table, swarm copy), median over records; MW recomputed from the standardised structure; acute lethality only.",
+     "compound_class": "neutral_organic",
+     "definedness_reason": "defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "value": 0.625,
+     "interval": [
+      -0.293,
+      1.543
+     ],
+     "interval_level": 0.9,
+     "coverage": {
+      "empirical_coverage": 0.9,
+      "n": 1135,
+      "scope": "test, familiarity bin 0.3-0.5",
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/*_meta.json"
+     },
+     "skill_naive": {
+      "this_bin": {
+       "rmse_pct_naive": 81.9,
+       "n": 1135
+      },
+      "overall": {
+       "rmse_pct_naive": 81.8,
+       "n": 2017
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/rat_oral_ld50_meta.json measured_test_performance"
+     }
+    },
+    "er_potency": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "p_activity = -log10(M)",
+     "familiarity": 0.377,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.266,
+     "label_provenance": "MEASURED receptor potency, ChEMBL REST (CC BY-SA 3.0), primary literature; IC50/Ki/EC50/AC50/Kd pooled as p_activity = -log10(M). In-vitro potency only - not an in-vivo endocrine hazard call, and nothing about exposure or dose. NOT an OPERA consensus call.",
+     "compound_class": "neutral_organic",
+     "definedness_reason": "in-vitro potency is defined for any substance deliverable in assay medium, ions included",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "value": 5.037,
+     "interval": [
+      3.459,
+      6.615
+     ],
+     "interval_level": 0.9,
+     "coverage": {
+      "empirical_coverage": 0.89,
+      "n": 263,
+      "scope": "test, familiarity bin 0.3-0.5",
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/*_meta.json"
+     },
+     "skill_naive": {
+      "this_bin": {
+       "rmse_pct_naive": 54.8,
+       "n": 263
+      },
+      "overall": {
+       "rmse_pct_naive": 58.4,
+       "n": 586
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/er_potency_meta.json measured_test_performance"
+     }
+    },
+    "er_active": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "binary: active = measured p_activity >= 6.0 (<= 1 uM)",
+     "familiarity": 0.377,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.266,
+     "label_provenance": "MEASURED receptor potency, ChEMBL REST (CC BY-SA 3.0), primary literature; IC50/Ki/EC50/AC50/Kd pooled as p_activity = -log10(M). In-vitro potency only - not an in-vivo endocrine hazard call, and nothing about exposure or dose. NOT an OPERA consensus call.",
+     "compound_class": "neutral_organic",
+     "definedness_reason": "in-vitro potency is defined for any substance deliverable in assay medium, ions included",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "kind": "classifier",
+     "value": 0.0,
+     "interval": null,
+     "probability": 0.0,
+     "threshold": 0.09,
+     "call": "inactive",
+     "base_rate": 0.232,
+     "pr_auc": 0.761,
+     "note": "rare-positive label: judge PR-AUC against the base rate; accuracy is not skill",
+     "coverage": {
+      "empirical_coverage": null,
+      "scope": "classifier: no interval"
+     }
+    },
+    "ar_potency": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "p_activity = -log10(M)",
+     "familiarity": 0.269,
+     "familiarity_bin": "<0.3",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "out",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.266,
+     "label_provenance": "MEASURED receptor potency, ChEMBL REST (CC BY-SA 3.0), primary literature; IC50/Ki/EC50/AC50/Kd pooled as p_activity = -log10(M). In-vitro potency only - not an in-vivo endocrine hazard call, and nothing about exposure or dose. NOT an OPERA consensus call.",
+     "compound_class": "neutral_organic",
+     "definedness_reason": "in-vitro potency is defined for any substance deliverable in assay medium, ions included",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "value": 6.511,
+     "interval": [
+      4.263,
+      8.759
+     ],
+     "interval_level": 0.9,
+     "coverage": {
+      "empirical_coverage": 0.921,
+      "n": 38,
+      "scope": "test, familiarity bin <0.3",
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/*_meta.json"
+     },
+     "skill_naive": {
+      "this_bin": {
+       "rmse_pct_naive": 95.1,
+       "n": 38
+      },
+      "overall": {
+       "rmse_pct_naive": 80.4,
+       "n": 462
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/ar_potency_meta.json measured_test_performance"
+     }
+    },
+    "ar_active": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "binary: active = measured p_activity >= 6.0 (<= 1 uM)",
+     "familiarity": 0.272,
+     "familiarity_bin": "<0.3",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "out",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.266,
+     "label_provenance": "MEASURED receptor potency, ChEMBL REST (CC BY-SA 3.0), primary literature; IC50/Ki/EC50/AC50/Kd pooled as p_activity = -log10(M). In-vitro potency only - not an in-vivo endocrine hazard call, and nothing about exposure or dose. NOT an OPERA consensus call.",
+     "compound_class": "neutral_organic",
+     "definedness_reason": "in-vitro potency is defined for any substance deliverable in assay medium, ions included",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "kind": "classifier",
+     "value": 0.048,
+     "interval": null,
+     "probability": 0.048,
+     "threshold": 0.07,
+     "call": "inactive",
+     "base_rate": 0.114,
+     "pr_auc": 0.497,
+     "note": "rare-positive label: judge PR-AUC against the base rate; accuracy is not skill",
+     "coverage": {
+      "empirical_coverage": null,
+      "scope": "classifier: no interval"
+     }
+    }
+   },
+   "errors": [],
+   "species": {
+    "input": "COc1cc(C(=O)OCC2CCCO2)ccc1Cl",
+    "species_class": "neutralisable",
+    "parent_smiles": "COc1cc(C(=O)OCC2CCCO2)ccc1Cl",
+    "removed_fragments": [],
+    "net_charge": 0,
+    "n_permanent_pos": 0,
+    "n_permanent_neg": 0,
+    "notes": [],
+    "plain": "neutral compound (or a salt of one)"
+   },
+   "physics": {
+    "status": "ok",
+    "detail": "<TEAM_ROOT>/agents/work/W-PHYSICS/compute_physics.py",
+    "seconds": 32.81,
+    "n_features": 32,
+    "converged": true,
+    "source": "cpu_relax",
+    "fmax_eV_A": 0.009102437645196915,
+    "relax_wall_s": 32.81,
+    "n_steps": 196,
+    "n_rotatable": 4,
+    "notes": [
+     "physics approximate: flexible molecule (4 rotatable bonds), dipole/shape descriptors depend on the conformer found (OPS-2 CPU-vs-GPU parity: 12/18 molecules with >=4 rotatable bonds differed by >10% of training SD on these descriptors)"
+    ],
+    "parity": "CPU vs GPU table: median |dE| 2 meV, 40/40 converged (W-PHYSICS parity_cpu_gpu_v1.json); descriptors within 3% of training SD for <=3 rotatable bonds (OPS-2 cpu_parity_desc_summary.md)"
+   },
+   "epi": {
+    "status": "ok",
+    "fetched_now": false,
+    "cache": "<TEAM_ROOT>/agents/work/W-TOOL/epi_cache_wtool/TYOFWEJCGQUZJM-UHFFFAOYSA-N.json",
+    "returned_smiles": "COc1cc(C(=O)OCC2CCCO2)ccc1Cl",
+    "stereo_exact": true,
+    "values": {
+     "logkow": {
+      "value": 3.0754998,
+      "units": "log10",
+      "module": "KOWWIN",
+      "epi_has_experimental": false
+     },
+     "melting_point": {
+      "value": 111.43218231201172,
+      "units": "degC",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "boiling_point": {
+      "value": 355.4549865722656,
+      "units": "degC",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "vapor_pressure": {
+      "value": -4.859636220195378,
+      "units": "log10 mmHg",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "water_solubility": {
+      "value": -3.801281313584008,
+      "units": "log10 mol/L",
+      "module": "WSKOWWIN",
+      "epi_has_experimental": false
+     },
+     "henry": {
+      "value": -8.635824573107213,
+      "units": "log10 atm m3/mol",
+      "module": "HENRYWIN",
+      "epi_has_experimental": false
+     },
+     "koc": {
+      "value": 2.2888805866241455,
+      "units": "log10 L/kg",
+      "module": "KOCWIN",
+      "epi_has_experimental": false
+     },
+     "logkoa": {
+      "value": 10.099781036376953,
+      "units": "log10",
+      "module": "KOAWIN",
+      "epi_has_experimental": false
+     },
+     "koh_gas": {
+      "value": -10.628788979976404,
+      "units": "log10 cm3/(molecule s)",
+      "module": "AOPWIN",
+      "epi_has_experimental": false
+     },
+     "bcf": {
+      "value": 1.7,
+      "units": "log10 L/kg wet-wt",
+      "module": "BCFBAF (regression)",
+      "epi_has_experimental": false
+     }
+    },
+    "note": "EPI estimated values only; EPI training sets overlap CompTox data, so its errors on known compounds are optimistic"
+   },
+   "rule_source": "W-SPACE domain_rules.category",
+   "seconds_total": 38.29
+  }
+ ]
+}

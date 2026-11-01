@@ -1,0 +1,46 @@
+endpoint,units,subset,n,naive_rmse,SP_rmse,EPI_rmse,SP_pct_naive,EPI_pct_naive,SP_minus_EPI_lo,SP_minus_EPI_hi,verdict
+bcf,log10_L_per_kg_linear,full_test,206,1.1835,0.8513,1.0387,71.9,87.8,-0.3337,-0.0507,SP better
+bcf,log10_L_per_kg_linear,leak_free,52,1.2743,1.1225,1.2642,88.1,99.2,-0.4594,0.1321,n.s. (CI spans 0)
+bcf,log10_L_per_kg_linear,EPI_home_turf_physprop,90,1.2126,0.6979,0.728,57.6,60.0,-0.1838,0.1254,n.s. (CI spans 0)
+bcf,log10_L_per_kg_linear,EPI_home_turf_AND_leakfree,14,1.294,0.8153,0.8462,63.0,65.4,-0.5007,0.4557,n.s. (CI spans 0)
+bcf,log10_L_per_kg_linear,OUTSIDE_BOTH,37,1.2838,1.2304,1.3779,95.8,107.3,-0.5725,0.1859,n.s. (CI spans 0)
+boiling_point,degC,full_test,1325,96.5063,49.2046,72.3286,51.0,74.9,-30.548,-16.0079,SP better
+boiling_point,degC,leak_free,367,106.7816,56.4918,83.6693,52.9,78.4,-45.326,-9.5465,SP better
+boiling_point,degC,EPI_home_turf_physprop,712,93.2726,23.8571,26.6067,25.6,28.5,-6.7891,1.2471,n.s. (CI spans 0)
+boiling_point,degC,EPI_home_turf_AND_leakfree,185,100.2422,28.0065,29.929,27.9,29.9,-12.5797,8.8237,n.s. (CI spans 0)
+boiling_point,degC,OUTSIDE_BOTH,106,122.7301,81.8626,135.16,66.7,110.1,-89.2849,-16.9114,SP better
+henry,log10_atm_m3_per_mol,full_test,429,2.9764,1.3766,1.8649,46.3,62.7,-0.846,-0.1101,SP better
+henry,log10_atm_m3_per_mol,leak_free,121,3.3909,1.7759,2.6071,52.4,76.9,-1.7661,0.0976,n.s. (CI spans 0)
+henry,log10_atm_m3_per_mol,EPI_home_turf_physprop,65,2.2066,1.3347,1.2287,60.5,55.7,-0.7835,0.9798,n.s. (CI spans 0)
+henry,log10_atm_m3_per_mol,EPI_home_turf_AND_leakfree,13,3.2783,2.3528,1.2268,71.8,37.4,-0.6558,2.5725,n.s. (CI spans 0)
+henry,log10_atm_m3_per_mol,OUTSIDE_BOTH,108,3.4042,1.6932,2.7266,49.7,80.1,-1.9098,-0.1732,SP better
+koc,log10_L_per_kg_linear,full_test,104,1.1057,0.6042,0.6654,54.6,60.2,-0.1548,0.038,n.s. (CI spans 0)
+koc,log10_L_per_kg_linear,leak_free,27,1.1016,0.5697,0.7114,51.7,64.6,-0.2727,-0.0028,SP better
+koc,log10_L_per_kg_linear,EPI_home_turf_physprop,104,1.1057,0.6042,0.6654,54.6,60.2,-0.1582,0.0418,n.s. (CI spans 0)
+koc,log10_L_per_kg_linear,EPI_home_turf_AND_leakfree,27,1.1016,0.5697,0.7114,51.7,64.6,-0.2724,-0.0092,SP better
+koh_gas,log10_cm3_per_molecule_s,full_test,97,1.1916,0.6606,0.2811,55.4,23.6,0.239,0.5425,EPI better
+koh_gas,log10_cm3_per_molecule_s,leak_free,30,1.253,0.7223,0.3341,57.6,26.7,0.2145,0.5984,EPI better
+koh_gas,log10_cm3_per_molecule_s,EPI_home_turf_physprop,97,1.1916,0.6606,0.2811,55.4,23.6,0.2347,0.5336,EPI better
+koh_gas,log10_cm3_per_molecule_s,EPI_home_turf_AND_leakfree,30,1.253,0.7223,0.3341,57.6,26.7,0.2226,0.6172,EPI better
+logkoa,log10,full_test,36,3.744,0.5465,0.5458,14.6,14.6,-0.2766,0.3027,n.s. (CI spans 0)
+logkoa,log10,EPI_home_turf_physprop,34,3.8394,0.5372,0.4942,14.0,12.9,-0.2698,0.3635,n.s. (CI spans 0)
+logkow,log10,full_test,1667,2.131,0.8811,1.4317,41.3,67.2,-0.9847,-0.2219,SP better
+logkow,log10,leak_free,451,2.0861,1.0706,1.9325,51.3,92.6,-1.8951,-0.0138,SP better
+logkow,log10,EPI_home_turf_physprop,987,2.0207,0.6611,0.652,32.7,32.3,-0.0941,0.1105,n.s. (CI spans 0)
+logkow,log10,EPI_home_turf_AND_leakfree,237,1.9749,0.8738,0.6787,44.2,34.4,-0.0133,0.4108,n.s. (CI spans 0)
+logkow,log10,OUTSIDE_BOTH,102,2.2424,1.0208,1.343,45.5,59.9,-0.5332,-0.0967,SP better
+melting_point,degC,full_test,3251,97.3782,47.6562,76.7573,48.9,78.8,-31.7496,-26.591,SP better
+melting_point,degC,leak_free,820,103.8486,55.1605,87.597,53.1,84.4,-38.2194,-26.7089,SP better
+melting_point,degC,EPI_home_turf_physprop,1145,105.6374,42.7375,69.0185,40.5,65.3,-29.6601,-22.8458,SP better
+melting_point,degC,EPI_home_turf_AND_leakfree,279,112.1042,47.2015,74.7676,42.1,66.7,-34.3181,-21.1039,SP better
+melting_point,degC,OUTSIDE_BOTH,443,99.2741,57.1239,92.4748,57.5,93.2,-42.8214,-28.0138,SP better
+vapor_pressure,log10_mmHg,full_test,1073,3.6832,1.5954,3.0559,43.3,83.0,-2.0553,-0.867,SP better
+vapor_pressure,log10_mmHg,leak_free,302,3.6568,1.6577,3.3973,45.3,92.9,-2.9606,-0.431,SP better
+vapor_pressure,log10_mmHg,EPI_home_turf_physprop,400,3.9307,1.1367,1.3633,28.9,34.7,-0.3955,-0.0601,SP better
+vapor_pressure,log10_mmHg,EPI_home_turf_AND_leakfree,101,3.9339,1.1682,1.3122,29.7,33.4,-0.4739,0.1867,n.s. (CI spans 0)
+vapor_pressure,log10_mmHg,OUTSIDE_BOTH,88,4.102,1.777,4.4254,43.3,107.9,-4.7155,-0.3487,SP better
+water_solubility,log10_mol_per_L,full_test,1406,2.2514,1.0226,1.9167,45.4,85.1,-1.1826,-0.618,SP better
+water_solubility,log10_mol_per_L,leak_free,403,2.2421,1.1318,1.9614,50.5,87.5,-1.1514,-0.5267,SP better
+water_solubility,log10_mol_per_L,EPI_home_turf_physprop,480,2.5037,0.9024,1.3031,36.0,52.0,-0.5281,-0.2649,SP better
+water_solubility,log10_mol_per_L,EPI_home_turf_AND_leakfree,132,2.5465,1.0424,1.6162,40.9,63.5,-0.9023,-0.2767,SP better
+water_solubility,log10_mol_per_L,OUTSIDE_BOTH,244,2.0845,1.1312,2.1642,54.3,103.8,-1.4379,-0.6282,SP better

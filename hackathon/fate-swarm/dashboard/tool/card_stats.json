@@ -1,0 +1,1582 @@
+{
+ "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5": {
+  "struct_only": {
+   "bcf": {
+    "all": {
+     "n": 209,
+     "rmse": 0.8727538135331403,
+     "rmse_naive": 1.1818081341544038,
+     "pct": 73.84902746143348,
+     "coverage": 0.9186602870813397,
+     "median_width": 3.303334324813331,
+     "rmse_pct_naive": 73.84902746143348,
+     "empirical_coverage": 0.9186602870813397
+    },
+    "bins": {
+     "<0.3": {
+      "n": 16,
+      "rmse": 0.9579101102400194,
+      "rmse_naive": 1.2295681199955582,
+      "pct": 77.90622533735502,
+      "coverage": 0.9375,
+      "median_width": 3.9689247936292062,
+      "rmse_pct_naive": 77.90622533735502,
+      "empirical_coverage": 0.9375
+     },
+     "0.3-0.5": {
+      "n": 102,
+      "rmse": 1.0252798336155922,
+      "rmse_naive": 1.2003609549168932,
+      "pct": 85.41429387684285,
+      "coverage": 0.9509803921568627,
+      "median_width": 3.9384155614789345,
+      "rmse_pct_naive": 85.41429387684285,
+      "empirical_coverage": 0.9509803921568627
+     },
+     "0.5-0.7": {
+      "n": 72,
+      "rmse": 0.6326297751677701,
+      "rmse_naive": 1.1130603599501143,
+      "pct": 56.836969308306294,
+      "coverage": 0.875,
+      "median_width": 2.361617293202055,
+      "rmse_pct_naive": 56.836969308306294,
+      "empirical_coverage": 0.875
+     },
+     ">=0.7": {
+      "n": 19,
+      "rmse": 0.667892442438481,
+      "rmse_naive": 1.2885182406161892,
+      "pct": 51.83414726974176,
+      "coverage": 0.8947368421052632,
+      "median_width": 3.7988430250901164,
+      "rmse_pct_naive": 51.83414726974176,
+      "empirical_coverage": 0.8947368421052632
+     }
+    },
+    "leak_free": {
+     "n": 55,
+     "rmse": 1.110155100202122,
+     "rmse_naive": 1.2627000757715892,
+     "pct": 87.9191441818634,
+     "coverage": 0.9636363636363636,
+     "median_width": 4.184778296799878,
+     "rmse_pct_naive": 87.9191441818634,
+     "empirical_coverage": 0.9636363636363636
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "boiling_point": {
+    "all": {
+     "n": 1337,
+     "rmse": 50.94064787316509,
+     "rmse_naive": 96.72200179569319,
+     "pct": 52.66707360003519,
+     "coverage": 0.8982797307404637,
+     "median_width": 82.37332900975983,
+     "rmse_pct_naive": 52.66707360003519,
+     "empirical_coverage": 0.8982797307404637
+    },
+    "bins": {
+     "<0.3": {
+      "n": 81,
+      "rmse": 66.46426606937769,
+      "rmse_naive": 108.74298468052977,
+      "pct": 61.12050930424571,
+      "coverage": 0.8888888888888888,
+      "median_width": 101.42356531573039,
+      "rmse_pct_naive": 61.12050930424571,
+      "empirical_coverage": 0.8888888888888888
+     },
+     "0.3-0.5": {
+      "n": 621,
+      "rmse": 54.29910249035002,
+      "rmse_naive": 102.36133497169322,
+      "pct": 53.04649700530555,
+      "coverage": 0.927536231884058,
+      "median_width": 103.98720990010013,
+      "rmse_pct_naive": 53.04649700530555,
+      "empirical_coverage": 0.927536231884058
+     },
+     "0.5-0.7": {
+      "n": 542,
+      "rmse": 42.74883200450629,
+      "rmse_naive": 88.9928655545046,
+      "pct": 48.03624620708986,
+      "coverage": 0.8579335793357934,
+      "median_width": 63.797023364484176,
+      "rmse_pct_naive": 48.03624620708986,
+      "empirical_coverage": 0.8579335793357934
+     },
+     ">=0.7": {
+      "n": 93,
+      "rmse": 55.86020565054354,
+      "rmse_naive": 89.84859253947705,
+      "pct": 62.17148657726616,
+      "coverage": 0.946236559139785,
+      "median_width": 107.25636366240536,
+      "rmse_pct_naive": 62.17148657726616,
+      "empirical_coverage": 0.946236559139785
+     }
+    },
+    "leak_free": {
+     "n": 375,
+     "rmse": 59.31962157675031,
+     "rmse_naive": 107.11658756452564,
+     "pct": 55.37855800439585,
+     "coverage": 0.92,
+     "median_width": 111.33301545499361,
+     "rmse_pct_naive": 55.37855800439585,
+     "empirical_coverage": 0.92
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "henry": {
+    "all": {
+     "n": 433,
+     "rmse": 1.4417667767356588,
+     "rmse_naive": 2.986364408365107,
+     "pct": 48.278327075460886,
+     "coverage": 0.9030023094688222,
+     "median_width": 4.279930519491791,
+     "rmse_pct_naive": 48.278327075460886,
+     "empirical_coverage": 0.9030023094688222
+    },
+    "bins": {
+     "<0.3": {
+      "n": 35,
+      "rmse": 2.792314810502825,
+      "rmse_naive": 3.5895993185826036,
+      "pct": 77.78903890603044,
+      "coverage": 0.9714285714285714,
+      "median_width": 8.44818710879457,
+      "rmse_pct_naive": 77.78903890603044,
+      "empirical_coverage": 0.9714285714285714
+     },
+     "0.3-0.5": {
+      "n": 214,
+      "rmse": 1.387567400523873,
+      "rmse_naive": 3.2841954931212833,
+      "pct": 42.24984180844654,
+      "coverage": 0.9205607476635514,
+      "median_width": 5.214764048937356,
+      "rmse_pct_naive": 42.24984180844654,
+      "empirical_coverage": 0.9205607476635514
+     },
+     "0.5-0.7": {
+      "n": 156,
+      "rmse": 1.0980962534530243,
+      "rmse_naive": 2.4937153990987175,
+      "pct": 44.03454595700455,
+      "coverage": 0.8717948717948718,
+      "median_width": 2.7769118319366326,
+      "rmse_pct_naive": 44.03454595700455,
+      "empirical_coverage": 0.8717948717948718
+     },
+     ">=0.7": {
+      "n": 28,
+      "rmse": 0.982834076155935,
+      "rmse_naive": 2.17433968083666,
+      "pct": 45.20149656551143,
+      "coverage": 0.8571428571428571,
+      "median_width": 2.0753274013853664,
+      "rmse_pct_naive": 45.20149656551143,
+      "empirical_coverage": 0.8571428571428571
+     }
+    },
+    "leak_free": {
+     "n": 125,
+     "rmse": 1.9089673194328554,
+     "rmse_naive": 3.4238026373029715,
+     "pct": 55.755764033659496,
+     "coverage": 0.928,
+     "median_width": 5.700921824745519,
+     "rmse_pct_naive": 55.755764033659496,
+     "empirical_coverage": 0.928
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "koc": {
+    "all": {
+     "n": 105,
+     "rmse": 0.6133985744082037,
+     "rmse_naive": 1.10014198007713,
+     "pct": 55.756310141460006,
+     "coverage": 0.8666666666666667,
+     "median_width": 2.6339633715248008,
+     "rmse_pct_naive": 55.756310141460006,
+     "empirical_coverage": 0.8666666666666667
+    },
+    "bins": {
+     "<0.3": {
+      "n": 6,
+      "rmse": 0.7318493159216155,
+      "rmse_naive": 0.9599627053277302,
+      "pct": 76.23726545415771,
+      "coverage": 0.6666666666666666,
+      "median_width": 1.748926834898062,
+      "rmse_pct_naive": 76.23726545415771,
+      "empirical_coverage": 0.6666666666666666
+     },
+     "0.3-0.5": {
+      "n": 53,
+      "rmse": 0.6269245568770161,
+      "rmse_naive": 0.9781090692887225,
+      "pct": 64.09556731059793,
+      "coverage": 0.8301886792452831,
+      "median_width": 2.1907732738122156,
+      "rmse_pct_naive": 64.09556731059793,
+      "empirical_coverage": 0.8301886792452831
+     },
+     "0.5-0.7": {
+      "n": 39,
+      "rmse": 0.535358539249259,
+      "rmse_naive": 1.1491233644390693,
+      "pct": 46.58843043458505,
+      "coverage": 0.9743589743589743,
+      "median_width": 3.612131163551811,
+      "rmse_pct_naive": 46.58843043458505,
+      "empirical_coverage": 0.9743589743589743
+     },
+     ">=0.7": {
+      "n": 7,
+      "rmse": 0.7823850513093851,
+      "rmse_naive": 1.6626044007569292,
+      "pct": 47.057799856249076,
+      "coverage": 0.7142857142857143,
+      "median_width": 1.1262326953678414,
+      "rmse_pct_naive": 47.057799856249076,
+      "empirical_coverage": 0.7142857142857143
+     }
+    },
+    "leak_free": {
+     "n": 28,
+     "rmse": 0.5924993044199938,
+     "rmse_naive": 1.0799462106147366,
+     "pct": 54.86377919532919,
+     "coverage": 0.7857142857142857,
+     "median_width": 1.7410607005611052,
+     "rmse_pct_naive": 54.86377919532919,
+     "empirical_coverage": 0.7857142857142857
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "koh_gas": {
+    "all": {
+     "n": 101,
+     "rmse": 0.6804514262390493,
+     "rmse_naive": 1.4288815901758565,
+     "pct": 47.62126063611081,
+     "coverage": 1.0,
+     "median_width": 2.711135679644265,
+     "rmse_pct_naive": 47.62126063611081,
+     "empirical_coverage": 1.0
+    },
+    "bins": {
+     "<0.3": {
+      "n": 14,
+      "rmse": 1.1484314980975472,
+      "rmse_naive": 1.3421375011832393,
+      "pct": 85.56735037096279,
+      "coverage": 1.0,
+      "median_width": 3.889659751381851,
+      "rmse_pct_naive": 85.56735037096279,
+      "empirical_coverage": 1.0
+     },
+     "0.3-0.5": {
+      "n": 46,
+      "rmse": 0.5819492266158532,
+      "rmse_naive": 1.2049097312639,
+      "pct": 48.298159730639135,
+      "coverage": 1.0,
+      "median_width": 2.7476173322174198,
+      "rmse_pct_naive": 48.298159730639135,
+      "empirical_coverage": 1.0
+     },
+     "0.5-0.7": {
+      "n": 37,
+      "rmse": 0.576609990201055,
+      "rmse_naive": 1.745563102205368,
+      "pct": 33.03289290845792,
+      "coverage": 1.0,
+      "median_width": 2.5755465693899033,
+      "rmse_pct_naive": 33.03289290845792,
+      "empirical_coverage": 1.0
+     },
+     ">=0.7": {
+      "n": 4,
+      "rmse": 0.3238781834805205,
+      "rmse_naive": 0.6065282683650148,
+      "pct": 53.39869555520986,
+      "coverage": 1.0,
+      "median_width": 1.1337304169567215,
+      "rmse_pct_naive": 53.39869555520986,
+      "empirical_coverage": 1.0
+     }
+    },
+    "leak_free": {
+     "n": 30,
+     "rmse": 0.7610985302726209,
+     "rmse_naive": 1.2527331006208977,
+     "pct": 60.75504270585604,
+     "coverage": 1.0,
+     "median_width": 3.335688126382715,
+     "rmse_pct_naive": 60.75504270585604,
+     "empirical_coverage": 1.0
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "logkoa": {
+    "all": {
+     "n": 36,
+     "rmse": 0.5097622547964951,
+     "rmse_naive": 3.7440411997825365,
+     "pct": 13.61529501401062,
+     "coverage": 0.9722222222222222,
+     "median_width": 4.3640340107000455,
+     "rmse_pct_naive": 13.61529501401062,
+     "empirical_coverage": 0.9722222222222222
+    },
+    "bins": {
+     "<0.3": {
+      "n": 3,
+      "rmse": 1.2775809536462466,
+      "rmse_naive": 5.1662109488333146,
+      "pct": 24.729554528445313,
+      "coverage": 0.6666666666666666,
+      "median_width": 3.5543860595172316,
+      "rmse_pct_naive": 24.729554528445313,
+      "empirical_coverage": 0.6666666666666666
+     },
+     "0.3-0.5": {
+      "n": 9,
+      "rmse": 0.31529580819586556,
+      "rmse_naive": 4.076899755758936,
+      "pct": 7.733715006126551,
+      "coverage": 1.0,
+      "median_width": 2.443208972318151,
+      "rmse_pct_naive": 7.733715006126551,
+      "empirical_coverage": 1.0
+     },
+     "0.5-0.7": {
+      "n": 18,
+      "rmse": 0.3552060970273146,
+      "rmse_naive": 3.4268026223631685,
+      "pct": 10.365525423298521,
+      "coverage": 1.0,
+      "median_width": 6.070424776600564,
+      "rmse_pct_naive": 10.365525423298521,
+      "empirical_coverage": 1.0
+     },
+     ">=0.7": {
+      "n": 6,
+      "rmse": 0.4641201437520835,
+      "rmse_naive": 3.2560103170023176,
+      "pct": 14.254259003066702,
+      "coverage": 1.0,
+      "median_width": 4.860781198552186,
+      "rmse_pct_naive": 14.254259003066702,
+      "empirical_coverage": 1.0
+     }
+    },
+    "leak_free": {
+     "n": 3,
+     "rmse_pct_naive": null,
+     "too_few": true
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "logkow": {
+    "all": {
+     "n": 1685,
+     "rmse": 0.8924442017822304,
+     "rmse_naive": 2.126797907872563,
+     "pct": 41.96187134089024,
+     "coverage": 0.8967359050445104,
+     "median_width": 2.1719236001395483,
+     "rmse_pct_naive": 41.96187134089024,
+     "empirical_coverage": 0.8967359050445104
+    },
+    "bins": {
+     "<0.3": {
+      "n": 123,
+      "rmse": 1.1237344869129942,
+      "rmse_naive": 2.029801203146317,
+      "pct": 55.361800218225135,
+      "coverage": 0.9105691056910569,
+      "median_width": 3.457265756386655,
+      "rmse_pct_naive": 55.361800218225135,
+      "empirical_coverage": 0.9105691056910569
+     },
+     "0.3-0.5": {
+      "n": 789,
+      "rmse": 0.9779294514618592,
+      "rmse_naive": 2.118919606976187,
+      "pct": 46.152267799221384,
+      "coverage": 0.8897338403041825,
+      "median_width": 2.3318969712561497,
+      "rmse_pct_naive": 46.152267799221384,
+      "empirical_coverage": 0.8897338403041825
+     },
+     "0.5-0.7": {
+      "n": 644,
+      "rmse": 0.7479383220145092,
+      "rmse_naive": 2.0844892858574346,
+      "pct": 35.88113055265006,
+      "coverage": 0.8990683229813664,
+      "median_width": 1.8556274781262905,
+      "rmse_pct_naive": 35.88113055265006,
+      "empirical_coverage": 0.8990683229813664
+     },
+     ">=0.7": {
+      "n": 129,
+      "rmse": 0.7465136522989984,
+      "rmse_naive": 2.44984991957519,
+      "pct": 30.471811613196518,
+      "coverage": 0.9147286821705426,
+      "median_width": 1.9660761217036966,
+      "rmse_pct_naive": 30.471811613196518,
+      "empirical_coverage": 0.9147286821705426
+     }
+    },
+    "leak_free": {
+     "n": 460,
+     "rmse": 1.077107944062364,
+     "rmse_naive": 2.071591878334755,
+     "pct": 51.99421543051207,
+     "coverage": 0.8826086956521739,
+     "median_width": 2.548087756098624,
+     "rmse_pct_naive": 51.99421543051207,
+     "empirical_coverage": 0.8826086956521739
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "melting_point": {
+    "all": {
+     "n": 3334,
+     "rmse": 50.12522247474408,
+     "rmse_naive": 97.83994572912248,
+     "pct": 51.231858420608354,
+     "coverage": 0.8875224955008998,
+     "median_width": 144.65310529982713,
+     "rmse_pct_naive": 51.231858420608354,
+     "empirical_coverage": 0.8875224955008998
+    },
+    "bins": {
+     "<0.3": {
+      "n": 197,
+      "rmse": 67.92775025259485,
+      "rmse_naive": 113.59680031216834,
+      "pct": 59.79723906476838,
+      "coverage": 0.9086294416243654,
+      "median_width": 195.16096304201713,
+      "rmse_pct_naive": 59.79723906476838,
+      "empirical_coverage": 0.9086294416243654
+     },
+     "0.3-0.5": {
+      "n": 1548,
+      "rmse": 54.33390011006188,
+      "rmse_naive": 101.4234456695649,
+      "pct": 53.57134117399285,
+      "coverage": 0.8934108527131783,
+      "median_width": 168.51434773095156,
+      "rmse_pct_naive": 53.57134117399285,
+      "empirical_coverage": 0.8934108527131783
+     },
+     "0.5-0.7": {
+      "n": 1372,
+      "rmse": 43.456420595421015,
+      "rmse_naive": 91.47366551311491,
+      "pct": 47.507028773423876,
+      "coverage": 0.8841107871720116,
+      "median_width": 119.15545065189443,
+      "rmse_pct_naive": 47.507028773423876,
+      "empirical_coverage": 0.8841107871720116
+     },
+     ">=0.7": {
+      "n": 217,
+      "rmse": 37.60558127868391,
+      "rmse_naive": 95.25968552990047,
+      "pct": 39.47691100332273,
+      "coverage": 0.847926267281106,
+      "median_width": 101.56661539924845,
+      "rmse_pct_naive": 39.47691100332273,
+      "empirical_coverage": 0.847926267281106
+     }
+    },
+    "leak_free": {
+     "n": 849,
+     "rmse": 59.09107542240635,
+     "rmse_naive": 104.98746132278731,
+     "pct": 56.28393588900006,
+     "coverage": 0.8987043580683156,
+     "median_width": 177.9480198597763,
+     "rmse_pct_naive": 56.28393588900006,
+     "empirical_coverage": 0.8987043580683156
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "pka_acidic": {
+    "all": {
+     "n": 172,
+     "rmse": 2.2544111999635867,
+     "rmse_naive": 3.3188016608090836,
+     "pct": 67.9284702844818,
+     "coverage": 0.9011627906976745,
+     "median_width": 5.761688927776672,
+     "rmse_pct_naive": 67.9284702844818,
+     "empirical_coverage": 0.9011627906976745
+    },
+    "bins": {
+     "<0.3": {
+      "n": 2,
+      "rmse": 2.3312345288126255,
+      "rmse_naive": 2.395207156246364,
+      "pct": 97.3291401010177,
+      "coverage": 1.0,
+      "median_width": 17.37691922056284,
+      "rmse_pct_naive": 97.3291401010177,
+      "empirical_coverage": 1.0
+     },
+     "0.3-0.5": {
+      "n": 74,
+      "rmse": 3.0612078048635754,
+      "rmse_naive": 3.636453161230455,
+      "pct": 84.18114214972493,
+      "coverage": 0.9459459459459459,
+      "median_width": 10.63790863107202,
+      "rmse_pct_naive": 84.18114214972493,
+      "empirical_coverage": 0.9459459459459459
+     },
+     "0.5-0.7": {
+      "n": 80,
+      "rmse": 1.3521136224313044,
+      "rmse_naive": 3.1425878896969777,
+      "pct": 43.025483133319185,
+      "coverage": 0.85,
+      "median_width": 3.4023905080859467,
+      "rmse_pct_naive": 43.025483133319185,
+      "empirical_coverage": 0.85
+     },
+     ">=0.7": {
+      "n": 16,
+      "rmse": 1.2141846120593758,
+      "rmse_naive": 2.673728010996008,
+      "pct": 45.411672655778915,
+      "coverage": 0.9375,
+      "median_width": 3.753694492462473,
+      "rmse_pct_naive": 45.411672655778915,
+      "empirical_coverage": 0.9375
+     }
+    },
+    "leak_free": {
+     "n": 39,
+     "rmse": 3.4833734692338063,
+     "rmse_naive": 3.324075497800939,
+     "pct": 104.79224889862616,
+     "coverage": 0.9230769230769231,
+     "median_width": 15.624594511997403,
+     "rmse_pct_naive": 104.79224889862616,
+     "empirical_coverage": 0.9230769230769231
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "pka_basic": {
+    "all": {
+     "n": 211,
+     "rmse": 2.2461161823644353,
+     "rmse_naive": 3.287403731228279,
+     "pct": 68.324926477017,
+     "coverage": 0.9289099526066351,
+     "median_width": 7.648767663281374,
+     "rmse_pct_naive": 68.324926477017,
+     "empirical_coverage": 0.9289099526066351
+    },
+    "bins": {
+     "<0.3": {
+      "n": 6,
+      "rmse": 3.0671076942777975,
+      "rmse_naive": 2.8635488901111525,
+      "pct": 107.10861982729212,
+      "coverage": 0.8333333333333334,
+      "median_width": 7.016526611246328,
+      "rmse_pct_naive": 107.10861982729212,
+      "empirical_coverage": 0.8333333333333334
+     },
+     "0.3-0.5": {
+      "n": 112,
+      "rmse": 2.3930702930652803,
+      "rmse_naive": 3.359018483217364,
+      "pct": 71.24314156119584,
+      "coverage": 0.9107142857142857,
+      "median_width": 7.436217987726154,
+      "rmse_pct_naive": 71.24314156119584,
+      "empirical_coverage": 0.9107142857142857
+     },
+     "0.5-0.7": {
+      "n": 83,
+      "rmse": 1.9712595136402642,
+      "rmse_naive": 3.2754711483861714,
+      "pct": 60.18247221049424,
+      "coverage": 0.9518072289156626,
+      "median_width": 9.045401614034919,
+      "rmse_pct_naive": 60.18247221049424,
+      "empirical_coverage": 0.9518072289156626
+     },
+     ">=0.7": {
+      "n": 10,
+      "rmse": 2.1007954334503136,
+      "rmse_naive": 2.773135928946221,
+      "pct": 75.75522755743914,
+      "coverage": 1.0,
+      "median_width": 5.5673579920647835,
+      "rmse_pct_naive": 75.75522755743914,
+      "empirical_coverage": 1.0
+     }
+    },
+    "leak_free": {
+     "n": 54,
+     "rmse": 2.6526510028375685,
+     "rmse_naive": 3.328534939445837,
+     "pct": 79.69425140777415,
+     "coverage": 0.8703703703703703,
+     "median_width": 7.351624666155728,
+     "rmse_pct_naive": 79.69425140777415,
+     "empirical_coverage": 0.8703703703703703
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "vapor_pressure": {
+    "all": {
+     "n": 1087,
+     "rmse": 1.6321317723283038,
+     "rmse_naive": 3.693001755771097,
+     "pct": 44.195261206625545,
+     "coverage": 0.8978840846366145,
+     "median_width": 4.020920911536495,
+     "rmse_pct_naive": 44.195261206625545,
+     "empirical_coverage": 0.8978840846366145
+    },
+    "bins": {
+     "<0.3": {
+      "n": 72,
+      "rmse": 1.8416521143884579,
+      "rmse_naive": 3.5823287709187692,
+      "pct": 51.40935497989272,
+      "coverage": 0.9027777777777778,
+      "median_width": 5.479969644839562,
+      "rmse_pct_naive": 51.40935497989272,
+      "empirical_coverage": 0.9027777777777778
+     },
+     "0.3-0.5": {
+      "n": 538,
+      "rmse": 1.6814060922560121,
+      "rmse_naive": 3.8364872826280743,
+      "pct": 43.826708350358814,
+      "coverage": 0.8996282527881041,
+      "median_width": 4.314387269251845,
+      "rmse_pct_naive": 43.826708350358814,
+      "empirical_coverage": 0.8996282527881041
+     },
+     "0.5-0.7": {
+      "n": 395,
+      "rmse": 1.5103594595030936,
+      "rmse_naive": 3.470659158973583,
+      "pct": 43.51794256713382,
+      "coverage": 0.8784810126582279,
+      "median_width": 3.051364353882529,
+      "rmse_pct_naive": 43.51794256713382,
+      "empirical_coverage": 0.8784810126582279
+     },
+     ">=0.7": {
+      "n": 82,
+      "rmse": 1.6723939002451202,
+      "rmse_naive": 3.8638742159536505,
+      "pct": 43.282824615250924,
+      "coverage": 0.975609756097561,
+      "median_width": 5.642334770630405,
+      "rmse_pct_naive": 43.282824615250924,
+      "empirical_coverage": 0.975609756097561
+     }
+    },
+    "leak_free": {
+     "n": 311,
+     "rmse": 1.7161972654466966,
+     "rmse_naive": 3.6653343033810124,
+     "pct": 46.82239390452395,
+     "coverage": 0.9131832797427653,
+     "median_width": 4.76236489865586,
+     "rmse_pct_naive": 46.82239390452395,
+     "empirical_coverage": 0.9131832797427653
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "water_solubility": {
+    "all": {
+     "n": 1443,
+     "rmse": 1.0889534739906697,
+     "rmse_naive": 2.2535732359712872,
+     "pct": 48.32119305505206,
+     "coverage": 0.9272349272349273,
+     "median_width": 3.378898693724277,
+     "rmse_pct_naive": 48.32119305505206,
+     "empirical_coverage": 0.9272349272349273
+    },
+    "bins": {
+     "<0.3": {
+      "n": 111,
+      "rmse": 1.3226908506025479,
+      "rmse_naive": 2.233639470534813,
+      "pct": 59.21684623015049,
+      "coverage": 0.9369369369369369,
+      "median_width": 4.376761205330564,
+      "rmse_pct_naive": 59.21684623015049,
+      "empirical_coverage": 0.9369369369369369
+     },
+     "0.3-0.5": {
+      "n": 719,
+      "rmse": 1.0935370752200477,
+      "rmse_naive": 2.1876523597734563,
+      "pct": 49.98678470711359,
+      "coverage": 0.9151599443671766,
+      "median_width": 3.238214538022877,
+      "rmse_pct_naive": 49.98678470711359,
+      "empirical_coverage": 0.9151599443671766
+     },
+     "0.5-0.7": {
+      "n": 517,
+      "rmse": 0.99530488896966,
+      "rmse_naive": 2.2727941015144353,
+      "pct": 43.79212742176937,
+      "coverage": 0.9477756286266924,
+      "median_width": 3.525993455029022,
+      "rmse_pct_naive": 43.79212742176937,
+      "empirical_coverage": 0.9477756286266924
+     },
+     ">=0.7": {
+      "n": 96,
+      "rmse": 1.2289410301509693,
+      "rmse_naive": 2.627965354641193,
+      "pct": 46.76397380888462,
+      "coverage": 0.8958333333333334,
+      "median_width": 2.7179658935139646,
+      "rmse_pct_naive": 46.76397380888462,
+      "empirical_coverage": 0.8958333333333334
+     }
+    },
+    "leak_free": {
+     "n": 418,
+     "rmse": 1.1595679644328323,
+     "rmse_naive": 2.2313326653458243,
+     "pct": 51.96750724093021,
+     "coverage": 0.916267942583732,
+     "median_width": 3.6840877727824095,
+     "rmse_pct_naive": 51.96750724093021,
+     "empirical_coverage": 0.916267942583732
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_sall/test_predictions.parquet",
+    "n_missing_nn": 0
+   }
+  },
+  "struct_physics": {
+   "bcf": {
+    "all": {
+     "n": 206,
+     "rmse": 0.8512998312725133,
+     "rmse_naive": 1.1842024430289817,
+     "pct": 71.88803200701376,
+     "coverage": 0.883495145631068,
+     "median_width": 3.2019480187311573,
+     "rmse_pct_naive": 71.88803200701376,
+     "empirical_coverage": 0.883495145631068
+    },
+    "bins": {
+     "<0.3": {
+      "n": 14,
+      "rmse": 0.9695810712224137,
+      "rmse_naive": 1.229658297046161,
+      "pct": 78.8496343700933,
+      "coverage": 0.8571428571428571,
+      "median_width": 3.7091197535491296,
+      "rmse_pct_naive": 78.8496343700933,
+      "empirical_coverage": 0.8571428571428571
+     },
+     "0.3-0.5": {
+      "n": 101,
+      "rmse": 0.9920358576920869,
+      "rmse_naive": 1.2062786086191934,
+      "pct": 82.23936415714553,
+      "coverage": 0.8712871287128713,
+      "median_width": 3.3469101829043453,
+      "rmse_pct_naive": 82.23936415714553,
+      "empirical_coverage": 0.8712871287128713
+     },
+     "0.5-0.7": {
+      "n": 72,
+      "rmse": 0.6188104728946879,
+      "rmse_naive": 1.1130603599501143,
+      "pct": 55.59541020061321,
+      "coverage": 0.875,
+      "median_width": 2.906345463233693,
+      "rmse_pct_naive": 55.59541020061321,
+      "empirical_coverage": 0.875
+     },
+     ">=0.7": {
+      "n": 19,
+      "rmse": 0.694374928073232,
+      "rmse_naive": 1.2885182406161892,
+      "pct": 53.88941391634248,
+      "coverage": 1.0,
+      "median_width": 3.3620009243395144,
+      "rmse_pct_naive": 53.88941391634248,
+      "empirical_coverage": 1.0
+     }
+    },
+    "leak_free": {
+     "n": 52,
+     "rmse": 1.1225237800147607,
+     "rmse_naive": 1.2760335317949063,
+     "pct": 87.96977133005163,
+     "coverage": 0.9230769230769231,
+     "median_width": 3.7115259296390315,
+     "rmse_pct_naive": 87.96977133005163,
+     "empirical_coverage": 0.9230769230769231
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "boiling_point": {
+    "all": {
+     "n": 1326,
+     "rmse": 49.39718964554786,
+     "rmse_naive": 96.58382396980704,
+     "pct": 51.14437140218207,
+     "coverage": 0.8989441930618401,
+     "median_width": 73.26308509591959,
+     "rmse_pct_naive": 51.14437140218207,
+     "empirical_coverage": 0.8989441930618401
+    },
+    "bins": {
+     "<0.3": {
+      "n": 77,
+      "rmse": 66.84583018128507,
+      "rmse_naive": 109.64912605016166,
+      "pct": 60.963395322188724,
+      "coverage": 0.9090909090909091,
+      "median_width": 118.46331296529857,
+      "rmse_pct_naive": 60.963395322188724,
+      "empirical_coverage": 0.9090909090909091
+     },
+     "0.3-0.5": {
+      "n": 616,
+      "rmse": 52.280727224978556,
+      "rmse_naive": 102.07524910343959,
+      "pct": 51.21782967387035,
+      "coverage": 0.9301948051948052,
+      "median_width": 89.17368559501156,
+      "rmse_pct_naive": 51.21782967387035,
+      "empirical_coverage": 0.9301948051948052
+     },
+     "0.5-0.7": {
+      "n": 540,
+      "rmse": 41.13110560530056,
+      "rmse_naive": 88.97198937473182,
+      "pct": 46.22927495985817,
+      "coverage": 0.8740740740740741,
+      "median_width": 57.19252425985496,
+      "rmse_pct_naive": 46.22927495985817,
+      "empirical_coverage": 0.8740740740740741
+     },
+     ">=0.7": {
+      "n": 93,
+      "rmse": 56.2476657309,
+      "rmse_naive": 89.84859253947705,
+      "pct": 62.60272324932224,
+      "coverage": 0.8279569892473119,
+      "median_width": 64.57584639210563,
+      "rmse_pct_naive": 62.60272324932224,
+      "empirical_coverage": 0.8279569892473119
+     }
+    },
+    "leak_free": {
+     "n": 368,
+     "rmse": 57.0757971393758,
+     "rmse_naive": 106.77902161847756,
+     "pct": 53.45225707658959,
+     "coverage": 0.9320652173913043,
+     "median_width": 101.8036036220666,
+     "rmse_pct_naive": 53.45225707658959,
+     "empirical_coverage": 0.9320652173913043
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "henry": {
+    "all": {
+     "n": 431,
+     "rmse": 1.3835577029972548,
+     "rmse_naive": 2.9845946708035953,
+     "pct": 46.35663651522687,
+     "coverage": 0.9396751740139211,
+     "median_width": 4.1519900723974,
+     "rmse_pct_naive": 46.35663651522687,
+     "empirical_coverage": 0.9396751740139211
+    },
+    "bins": {
+     "<0.3": {
+      "n": 34,
+      "rmse": 2.6724878007966306,
+      "rmse_naive": 3.6363244369993595,
+      "pct": 73.49420677660785,
+      "coverage": 0.9705882352941176,
+      "median_width": 7.576763459876711,
+      "rmse_pct_naive": 73.49420677660785,
+      "empirical_coverage": 0.9705882352941176
+     },
+     "0.3-0.5": {
+      "n": 213,
+      "rmse": 1.318073597215769,
+      "rmse_naive": 3.2768971950936496,
+      "pct": 40.22322089290019,
+      "coverage": 0.9436619718309859,
+      "median_width": 4.921780016718717,
+      "rmse_pct_naive": 40.22322089290019,
+      "empirical_coverage": 0.9436619718309859
+     },
+     "0.5-0.7": {
+      "n": 156,
+      "rmse": 1.0967751681788462,
+      "rmse_naive": 2.4937153990987175,
+      "pct": 43.98156937135827,
+      "coverage": 0.9423076923076923,
+      "median_width": 3.260253965797806,
+      "rmse_pct_naive": 43.98156937135827,
+      "empirical_coverage": 0.9423076923076923
+     },
+     ">=0.7": {
+      "n": 28,
+      "rmse": 0.9353354101617193,
+      "rmse_naive": 2.17433968083666,
+      "pct": 43.01698664680641,
+      "coverage": 0.8571428571428571,
+      "median_width": 1.8967434783073402,
+      "rmse_pct_naive": 43.01698664680641,
+      "empirical_coverage": 0.8571428571428571
+     }
+    },
+    "leak_free": {
+     "n": 123,
+     "rmse": 1.7889785558647742,
+     "rmse_naive": 3.425053471150589,
+     "pct": 52.23213508733331,
+     "coverage": 0.9512195121951219,
+     "median_width": 5.606338585293116,
+     "rmse_pct_naive": 52.23213508733331,
+     "empirical_coverage": 0.9512195121951219
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "koc": {
+    "all": {
+     "n": 104,
+     "rmse": 0.6042015477938838,
+     "rmse_naive": 1.1053879758780054,
+     "pct": 54.65968157596149,
+     "coverage": 0.8653846153846154,
+     "median_width": 2.476677434950458,
+     "rmse_pct_naive": 54.65968157596149,
+     "empirical_coverage": 0.8653846153846154
+    },
+    "bins": {
+     "<0.3": {
+      "n": 5,
+      "rmse": 0.7697589261077757,
+      "rmse_naive": 1.0509194916555653,
+      "pct": 73.2462317256231,
+      "coverage": 0.6,
+      "median_width": 1.9731133075897371,
+      "rmse_pct_naive": 73.2462317256231,
+      "empirical_coverage": 0.6
+     },
+     "0.3-0.5": {
+      "n": 53,
+      "rmse": 0.6203328814606149,
+      "rmse_naive": 0.9781090692887225,
+      "pct": 63.42164702671848,
+      "coverage": 0.8113207547169812,
+      "median_width": 2.2845718408116467,
+      "rmse_pct_naive": 63.42164702671848,
+      "empirical_coverage": 0.8113207547169812
+     },
+     "0.5-0.7": {
+      "n": 39,
+      "rmse": 0.5174286457584841,
+      "rmse_naive": 1.1491233644390693,
+      "pct": 45.02811984952205,
+      "coverage": 1.0,
+      "median_width": 2.9512493618644515,
+      "rmse_pct_naive": 45.02811984952205,
+      "empirical_coverage": 1.0
+     },
+     ">=0.7": {
+      "n": 7,
+      "rmse": 0.771538211102022,
+      "rmse_naive": 1.6626044007569292,
+      "pct": 46.405399309106,
+      "coverage": 0.7142857142857143,
+      "median_width": 1.5300212802590893,
+      "rmse_pct_naive": 46.405399309106,
+      "empirical_coverage": 0.7142857142857143
+     }
+    },
+    "leak_free": {
+     "n": 27,
+     "rmse": 0.5697122575016839,
+     "rmse_naive": 1.099645320175737,
+     "pct": 51.808728418963014,
+     "coverage": 0.8518518518518519,
+     "median_width": 2.050506263797131,
+     "rmse_pct_naive": 51.808728418963014,
+     "empirical_coverage": 0.8518518518518519
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "koh_gas": {
+    "all": {
+     "n": 101,
+     "rmse": 0.6836161019249574,
+     "rmse_naive": 1.4288815901758565,
+     "pct": 47.84273984808096,
+     "coverage": 0.9603960396039604,
+     "median_width": 2.4793946687001984,
+     "rmse_pct_naive": 47.84273984808096,
+     "empirical_coverage": 0.9603960396039604
+    },
+    "bins": {
+     "<0.3": {
+      "n": 14,
+      "rmse": 1.0727719430915132,
+      "rmse_naive": 1.3421375011832393,
+      "pct": 79.93010717201098,
+      "coverage": 0.9285714285714286,
+      "median_width": 3.6994613643288847,
+      "rmse_pct_naive": 79.93010717201098,
+      "empirical_coverage": 0.9285714285714286
+     },
+     "0.3-0.5": {
+      "n": 46,
+      "rmse": 0.6381446793982455,
+      "rmse_naive": 1.2049097312639,
+      "pct": 52.962032162264826,
+      "coverage": 0.9347826086956522,
+      "median_width": 2.3218940122320646,
+      "rmse_pct_naive": 52.962032162264826,
+      "empirical_coverage": 0.9347826086956522
+     },
+     "0.5-0.7": {
+      "n": 37,
+      "rmse": 0.5707119605204267,
+      "rmse_naive": 1.745563102205368,
+      "pct": 32.69500597253583,
+      "coverage": 1.0,
+      "median_width": 2.5739503998076003,
+      "rmse_pct_naive": 32.69500597253583,
+      "empirical_coverage": 1.0
+     },
+     ">=0.7": {
+      "n": 4,
+      "rmse": 0.2760467148422529,
+      "rmse_naive": 0.6065282683650148,
+      "pct": 45.51258848765235,
+      "coverage": 1.0,
+      "median_width": 1.0529410601328326,
+      "rmse_pct_naive": 45.51258848765235,
+      "empirical_coverage": 1.0
+     }
+    },
+    "leak_free": {
+     "n": 30,
+     "rmse": 0.7223122003905817,
+     "rmse_naive": 1.2527331006208977,
+     "pct": 57.658905957907464,
+     "coverage": 0.9333333333333333,
+     "median_width": 3.2254888065144733,
+     "rmse_pct_naive": 57.658905957907464,
+     "empirical_coverage": 0.9333333333333333
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "logkoa": {
+    "all": {
+     "n": 36,
+     "rmse": 0.5465312775167547,
+     "rmse_naive": 3.7440411997825365,
+     "pct": 14.597362805422618,
+     "coverage": 0.9722222222222222,
+     "median_width": 3.7955710555212225,
+     "rmse_pct_naive": 14.597362805422618,
+     "empirical_coverage": 0.9722222222222222
+    },
+    "bins": {
+     "<0.3": {
+      "n": 3,
+      "rmse": 1.1273765101725672,
+      "rmse_naive": 5.1662109488333146,
+      "pct": 21.82211530536055,
+      "coverage": 0.6666666666666666,
+      "median_width": 2.9890553562784414,
+      "rmse_pct_naive": 21.82211530536055,
+      "empirical_coverage": 0.6666666666666666
+     },
+     "0.3-0.5": {
+      "n": 9,
+      "rmse": 0.390425594801705,
+      "rmse_naive": 4.076899755758936,
+      "pct": 9.576531634122194,
+      "coverage": 1.0,
+      "median_width": 3.3207458126202,
+      "rmse_pct_naive": 9.576531634122194,
+      "empirical_coverage": 1.0
+     },
+     "0.5-0.7": {
+      "n": 18,
+      "rmse": 0.45627869813055366,
+      "rmse_naive": 3.4268026223631685,
+      "pct": 13.314997927015062,
+      "coverage": 1.0,
+      "median_width": 3.9504895000049345,
+      "rmse_pct_naive": 13.314997927015062,
+      "empirical_coverage": 1.0
+     },
+     ">=0.7": {
+      "n": 6,
+      "rmse": 0.5508817997198677,
+      "rmse_naive": 3.2560103170023176,
+      "pct": 16.918920583367292,
+      "coverage": 1.0,
+      "median_width": 3.852324670930191,
+      "rmse_pct_naive": 16.918920583367292,
+      "empirical_coverage": 1.0
+     }
+    },
+    "leak_free": {
+     "n": 3,
+     "rmse_pct_naive": null,
+     "too_few": true
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "logkow": {
+    "all": {
+     "n": 1670,
+     "rmse": 0.881601772741954,
+     "rmse_naive": 2.125802014784486,
+     "pct": 41.47149012987133,
+     "coverage": 0.8988023952095808,
+     "median_width": 2.1630370653775866,
+     "rmse_pct_naive": 41.47149012987133,
+     "empirical_coverage": 0.8988023952095808
+    },
+    "bins": {
+     "<0.3": {
+      "n": 121,
+      "rmse": 1.1494731394983968,
+      "rmse_naive": 2.038908069127678,
+      "pct": 56.37689883635533,
+      "coverage": 0.8677685950413223,
+      "median_width": 3.1126074745393786,
+      "rmse_pct_naive": 56.37689883635533,
+      "empirical_coverage": 0.8677685950413223
+     },
+     "0.3-0.5": {
+      "n": 781,
+      "rmse": 0.9509914705001105,
+      "rmse_naive": 2.1163880354846967,
+      "pct": 44.934645941821046,
+      "coverage": 0.9014084507042254,
+      "median_width": 2.374043740232466,
+      "rmse_pct_naive": 44.934645941821046,
+      "empirical_coverage": 0.9014084507042254
+     },
+     "0.5-0.7": {
+      "n": 639,
+      "rmse": 0.7487050236285152,
+      "rmse_naive": 2.0825562952189545,
+      "pct": 35.95125017015679,
+      "coverage": 0.9014084507042254,
+      "median_width": 1.770089730965418,
+      "rmse_pct_naive": 35.95125017015679,
+      "empirical_coverage": 0.9014084507042254
+     },
+     ">=0.7": {
+      "n": 129,
+      "rmse": 0.7551500660731777,
+      "rmse_naive": 2.44984991957519,
+      "pct": 30.824339892793212,
+      "coverage": 0.8992248062015504,
+      "median_width": 1.7414625103083203,
+      "rmse_pct_naive": 30.824339892793212,
+      "empirical_coverage": 0.8992248062015504
+     }
+    },
+    "leak_free": {
+     "n": 454,
+     "rmse": 1.0709854288041376,
+     "rmse_naive": 2.0740682746376002,
+     "pct": 51.63694184518925,
+     "coverage": 0.8634361233480177,
+     "median_width": 2.544154124397635,
+     "rmse_pct_naive": 51.63694184518925,
+     "empirical_coverage": 0.8634361233480177
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "melting_point": {
+    "all": {
+     "n": 3253,
+     "rmse": 47.646933803852136,
+     "rmse_naive": 97.30875468766229,
+     "pct": 48.964693831287164,
+     "coverage": 0.8970181371042115,
+     "median_width": 140.4738032476679,
+     "rmse_pct_naive": 48.964693831287164,
+     "empirical_coverage": 0.8970181371042115
+    },
+    "bins": {
+     "<0.3": {
+      "n": 186,
+      "rmse": 62.41901706396704,
+      "rmse_naive": 110.59890733333572,
+      "pct": 56.43728185834732,
+      "coverage": 0.9247311827956989,
+      "median_width": 194.23102960056758,
+      "rmse_pct_naive": 56.43728185834732,
+      "empirical_coverage": 0.9247311827956989
+     },
+     "0.3-0.5": {
+      "n": 1508,
+      "rmse": 51.00565310061323,
+      "rmse_naive": 100.93714702843161,
+      "pct": 50.53209309179913,
+      "coverage": 0.8892572944297082,
+      "median_width": 155.71405803866088,
+      "rmse_pct_naive": 50.53209309179913,
+      "empirical_coverage": 0.8892572944297082
+     },
+     "0.5-0.7": {
+      "n": 1344,
+      "rmse": 42.40071605377386,
+      "rmse_naive": 91.38176765874535,
+      "pct": 46.3995358594008,
+      "coverage": 0.9002976190476191,
+      "median_width": 121.57915571787741,
+      "rmse_pct_naive": 46.3995358594008,
+      "empirical_coverage": 0.9002976190476191
+     },
+     ">=0.7": {
+      "n": 215,
+      "rmse": 38.6354257592626,
+      "rmse_naive": 94.99697387387099,
+      "pct": 40.67016472604641,
+      "coverage": 0.9069767441860465,
+      "median_width": 111.92436305404547,
+      "rmse_pct_naive": 40.67016472604641,
+      "empirical_coverage": 0.9069767441860465
+     }
+    },
+    "leak_free": {
+     "n": 822,
+     "rmse": 55.11178198891257,
+     "rmse_naive": 103.75601453363049,
+     "pct": 53.11671061830267,
+     "coverage": 0.8978102189781022,
+     "median_width": 167.0344387767176,
+     "rmse_pct_naive": 53.11671061830267,
+     "empirical_coverage": 0.8978102189781022
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "pka_acidic": {
+    "all": {
+     "n": 168,
+     "rmse": 2.157967849695771,
+     "rmse_naive": 3.3525667538661517,
+     "pct": 64.36763256711356,
+     "coverage": 0.9226190476190477,
+     "median_width": 5.866923027006042,
+     "rmse_pct_naive": 64.36763256711356,
+     "empirical_coverage": 0.9226190476190477
+    },
+    "bins": {
+     "<0.3": {
+      "n": 2,
+      "rmse": 2.3020211069407535,
+      "rmse_naive": 2.395207156246364,
+      "pct": 96.10947850324368,
+      "coverage": 0.5,
+      "median_width": 8.447253770924132,
+      "rmse_pct_naive": 96.10947850324368,
+      "empirical_coverage": 0.5
+     },
+     "0.3-0.5": {
+      "n": 70,
+      "rmse": 2.921706707583642,
+      "rmse_naive": 3.7270179100814995,
+      "pct": 78.39261248733179,
+      "coverage": 0.9857142857142858,
+      "median_width": 14.403608373706412,
+      "rmse_pct_naive": 78.39261248733179,
+      "empirical_coverage": 0.9857142857142858
+     },
+     "0.5-0.7": {
+      "n": 80,
+      "rmse": 1.3699039445463985,
+      "rmse_naive": 3.1425878896969777,
+      "pct": 43.59158733595485,
+      "coverage": 0.8875,
+      "median_width": 3.381181741621069,
+      "rmse_pct_naive": 43.59158733595485,
+      "empirical_coverage": 0.8875
+     },
+     ">=0.7": {
+      "n": 16,
+      "rmse": 1.2265598914700384,
+      "rmse_naive": 2.673728010996008,
+      "pct": 45.874520011971015,
+      "coverage": 0.875,
+      "median_width": 3.4523416512912735,
+      "rmse_pct_naive": 45.874520011971015,
+      "empirical_coverage": 0.875
+     }
+    },
+    "leak_free": {
+     "n": 38,
+     "rmse": 3.2649199654182177,
+     "rmse_naive": 3.3643021348289275,
+     "pct": 97.04597965854921,
+     "coverage": 0.9473684210526315,
+     "median_width": 15.266661367840054,
+     "rmse_pct_naive": 97.04597965854921,
+     "empirical_coverage": 0.9473684210526315
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "pka_basic": {
+    "all": {
+     "n": 210,
+     "rmse": 2.134535796080722,
+     "rmse_naive": 3.294780811083079,
+     "pct": 64.78536565772474,
+     "coverage": 0.9476190476190476,
+     "median_width": 7.218891227666525,
+     "rmse_pct_naive": 64.78536565772474,
+     "empirical_coverage": 0.9476190476190476
+    },
+    "bins": {
+     "<0.3": {
+      "n": 6,
+      "rmse": 2.9958081601868045,
+      "rmse_naive": 2.8635488901111525,
+      "pct": 104.61871876999867,
+      "coverage": 0.8333333333333334,
+      "median_width": 7.737471314602595,
+      "rmse_pct_naive": 104.61871876999867,
+      "empirical_coverage": 0.8333333333333334
+     },
+     "0.3-0.5": {
+      "n": 111,
+      "rmse": 2.233767053501279,
+      "rmse_naive": 3.373300825550273,
+      "pct": 66.21902904662804,
+      "coverage": 0.9459459459459459,
+      "median_width": 8.60648967350299,
+      "rmse_pct_naive": 66.21902904662804,
+      "empirical_coverage": 0.9459459459459459
+     },
+     "0.5-0.7": {
+      "n": 83,
+      "rmse": 1.8997876845178394,
+      "rmse_naive": 3.2754711483861714,
+      "pct": 58.000440194805776,
+      "coverage": 0.9518072289156626,
+      "median_width": 5.871488278876583,
+      "rmse_pct_naive": 58.000440194805776,
+      "empirical_coverage": 0.9518072289156626
+     },
+     ">=0.7": {
+      "n": 10,
+      "rmse": 2.225767559519351,
+      "rmse_naive": 2.773135928946221,
+      "pct": 80.26175479847944,
+      "coverage": 1.0,
+      "median_width": 4.811559484057862,
+      "rmse_pct_naive": 80.26175479847944,
+      "empirical_coverage": 1.0
+     }
+    },
+    "leak_free": {
+     "n": 54,
+     "rmse": 2.4571568736845153,
+     "rmse_naive": 3.328534939445837,
+     "pct": 73.82097284199168,
+     "coverage": 0.8888888888888888,
+     "median_width": 8.601241206734876,
+     "rmse_pct_naive": 73.82097284199168,
+     "empirical_coverage": 0.8888888888888888
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "vapor_pressure": {
+    "all": {
+     "n": 1076,
+     "rmse": 1.594524147325742,
+     "rmse_naive": 3.6866124907885305,
+     "pct": 43.251742658331004,
+     "coverage": 0.8977695167286245,
+     "median_width": 3.710883806851156,
+     "rmse_pct_naive": 43.251742658331004,
+     "empirical_coverage": 0.8977695167286245
+    },
+    "bins": {
+     "<0.3": {
+      "n": 69,
+      "rmse": 1.8494689631132444,
+      "rmse_naive": 3.601510867819804,
+      "pct": 51.352585928272696,
+      "coverage": 0.927536231884058,
+      "median_width": 4.932034261880631,
+      "rmse_pct_naive": 51.352585928272696,
+      "empirical_coverage": 0.927536231884058
+     },
+     "0.3-0.5": {
+      "n": 533,
+      "rmse": 1.6340158774196816,
+      "rmse_naive": 3.8342481847424263,
+      "pct": 42.61633046921427,
+      "coverage": 0.8930581613508443,
+      "median_width": 3.7949385181988786,
+      "rmse_pct_naive": 42.61633046921427,
+      "empirical_coverage": 0.8930581613508443
+     },
+     "0.5-0.7": {
+      "n": 392,
+      "rmse": 1.4623812480137695,
+      "rmse_naive": 3.451170571639641,
+      "pct": 42.373485101867814,
+      "coverage": 0.8801020408163265,
+      "median_width": 2.8379954995378696,
+      "rmse_pct_naive": 42.373485101867814,
+      "empirical_coverage": 0.8801020408163265
+     },
+     ">=0.7": {
+      "n": 82,
+      "rmse": 1.7046978257646623,
+      "rmse_naive": 3.8638742159536505,
+      "pct": 44.118874748201975,
+      "coverage": 0.9878048780487805,
+      "median_width": 6.15497657136855,
+      "rmse_pct_naive": 44.118874748201975,
+      "empirical_coverage": 0.9878048780487805
+     }
+    },
+    "leak_free": {
+     "n": 305,
+     "rmse": 1.653937517127921,
+     "rmse_naive": 3.6653893471328614,
+     "pct": 45.12310591019923,
+     "coverage": 0.9049180327868852,
+     "median_width": 4.066414508655183,
+     "rmse_pct_naive": 45.12310591019923,
+     "empirical_coverage": 0.9049180327868852
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+    "n_missing_nn": 0
+   },
+   "water_solubility": {
+    "all": {
+     "n": 1408,
+     "rmse": 1.023138490560405,
+     "rmse_naive": 2.2434924187578353,
+     "pct": 45.604722441045325,
+     "coverage": 0.9190340909090909,
+     "median_width": 3.119085045158976,
+     "rmse_pct_naive": 45.604722441045325,
+     "empirical_coverage": 0.9190340909090909
+    },
+    "bins": {
+     "<0.3": {
+      "n": 103,
+      "rmse": 1.271283529829086,
+      "rmse_naive": 2.25374465867235,
+      "pct": 56.40761143624769,
+      "coverage": 0.912621359223301,
+      "median_width": 3.418616318288237,
+      "rmse_pct_naive": 56.40761143624769,
+      "empirical_coverage": 0.912621359223301
+     },
+     "0.3-0.5": {
+      "n": 698,
+      "rmse": 1.0408155607712253,
+      "rmse_naive": 2.1668730285910196,
+      "pct": 48.03306640666443,
+      "coverage": 0.9226361031518625,
+      "median_width": 3.2689225012156538,
+      "rmse_pct_naive": 48.03306640666443,
+      "empirical_coverage": 0.9226361031518625
+     },
+     "0.5-0.7": {
+      "n": 512,
+      "rmse": 0.9384591427248556,
+      "rmse_naive": 2.2719449633182487,
+      "pct": 41.30642061655428,
+      "coverage": 0.916015625,
+      "median_width": 2.8176021611131965,
+      "rmse_pct_naive": 41.30642061655428,
+      "empirical_coverage": 0.916015625
+     },
+     ">=0.7": {
+      "n": 95,
+      "rmse": 1.0279492889829396,
+      "rmse_naive": 2.6026278326224594,
+      "pct": 39.4965917177316,
+      "coverage": 0.9157894736842105,
+      "median_width": 2.9107207138862643,
+      "rmse_pct_naive": 39.4965917177316,
+      "empirical_coverage": 0.9157894736842105
+     }
+    },
+    "leak_free": {
+     "n": 405,
+     "rmse": 1.1329160239076481,
+     "rmse_naive": 2.23237640911474,
+     "pct": 50.7493279037522,
+     "coverage": 0.9111111111111111,
+     "median_width": 3.379750802738487,
+     "rmse_pct_naive": 50.7493279037522,
+     "empirical_coverage": 0.9111111111111111
+    },
+    "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+    "n_missing_nn": 0
+   }
+  }
+ }
+}

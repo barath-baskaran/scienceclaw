@@ -1,0 +1,68 @@
+{
+ "_capture": "Verbatim status record captured from the orchestrator's market_view tool by SCRIBE at 2026-10-31 22:15 (run 3). Titles and statuses are the tool's; the 'why' field is the first clause of the principal's recorded verdict, quoted from the same tool output. This file is the citable record for the hypothesis-market paragraph of the whitepaper.",
+ "proposals": [
+  {
+   "id": "P-001",
+   "title": "Conformer ensembles beat single-conformer physics descriptors",
+   "status": "funded",
+   "owner": "W-PHYSICS",
+   "why": "in wave 1 with the scope restricted by the critic's power challenge to the five endpoints with at least 50 test rows in the nn_sim < 0.3 bin; everything else is reported as underpowered with its n, not as a null"
+  },
+  {
+   "id": "P-002",
+   "title": "The Run 2 spectral representation, not spectra, was what failed",
+   "status": "funded",
+   "owner": "W-SPECTRA",
+   "why": "in wave 1; CPU only, feeds a first-class deliverable, and a negative result is publishable, on condition that a precursor-mass-only and a mass+adduct control are separate rungs"
+  },
+  {
+   "id": "P-003",
+   "title": "Mechanism-matched quantities beat generic descriptors on their own endpoint",
+   "status": "rejected",
+   "owner": null,
+   "why": "on power and capacity, not on merit: the only clean design is a 2x2 crossover, and the endpoints it would be scored on are the weakest we have (kOH 30 leak-free rows, acidic pKa 38). Designed and scoped, not run"
+  },
+  {
+   "id": "P-004",
+   "title": "Measured receptor potencies make a better hazard feature than model-derived labels",
+   "status": "funded",
+   "owner": "W-TOX",
+   "why": "in its weak, non-circular form only; the docking half was refused because it depended on a container marked no longer supported. Falsified by the experiment that was run"
+  },
+  {
+   "id": "P-005",
+   "title": "Input modes form a user matrix, not a single pipeline",
+   "status": "funded",
+   "owner": "W-SPECTRA",
+   "why": "in wave 1 with the skill bar pre-registered before anyone ran it, and the naive baseline fixed as the subset's own training mean"
+  },
+  {
+   "id": "P-006",
+   "title": "Inventory-scale ML quantum-chemistry descriptors are a publishable artefact",
+   "status": "rejected then reversed into a deliverable",
+   "owner": "OPS-1",
+   "why": "as framed because the novelty half of the claim could not be checked from a machine whose network reaches two hosts; reversed after a human note said the dataset was wanted, and reinstated as a deliverable rather than a bet"
+  },
+  {
+   "id": "P-007",
+   "title": "Transformation products are the cleanest available test of extrapolation",
+   "status": "rejected",
+   "owner": null,
+   "why": "on the proposer's own feasibility data: first-generation hydrolysis products had median nn_sim_train 0.489 against 0.455 for their parents, so they are new to the lab but not new to the model, and the stated test (intervals widen with distance) cannot fail for a Mondrian conformal predictor"
+  },
+  {
+   "id": "P-008",
+   "title": "P-007 refined: transformation products test extrapolation only where the product is measured",
+   "status": "funded",
+   "owner": "W-TP",
+   "why": "P-007 with the tautological test removed: score the predicted parent-to-product change against a control of random pairs matched on similarity and size"
+  },
+  {
+   "id": "P-009",
+   "title": "Graph-CV estimate of the physics effect",
+   "status": "funded",
+   "owner": "W-SPACE",
+   "why": "to give the physics question a larger and harder test than the small leak-free subsets allow, with a permutation control for capacity"
+  }
+ ]
+}

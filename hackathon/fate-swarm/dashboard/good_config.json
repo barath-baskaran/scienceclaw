@@ -1,0 +1,34 @@
+{
+ "structure_methods": [
+  {
+   "method": "this tool: structure only",
+   "path": "W-MODEL/v5_sall/test_predictions.parquet",
+   "pred_col": "S",
+   "variant_label": "struct_only",
+   "nominal": 0.9
+  },
+  {
+   "method": "this tool: + quantum chemistry",
+   "path": "W-MODEL/v5_main/test_predictions.parquet",
+   "pred_col": "SP",
+   "variant_label": "struct_physics",
+   "nominal": 0.9
+  }
+ ],
+ "spectra_methods": [],
+ "card_stats_sources": [
+  {
+   "model_dir": "W-MODEL/frozen_v5",
+   "path": "W-MODEL/v5_sall/test_predictions.parquet",
+   "pred_col": "S",
+   "variant_label": "struct_only"
+  },
+  {
+   "model_dir": "W-MODEL/frozen_v5",
+   "path": "W-MODEL/v5_main/test_predictions.parquet",
+   "pred_col": "SP",
+   "variant_label": "struct_physics"
+  }
+ ],
+ "undefined_cells_csv": "W-SPACE/refuse_cells_for_dashboard.csv"
+}

@@ -1,0 +1,320 @@
+{
+ "benchmark": "ToxCast invitrodb v4.3 endocrine_models/ar.er.lit.xlsx literature reference calls (binding)",
+ "active_definition": "score in Strong/Moderate/Medium/Weak",
+ "targets": {
+  "ER_alpha": {
+   "n_benchmark": 1294,
+   "n_train_chembl_reg": 4547,
+   "n_train_chembl_cls": 6676,
+   "n_train_opera": 6738,
+   "n_train_opera_equal_data": 6676,
+   "A_chembl_measured_potency": {
+    "n": 1294,
+    "positives": 180,
+    "base_rate": 0.1391,
+    "pr_auc": 0.28,
+    "roc_auc": 0.68,
+    "balanced_accuracy_at_median_score": 0.623
+   },
+   "A2_chembl_measured_call": {
+    "n": 1294,
+    "positives": 180,
+    "base_rate": 0.1391,
+    "pr_auc": 0.344,
+    "roc_auc": 0.748,
+    "balanced_accuracy_at_median_score": 0.671
+   },
+   "B_opera_consensus_labels": {
+    "n": 1294,
+    "positives": 180,
+    "base_rate": 0.1391,
+    "pr_auc": 0.405,
+    "roc_auc": 0.777,
+    "balanced_accuracy_at_median_score": 0.69
+   },
+   "B_eq_opera_equal_n": {
+    "n": 1294,
+    "positives": 180,
+    "base_rate": 0.1391,
+    "pr_auc": 0.404,
+    "roc_auc": 0.776,
+    "balanced_accuracy_at_median_score": 0.694
+   },
+   "delta_pr_auc_A_minus_B_95CI": [
+    -0.193,
+    -0.049
+   ],
+   "delta_pr_auc_A2_minus_B_95CI": [
+    -0.117,
+    0.009
+   ],
+   "strict_definition": {
+    "A": {
+     "n": 1294,
+     "positives": 18,
+     "base_rate": 0.0139,
+     "pr_auc": 0.053,
+     "roc_auc": 0.702,
+     "balanced_accuracy_at_median_score": 0.613
+    },
+    "A2": {
+     "n": 1294,
+     "positives": 18,
+     "base_rate": 0.0139,
+     "pr_auc": 0.144,
+     "roc_auc": 0.84,
+     "balanced_accuracy_at_median_score": 0.754
+    },
+    "B": {
+     "n": 1294,
+     "positives": 18,
+     "base_rate": 0.0139,
+     "pr_auc": 0.282,
+     "roc_auc": 0.837,
+     "balanced_accuracy_at_median_score": 0.669
+    },
+    "delta_A_minus_B_95CI": [
+     -0.481,
+     -0.043
+    ]
+   },
+   "by_nn_sim_to_chembl_train": {
+    "<0.3": {
+     "A": {
+      "n": 850,
+      "positives": 108,
+      "base_rate": 0.1271,
+      "pr_auc": 0.252,
+      "roc_auc": 0.645,
+      "balanced_accuracy_at_median_score": 0.606
+     },
+     "A2": {
+      "n": 850,
+      "positives": 108,
+      "base_rate": 0.1271,
+      "pr_auc": 0.266,
+      "roc_auc": 0.721,
+      "balanced_accuracy_at_median_score": 0.691
+     },
+     "B": {
+      "n": 850,
+      "positives": 108,
+      "base_rate": 0.1271,
+      "pr_auc": 0.317,
+      "roc_auc": 0.751,
+      "balanced_accuracy_at_median_score": 0.686
+     }
+    },
+    "0.3-0.5": {
+     "A": {
+      "n": 365,
+      "positives": 47,
+      "base_rate": 0.1288,
+      "pr_auc": 0.277,
+      "roc_auc": 0.716,
+      "balanced_accuracy_at_median_score": 0.64
+     },
+     "A2": {
+      "n": 365,
+      "positives": 47,
+      "base_rate": 0.1288,
+      "pr_auc": 0.346,
+      "roc_auc": 0.765,
+      "balanced_accuracy_at_median_score": 0.688
+     },
+     "B": {
+      "n": 365,
+      "positives": 47,
+      "base_rate": 0.1288,
+      "pr_auc": 0.403,
+      "roc_auc": 0.804,
+      "balanced_accuracy_at_median_score": 0.713
+     }
+    },
+    "0.5-0.7": {
+     "A": {
+      "n": 64,
+      "positives": 19,
+      "base_rate": 0.2969,
+      "pr_auc": 0.65,
+      "roc_auc": 0.723,
+      "balanced_accuracy_at_median_score": 0.594
+     },
+     "A2": {
+      "n": 64,
+      "positives": 19,
+      "base_rate": 0.2969,
+      "pr_auc": 0.811,
+      "roc_auc": 0.883,
+      "balanced_accuracy_at_median_score": 0.818
+     },
+     "B": {
+      "n": 64,
+      "positives": 19,
+      "base_rate": 0.2969,
+      "pr_auc": 0.819,
+      "roc_auc": 0.881,
+      "balanced_accuracy_at_median_score": 0.781
+     }
+    }
+   }
+  },
+  "AR": {
+   "n_benchmark": 1141,
+   "n_train_chembl_reg": 3019,
+   "n_train_chembl_cls": 4320,
+   "n_train_opera": 5851,
+   "n_train_opera_equal_data": 4320,
+   "A_chembl_measured_potency": {
+    "n": 1141,
+    "positives": 139,
+    "base_rate": 0.1218,
+    "pr_auc": 0.355,
+    "roc_auc": 0.715,
+    "balanced_accuracy_at_median_score": 0.633
+   },
+   "A2_chembl_measured_call": {
+    "n": 1141,
+    "positives": 139,
+    "base_rate": 0.1218,
+    "pr_auc": 0.427,
+    "roc_auc": 0.697,
+    "balanced_accuracy_at_median_score": 0.608
+   },
+   "B_opera_consensus_labels": {
+    "n": 1141,
+    "positives": 139,
+    "base_rate": 0.1218,
+    "pr_auc": 0.569,
+    "roc_auc": 0.782,
+    "balanced_accuracy_at_median_score": 0.67
+   },
+   "B_eq_opera_equal_n": {
+    "n": 1141,
+    "positives": 139,
+    "base_rate": 0.1218,
+    "pr_auc": 0.568,
+    "roc_auc": 0.777,
+    "balanced_accuracy_at_median_score": 0.666
+   },
+   "delta_pr_auc_A_minus_B_95CI": [
+    -0.282,
+    -0.139
+   ],
+   "delta_pr_auc_A2_minus_B_95CI": [
+    -0.193,
+    -0.084
+   ],
+   "strict_definition": {
+    "A": {
+     "n": 1141,
+     "positives": 36,
+     "base_rate": 0.0316,
+     "pr_auc": 0.341,
+     "roc_auc": 0.884,
+     "balanced_accuracy_at_median_score": 0.715
+    },
+    "A2": {
+     "n": 1141,
+     "positives": 36,
+     "base_rate": 0.0316,
+     "pr_auc": 0.428,
+     "roc_auc": 0.887,
+     "balanced_accuracy_at_median_score": 0.729
+    },
+    "B": {
+     "n": 1141,
+     "positives": 36,
+     "base_rate": 0.0316,
+     "pr_auc": 0.585,
+     "roc_auc": 0.955,
+     "balanced_accuracy_at_median_score": 0.758
+    },
+    "delta_A_minus_B_95CI": [
+     -0.42,
+     -0.04
+    ]
+   },
+   "by_nn_sim_to_chembl_train": {
+    "<0.3": {
+     "A": {
+      "n": 875,
+      "positives": 77,
+      "base_rate": 0.088,
+      "pr_auc": 0.118,
+      "roc_auc": 0.599,
+      "balanced_accuracy_at_median_score": 0.582
+     },
+     "A2": {
+      "n": 875,
+      "positives": 77,
+      "base_rate": 0.088,
+      "pr_auc": 0.107,
+      "roc_auc": 0.55,
+      "balanced_accuracy_at_median_score": 0.539
+     },
+     "B": {
+      "n": 875,
+      "positives": 77,
+      "base_rate": 0.088,
+      "pr_auc": 0.191,
+      "roc_auc": 0.679,
+      "balanced_accuracy_at_median_score": 0.624
+     }
+    },
+    "0.3-0.5": {
+     "A": {
+      "n": 195,
+      "positives": 18,
+      "base_rate": 0.0923,
+      "pr_auc": 0.219,
+      "roc_auc": 0.664,
+      "balanced_accuracy_at_median_score": 0.59
+     },
+     "A2": {
+      "n": 195,
+      "positives": 18,
+      "base_rate": 0.0923,
+      "pr_auc": 0.282,
+      "roc_auc": 0.683,
+      "balanced_accuracy_at_median_score": 0.59
+     },
+     "B": {
+      "n": 195,
+      "positives": 18,
+      "base_rate": 0.0923,
+      "pr_auc": 0.459,
+      "roc_auc": 0.747,
+      "balanced_accuracy_at_median_score": 0.621
+     }
+    },
+    "0.5-0.7": {
+     "A": {
+      "n": 47,
+      "positives": 23,
+      "base_rate": 0.4894,
+      "pr_auc": 0.735,
+      "roc_auc": 0.784,
+      "balanced_accuracy_at_median_score": 0.681
+     },
+     "A2": {
+      "n": 47,
+      "positives": 23,
+      "base_rate": 0.4894,
+      "pr_auc": 0.908,
+      "roc_auc": 0.904,
+      "balanced_accuracy_at_median_score": 0.766
+     },
+     "B": {
+      "n": 47,
+      "positives": 23,
+      "base_rate": 0.4894,
+      "pr_auc": 0.995,
+      "roc_auc": 0.995,
+      "balanced_accuracy_at_median_score": 0.937
+     }
+    }
+   }
+  }
+ }
+}

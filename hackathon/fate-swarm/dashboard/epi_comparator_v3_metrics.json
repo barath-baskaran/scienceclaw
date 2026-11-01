@@ -1,0 +1,540 @@
+{
+ "_doc": "Canonical EPI Suite comparator for run 3 (owner: W-TOOL).\n\nInputs : labels_v2.parquet (test split), cached raw EPI responses\n         (W-LADDER/epi_cache_ladder [main, 4999 test compounds], results/epi_cache, W-TOOL/epi_cache_wtool).\n         Test compounds missing from every cache are fetched (<=1 req/s VM-wide via epi_rate.wait_turn)\n         into W-TOOL/epi_cache_wtool with a .meta.json provenance record.\nIdentity: RDKit InChIKey of EPI's returned chemicalProperties.smiles must equal the label inchikey_std\n         ('inchikey'), else first-block skeleton match ('skeleton'), else the row is REJECTED (epi value NaN,\n         identity='mismatch').\nOutputs: epi_comparator_v3.parquet  long table: one row per (test compound, endpoint) incl. pKa rows with\n                                    epi_status='no_epi_module'\n         epi_comparator_v3_metrics.json / .md: per endpoint EPI RMSE, naive RMSE (predict TRAIN mean),\n                                    RMSE as % of naive, overall and by nn_sim_train bin\n                                    (<0.3, 0.3-0.5, 0.5-0.7, >=0.7); n and n_test so coverage is visible.\n         Cross-check vs W-LADDER/epi_v2_values.parquet (independent earlier extraction) printed + stored.\nCAVEAT (carried into every output): EPI's training data (PhysProp) overlaps CompTox; the SMILES-only API\nreturns no experimental values, so per-compound overlap cannot be flagged -> EPI errors here are optimistic.\n",
+ "caveat": "EPI numbers are optimistic: EPI Suite was trained on PhysProp, which overlaps CompTox; the SMILES-only API returns no experimental values, so overlap cannot be flagged per compound.",
+ "naive": "predict the TRAIN-split mean of labels_v2 for the endpoint",
+ "pct_naive": "100 * RMSE(EPI) / RMSE(naive) on the same rows; 100 = no skill",
+ "n_fetched_this_run": 2,
+ "cross_check_vs_WLADDER_epi_v2_values": {
+  "logkow": {
+   "n_compared": 1700,
+   "n_abs_diff_gt_1e6": 0,
+   "max_abs_diff": 0.0
+  },
+  "water_solubility": {
+   "n_compared": 1462,
+   "n_abs_diff_gt_1e6": 0,
+   "max_abs_diff": 0.0
+  },
+  "vapor_pressure": {
+   "n_compared": 1092,
+   "n_abs_diff_gt_1e6": 0,
+   "max_abs_diff": 0.0
+  },
+  "henry": {
+   "n_compared": 425,
+   "n_abs_diff_gt_1e6": 0,
+   "max_abs_diff": 0.0
+  },
+  "melting_point": {
+   "n_compared": 3322,
+   "n_abs_diff_gt_1e6": 0,
+   "max_abs_diff": 0.0
+  },
+  "boiling_point": {
+   "n_compared": 1335,
+   "n_abs_diff_gt_1e6": 0,
+   "max_abs_diff": 0.0
+  },
+  "koc": {
+   "n_compared": 103,
+   "n_abs_diff_gt_1e6": 0,
+   "max_abs_diff": 0.0
+  },
+  "logkoa": {
+   "n_compared": 33,
+   "n_abs_diff_gt_1e6": 0,
+   "max_abs_diff": 0.0
+  },
+  "koh_gas": {
+   "n_compared": 91,
+   "n_abs_diff_gt_1e6": 0,
+   "max_abs_diff": 0.0
+  },
+  "bcf": {
+   "n_compared": 207,
+   "n_abs_diff_gt_1e6": 0,
+   "max_abs_diff": 0.0
+  }
+ },
+ "metrics": {
+  "bcf": {
+   "units": "log10_L_per_kg_linear",
+   "n_test": 210,
+   "n_with_epi": 210,
+   "n_identity_skeleton_only": 0,
+   "status_counts": {
+    "ok": 210
+   },
+   "overall": {
+    "n": 210,
+    "rmse": 1.0328348536838412,
+    "rmse_naive": 1.1825646977912136,
+    "pct_naive": 87.33854947750116,
+    "mae": 0.7630691464917688
+   },
+   "by_nn_sim_train": {
+    "<0.3": {
+     "n": 17,
+     "rmse": 1.1143011419271112,
+     "rmse_naive": 1.2357832081932656,
+     "pct_naive": 90.16962963562491,
+     "mae": 0.6493426818898239
+    },
+    "0.3-0.5": {
+     "n": 102,
+     "rmse": 1.1479830457894964,
+     "rmse_naive": 1.2003609549168932,
+     "pct_naive": 95.63648676568098,
+     "mae": 0.8569819996825755
+    },
+    "0.5-0.7": {
+     "n": 72,
+     "rmse": 0.8137573328934259,
+     "rmse_naive": 1.1130603599501143,
+     "pct_naive": 73.10990150883617,
+     "mae": 0.6483650943839613
+    },
+    ">=0.7": {
+     "n": 19,
+     "rmse": 1.0464978309175612,
+     "rmse_naive": 1.2885182406161892,
+     "pct_naive": 81.21715300026408,
+     "mae": 0.795328653046132
+    }
+   }
+  },
+  "boiling_point": {
+   "units": "degC",
+   "n_test": 1355,
+   "n_with_epi": 1351,
+   "n_identity_skeleton_only": 0,
+   "status_counts": {
+    "ok": 1351,
+    "epi_no_value": 4
+   },
+   "overall": {
+    "n": 1351,
+    "rmse": 73.95656765226398,
+    "rmse_naive": 96.85122259191765,
+    "pct_naive": 76.36100574990134,
+    "mae": 36.2420890495149
+   },
+   "by_nn_sim_train": {
+    "<0.3": {
+     "n": 82,
+     "rmse": 136.09381271488087,
+     "rmse_naive": 111.0517553727704,
+     "pct_naive": 122.54989780040049,
+     "mae": 61.77914140902883
+    },
+    "0.3-0.5": {
+     "n": 632,
+     "rmse": 69.60802560717453,
+     "rmse_naive": 102.15001662857715,
+     "pct_naive": 68.14294104353695,
+     "mae": 36.41305773361356
+    },
+    "0.5-0.7": {
+     "n": 544,
+     "rmse": 62.173854411293775,
+     "rmse_naive": 89.070772066322,
+     "pct_naive": 69.80275680668761,
+     "mae": 31.068874492520603
+    },
+    ">=0.7": {
+     "n": 93,
+     "rmse": 87.09987114748775,
+     "rmse_naive": 89.84859253947705,
+     "pct_naive": 96.94071847504834,
+     "mae": 42.82422041698169
+    }
+   }
+  },
+  "henry": {
+   "units": "log10_atm_m3_per_mol",
+   "n_test": 434,
+   "n_with_epi": 432,
+   "n_identity_skeleton_only": 0,
+   "status_counts": {
+    "ok": 432,
+    "epi_no_value": 2
+   },
+   "overall": {
+    "n": 432,
+    "rmse": 1.8585637691403738,
+    "rmse_naive": 2.969009133484575,
+    "pct_naive": 62.59878921150613,
+    "mae": 1.075322335289526
+   },
+   "by_nn_sim_train": {
+    "<0.3": {
+     "n": 34,
+     "rmse": 2.7184266344596035,
+     "rmse_naive": 3.5485395359615888,
+     "pct_naive": 76.60691410960875,
+     "mae": 1.4922996201344898
+    },
+    "0.3-0.5": {
+     "n": 214,
+     "rmse": 2.139870382453818,
+     "rmse_naive": 3.262268580867578,
+     "pct_naive": 65.5945496028023,
+     "mae": 1.295368094614752
+    },
+    "0.5-0.7": {
+     "n": 156,
+     "rmse": 1.2224136441811264,
+     "rmse_naive": 2.4937153990987175,
+     "pct_naive": 49.01977365271647,
+     "mae": 0.7674310173766642
+    },
+    ">=0.7": {
+     "n": 28,
+     "rmse": 0.9992785536141627,
+     "rmse_naive": 2.17433968083666,
+     "pct_naive": 45.95779410278951,
+     "mae": 0.6026089572209278
+    }
+   }
+  },
+  "koc": {
+   "units": "log10_L_per_kg_linear",
+   "n_test": 105,
+   "n_with_epi": 105,
+   "n_identity_skeleton_only": 0,
+   "status_counts": {
+    "ok": 105
+   },
+   "overall": {
+    "n": 105,
+    "rmse": 0.6681503202647682,
+    "rmse_naive": 1.10014198007713,
+    "pct_naive": 60.73309921487813,
+    "mae": 0.4974374783606756
+   },
+   "by_nn_sim_train": {
+    "<0.3": {
+     "n": 6,
+     "rmse": 0.6897376100943607,
+     "rmse_naive": 0.9599627053277302,
+     "pct_naive": 71.85045900912213,
+     "mae": 0.5926329851150512
+    },
+    "0.3-0.5": {
+     "n": 53,
+     "rmse": 0.6886197908831692,
+     "rmse_naive": 0.9781090692887225,
+     "pct_naive": 70.40317000474508,
+     "mae": 0.5375048607700275
+    },
+    "0.5-0.7": {
+     "n": 39,
+     "rmse": 0.6674688923133691,
+     "rmse_naive": 1.1491233644390693,
+     "pct_naive": 58.08505100226432,
+     "mae": 0.4650405469918862
+    },
+    ">=0.7": {
+     "n": 7,
+     "rmse": 0.46485863283466267,
+     "rmse_naive": 1.6626044007569292,
+     "pct_naive": 27.959665728241053,
+     "mae": 0.2929711948122297
+    }
+   }
+  },
+  "koh_gas": {
+   "units": "log10_cm3_per_molecule_s",
+   "n_test": 101,
+   "n_with_epi": 97,
+   "n_identity_skeleton_only": 0,
+   "status_counts": {
+    "ok": 97,
+    "epi_no_value": 4
+   },
+   "overall": {
+    "n": 97,
+    "rmse": 0.28109401317778776,
+    "rmse_naive": 1.1913342333180508,
+    "pct_naive": 23.59489094801694,
+    "mae": 0.16690223857709488
+   },
+   "by_nn_sim_train": {
+    "<0.3": {
+     "n": 14,
+     "rmse": 0.3968772274888287,
+     "rmse_naive": 1.3421375011832393,
+     "pct_naive": 29.570534102425313,
+     "mae": 0.20922010282875345
+    },
+    "0.3-0.5": {
+     "n": 46,
+     "rmse": 0.25190547386202805,
+     "rmse_naive": 1.2049097312639,
+     "pct_naive": 20.90658472795217,
+     "mae": 0.15866455402013568
+    },
+    "0.5-0.7": {
+     "n": 33,
+     "rmse": 0.2741336469914098,
+     "rmse_naive": 1.157277125973159,
+     "pct_naive": 23.687813475176895,
+     "mae": 0.16883359426587982
+    },
+    ">=0.7": {
+     "n": 4,
+     "rmse": 0.12274265890307441,
+     "rmse_naive": 0.6065282683650148,
+     "pct_naive": 20.236923043000964,
+     "mae": 0.097589401668845
+    }
+   }
+  },
+  "logkoa": {
+   "units": "log10",
+   "n_test": 36,
+   "n_with_epi": 36,
+   "n_identity_skeleton_only": 0,
+   "status_counts": {
+    "ok": 36
+   },
+   "overall": {
+    "n": 36,
+    "rmse": 0.545803938440165,
+    "rmse_naive": 3.7440411997825365,
+    "pct_naive": 14.577936227621285,
+    "mae": 0.3819284279147784
+   },
+   "by_nn_sim_train": {
+    "<0.3": {
+     "n": 3,
+     "rmse": 0.3412705362676846,
+     "rmse_naive": 5.1662109488333146,
+     "pct_naive": 6.605818841848758,
+     "mae": 0.3004361140727997
+    },
+    "0.3-0.5": {
+     "n": 9,
+     "rmse": 0.30435542945851785,
+     "rmse_naive": 4.076899755758936,
+     "pct_naive": 7.465364558659856,
+     "mae": 0.27254238446553547
+    },
+    "0.5-0.7": {
+     "n": 18,
+     "rmse": 0.6257369953265224,
+     "rmse_naive": 3.4268026223631685,
+     "pct_naive": 18.260082773457373,
+     "mae": 0.4505247608820598
+    },
+    ">=0.7": {
+     "n": 6,
+     "rmse": 0.6446628131949634,
+     "rmse_naive": 3.2560103170023176,
+     "pct_naive": 19.799163713599025,
+     "mae": 0.38096465110778804
+    }
+   }
+  },
+  "logkow": {
+   "units": "log10",
+   "n_test": 1757,
+   "n_with_epi": 1751,
+   "n_identity_skeleton_only": 0,
+   "status_counts": {
+    "ok": 1751,
+    "epi_no_value": 6
+   },
+   "overall": {
+    "n": 1751,
+    "rmse": 1.5048652480300848,
+    "rmse_naive": 2.1603588137622305,
+    "pct_naive": 69.65811597793729,
+    "mae": 0.7311532984498857
+   },
+   "by_nn_sim_train": {
+    "<0.3": {
+     "n": 126,
+     "rmse": 3.1988982185966273,
+     "rmse_naive": 2.027541085852251,
+     "pct_naive": 157.77230069061764,
+     "mae": 1.1584278134920638
+    },
+    "0.3-0.5": {
+     "n": 823,
+     "rmse": 1.3275741503211227,
+     "rmse_naive": 2.1668376318846554,
+     "pct_naive": 61.26781863052819,
+     "mae": 0.75976495510435
+    },
+    "0.5-0.7": {
+     "n": 665,
+     "rmse": 1.1984813179252778,
+     "rmse_naive": 2.1075905417425522,
+     "pct_naive": 56.86499792954923,
+     "mae": 0.6189294854937895
+    },
+    ">=0.7": {
+     "n": 137,
+     "rmse": 1.4046852780253485,
+     "rmse_naive": 2.470523318651075,
+     "pct_naive": 56.857802855806185,
+     "mae": 0.7110427385510948
+    }
+   }
+  },
+  "melting_point": {
+   "units": "degC",
+   "n_test": 3458,
+   "n_with_epi": 3448,
+   "n_identity_skeleton_only": 0,
+   "status_counts": {
+    "ok": 3448,
+    "epi_no_value": 10
+   },
+   "overall": {
+    "n": 3448,
+    "rmse": 83.18414832257442,
+    "rmse_naive": 99.58705437742597,
+    "pct_naive": 83.52907799372596,
+    "mae": 60.88530543305319
+   },
+   "by_nn_sim_train": {
+    "<0.3": {
+     "n": 208,
+     "rmse": 125.46093344433415,
+     "rmse_naive": 124.6848343365014,
+     "pct_naive": 100.62244868188075,
+     "mae": 81.29205640173366
+    },
+    "0.3-0.5": {
+     "n": 1611,
+     "rmse": 87.7073728536406,
+     "rmse_naive": 102.70600719117643,
+     "pct_naive": 85.39653643664928,
+     "mae": 66.59397668465998
+    },
+    "0.5-0.7": {
+     "n": 1402,
+     "rmse": 69.12220112143473,
+     "rmse_naive": 91.86300720059796,
+     "pct_naive": 75.2448708439242,
+     "mae": 51.55850258226044
+    },
+    ">=0.7": {
+     "n": 227,
+     "rmse": 81.11120498571643,
+     "rmse_naive": 97.03312579216113,
+     "pct_naive": 83.59125228991545,
+     "mae": 59.276953049737685
+    }
+   }
+  },
+  "pka_acidic": {
+   "status": "no_epi_module",
+   "n_test": 172,
+   "note": "EPI Suite has no pKa module"
+  },
+  "pka_basic": {
+   "status": "no_epi_module",
+   "n_test": 211,
+   "note": "EPI Suite has no pKa module"
+  },
+  "vapor_pressure": {
+   "units": "log10_mmHg",
+   "n_test": 1127,
+   "n_with_epi": 1121,
+   "n_identity_skeleton_only": 0,
+   "status_counts": {
+    "ok": 1121,
+    "epi_no_value": 6
+   },
+   "overall": {
+    "n": 1121,
+    "rmse": 3.208395797477485,
+    "rmse_naive": 3.7313250636238533,
+    "pct_naive": 85.98542723483595,
+    "mae": 1.4414266269041798
+   },
+   "by_nn_sim_train": {
+    "<0.3": {
+     "n": 81,
+     "rmse": 4.831017377749884,
+     "rmse_naive": 3.7428389673595106,
+     "pct_naive": 129.07361016277062,
+     "mae": 2.143777965629077
+    },
+    "0.3-0.5": {
+     "n": 555,
+     "rmse": 2.9939566216708,
+     "rmse_naive": 3.8628200920401863,
+     "pct_naive": 77.50701690301896,
+     "mae": 1.3902944819810847
+    },
+    "0.5-0.7": {
+     "n": 399,
+     "rmse": 2.877871641979741,
+     "rmse_naive": 3.4794325852995156,
+     "pct_naive": 82.71094701298858,
+     "mae": 1.2815319807303722
+    },
+    ">=0.7": {
+     "n": 86,
+     "rmse": 3.990461063322286,
+     "rmse_naive": 3.9779745679782637,
+     "pct_naive": 100.31389077860214,
+     "mae": 1.8517271596826728
+    }
+   }
+  },
+  "water_solubility": {
+   "units": "log10_mol_per_L",
+   "n_test": 1536,
+   "n_with_epi": 1531,
+   "n_identity_skeleton_only": 0,
+   "status_counts": {
+    "ok": 1531,
+    "epi_no_value": 5
+   },
+   "overall": {
+    "n": 1531,
+    "rmse": 1.9822935791691436,
+    "rmse_naive": 2.3202282813156954,
+    "pct_naive": 85.43528217167818,
+    "mae": 1.2066685780805997
+   },
+   "by_nn_sim_train": {
+    "<0.3": {
+     "n": 120,
+     "rmse": 2.4916612930821227,
+     "rmse_naive": 2.3254651594443407,
+     "pct_naive": 107.14679095332023,
+     "mae": 1.7069392234785112
+    },
+    "0.3-0.5": {
+     "n": 768,
+     "rmse": 1.9037154834554004,
+     "rmse_naive": 2.2696950314582267,
+     "pct_naive": 83.87538665193743,
+     "mae": 1.202385958136322
+    },
+    "0.5-0.7": {
+     "n": 532,
+     "rmse": 2.0016857414019875,
+     "rmse_naive": 2.3179748707245933,
+     "pct_naive": 86.35493709111115,
+     "mae": 1.114560241193771
+    },
+    ">=0.7": {
+     "n": 111,
+     "rmse": 1.7911647914576394,
+     "rmse_naive": 2.648027732121171,
+     "pct_naive": 67.64146650468982,
+     "mae": 1.1369227212630197
+    }
+   }
+  }
+ },
+ "table": "epi_comparator_v3.parquet",
+ "built_utc": "2026-11-01T00:18:19.408292Z"
+}

@@ -1,0 +1,14 @@
+endpoint,units,n_rows,dup_groups,conflicting_groups,median_range_conflicting,test_rows,test_rows_in_conflicting_group
+bcf,log10_L_per_kg_linear,1297,36,36,1.073,210,2
+boiling_point,degC,8157,98,95,60.9,1355,21
+henry,log10_atm_m3_per_mol,2586,13,12,0.324,434,2
+koc,log10_L_per_kg_linear,635,3,3,0.08,105,0
+koh_gas,log10_cm3_per_molecule_s,610,1,1,0.037,101,0
+logkoa,log10,252,0,0,,36,0
+logkow,log10,10642,236,186,1.289,1757,62
+melting_point,degC,20878,504,474,76.625,3458,192
+pka_acidic,log10,1029,0,0,,172,0
+pka_basic,log10,1264,0,0,,211,0
+vapor_pressure,log10_mmHg,6835,169,165,2.716,1127,44
+water_solubility,log10_mol_per_L,9243,274,272,0.979,1536,107
+ALL,mixed,63428,1334,1244,,10502,430

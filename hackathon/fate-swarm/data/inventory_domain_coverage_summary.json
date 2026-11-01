@@ -1,0 +1,15 @@
+{
+ "n_inventory_with_smiles": 280859,
+ "n_sample": 40000,
+ "seed": 20261031,
+ "species": {
+  "neutralisable": 0.9446,
+  "permanent_cation": 0.0292,
+  "metal_containing_not_assessed": 0.0141,
+  "permanent_zwitterion": 0.0072,
+  "permanent_anion": 0.0033,
+  "unparseable": 0.0016
+ },
+ "frac_multicomponent_flag": 0.1669,
+ "frac_counterions_removed": 0.1759
+}

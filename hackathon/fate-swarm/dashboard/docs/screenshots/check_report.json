@@ -1,0 +1,116 @@
+{
+ "page": "W-TOOL/dashboard/index.html",
+ "console_errors": [],
+ "rows": {
+  "rows_ex0": {
+   "n": 17,
+   "n_undefined": 0,
+   "n_bad": 0,
+   "bad": []
+  },
+  "rows_ex1": {
+   "n": 17,
+   "n_undefined": 0,
+   "n_bad": 0,
+   "bad": []
+  },
+  "rows_ex2": {
+   "n": 17,
+   "n_undefined": 0,
+   "n_bad": 0,
+   "bad": []
+  },
+  "rows_ex3": {
+   "n": 17,
+   "n_undefined": 0,
+   "n_bad": 0,
+   "bad": []
+  },
+  "rows_ex4": {
+   "n": 17,
+   "n_undefined": 6,
+   "n_bad": 0,
+   "bad": []
+  },
+  "rows_ex5": {
+   "n": 17,
+   "n_undefined": 6,
+   "n_bad": 0,
+   "bad": []
+  },
+  "rows_ex6": {
+   "n": 17,
+   "n_undefined": 0,
+   "n_bad": 0,
+   "bad": []
+  },
+  "rows_ex7": {
+   "n": 17,
+   "n_undefined": 0,
+   "n_bad": 0,
+   "bad": []
+  },
+  "rows_ex8": {
+   "n": 17,
+   "n_undefined": 0,
+   "n_bad": 0,
+   "bad": []
+  },
+  "rows_spec0": {
+   "n": 12,
+   "n_undefined": 0,
+   "n_bad": 0,
+   "bad": []
+  },
+  "rows_spec1": {
+   "n": 12,
+   "n_undefined": 0,
+   "n_bad": 0,
+   "bad": []
+  },
+  "rows_spec2": {
+   "n": 12,
+   "n_undefined": 0,
+   "n_bad": 0,
+   "bad": []
+  },
+  "rows_spec3": {
+   "n": 12,
+   "n_undefined": 0,
+   "n_bad": 0,
+   "bad": []
+  }
+ },
+ "other": {
+  "contrast_expanded": {
+   "n": 876,
+   "min": 4.83,
+   "fails": [],
+   "n_fail": 0
+  },
+  "overflow_1280": {
+   "sw": 1265,
+   "cw": 1265,
+   "minfont": 12.8
+  },
+  "contrast_good": {
+   "n": 1341,
+   "min": 4.83,
+   "fails": [],
+   "n_fail": 0
+  },
+  "offline_new_structure": "This copy of the page cannot compute a new structure.\nIt is a viewer: it contains only the precomputed examples (the buttons above) and any results file you open. New structures need the companion program, which is started with one command (see README.md next to this file) \u2014 or ask whoever sent you this file to run your structure and send you the results file.\nFor the person running the program",
+  "empty_input": "Please enter a structure.\nPaste a SMILES string in the box, or click one of the examples.",
+  "spec_missing_meta": "This copy of the page cannot compute a new spectrum.\nIt is a viewer: it contains only the precomputed examples (the buttons above) and any results file you open. New structures need the companion program, which is started with one command (see README.md next to this file) \u2014 or ask whoever sent you this file to run your structure and send you the results file.\nFor the person running the program",
+  "overflow_390": {
+   "sw": 401,
+   "cw": 375,
+   "minfont": 12.8
+  }
+ },
+ "summary": {
+  "n_row_checks": 201,
+  "n_bad_rows": 0,
+  "n_console_errors": 0
+ }
+}

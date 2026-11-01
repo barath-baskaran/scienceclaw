@@ -1,0 +1,333 @@
+{
+ "_doc": "Manifest of result files read by make_figures.py. 'run' says whether a file was produced in Run 3 or inherited from Runs 1-2. Edit paths here when a worker freezes a newer file; never retype numbers.",
+ "labels": {
+  "path": "data/labels_v2.parquet",
+  "run": "data"
+ },
+ "quarantine": {
+  "path": "W-SPACE/quarantine_skeletons_v3.txt",
+  "run": "run3",
+  "canonical": "W-SPACE/quarantine_v3.parquet leak_free; identical to run-2 list among labelled"
+ },
+ "fate": {
+  "path": "W-MODEL/v5_main/test_predictions.parquet",
+  "run": "run3 (W-MODEL v5, frozen 21:10)",
+  "results_json": "W-MODEL/v5_main/results.json",
+  "variants": [
+   "S",
+   "SP"
+  ],
+  "shipped": "SP",
+  "reference": "S",
+  "variant_names": {
+   "S": "structure only",
+   "SP": "structure + AIMNet2 physics"
+  },
+  "interval_methods": {
+   "shipped (normalised Mondrian)": [
+    "_lo",
+    "_hi"
+   ],
+   "per-bin Mondrian": [
+    "_lo_mondrian",
+    "_hi_mondrian"
+   ],
+   "global": [
+    "_lo_global",
+    "_hi_global"
+   ]
+  }
+ },
+ "ablation": {
+  "path": "W-MODEL/v5_main/test_predictions.parquet",
+  "run": "run3 (W-MODEL v5)",
+  "format": "wide",
+  "variants": [
+   "S",
+   "SP"
+  ],
+  "reference": "S"
+ },
+ "epi": {
+  "path": "W-TOOL/epi_comparator_v3.parquet",
+  "run": "run3",
+  "metrics": "W-TOOL/epi_comparator_v3_metrics.json",
+  "caveat": "EPI Suite was trained on PhysProp, which overlaps CompTox; EPI numbers are optimistic"
+ },
+ "spectra_only": {
+  "path": "W-SPECTRA/v31/report/scribe_input_modes_rows.parquet",
+  "run": "run3 (W-SPECTRA v3.1)",
+  "y": "y",
+  "blocks": {
+   "pos": "HR ESI+ MS/MS",
+   "neg": "HR ESI- MS/MS",
+   "ei": "EI"
+  },
+  "levels": [
+   [
+    "pred_S2_mass_ion",
+    "precursor m/z + adduct",
+    null,
+    null
+   ],
+   [
+    "pred_OLD_v2",
+    "full spectrum, Run-2 representation",
+    null,
+    null
+   ],
+   [
+    "pred_FULL",
+    "full spectrum, rebuilt (top-5 pooled)",
+    "lo_FULL",
+    "hi_FULL"
+   ],
+   [
+    "pred_SINGLE_spectrum",
+    "one spectrum (deployment case)",
+    "lo_SINGLE_spectrum",
+    "hi_SINGLE_spectrum"
+   ],
+   [
+    "pred_STRUCT",
+    "known structure (same compounds)",
+    null,
+    null
+   ]
+  ],
+  "ei_levels": [
+   [
+    "pred_S2_mass_ion",
+    "precursor m/z + adduct",
+    null,
+    null
+   ],
+   [
+    "pred_EI",
+    "EI spectrum",
+    null,
+    null
+   ],
+   [
+    "pred_STRUCT",
+    "known structure (same compounds)",
+    null,
+    null
+   ]
+  ],
+  "contrasts": [
+   [
+    "pred_S2_mass_ion",
+    "pred_FULL"
+   ],
+   [
+    "pred_OLD_v2",
+    "pred_FULL"
+   ],
+   [
+    "pred_STRUCT",
+    "pred_SINGLE_spectrum"
+   ],
+   [
+    "pred_STRUCT",
+    "pred_STRUCT+FULL"
+   ]
+  ],
+  "mass_regularised": "W-SPECTRA/v31/mass_sensitivity_v31.json",
+  "summary": "W-SPECTRA/v31/report/summary_v31.md",
+  "contrasts_csv": "W-SPECTRA/v31/report/contrasts_v31.csv"
+ },
+ "paired_ci": {
+  "path": "CRITIC/audit_wmodel_v4.csv",
+  "run": "feasibility (pre-run-3)"
+ },
+ "tox_cls": {
+  "path": "W-TOX/classification_metrics.json",
+  "run": "run2"
+ },
+ "tox_results": {
+  "path": "W-TOX/results.json",
+  "run": "run2"
+ },
+ "domain_rules": {
+  "path": "W-SPACE/domain_rules.json",
+  "run": "run3"
+ },
+ "undefined_vs_gap": {
+  "path": "W-SPACE/undefined_vs_gap_summary.json",
+  "run": "run3"
+ },
+ "ledger": {
+  "path": "(internal path removed)",
+  "run": "run3"
+ },
+ "board": {
+  "path": "(internal path removed)",
+  "run": "run3"
+ },
+ "noise_floor": {
+  "path": "READER-1/label_noise_floor.csv",
+  "run": "run3",
+  "column": "noise_floor_pct_naive_distinct",
+  "min_compounds": 20,
+  "definition": "pooled within-compound SD over compounds with >=2 distinct measured values, divided by train SD, x100 (READER-1/label_noise_floor.py)"
+ },
+ "class_coverage": {
+  "path": "READER-1/conditional_coverage_by_class.csv",
+  "run": "run3"
+ },
+ "prior_art": {
+  "path": "READER-1/prior_art_spectrum_only.md",
+  "run": "run3"
+ },
+ "undefined_cells": {
+  "path": "W-SPACE/undefined_vs_gap_cells.csv",
+  "run": "run3",
+  "scope": "visible"
+ },
+ "epi_joint": {
+  "path": "READER-1/epi_joint_comparison.csv",
+  "run": "run3",
+  "model": "W-MODEL frozen_v4 struct_only (per epi_joint_comparison.py docstring)",
+  "rules": "doubtful = eChemPortal-only label, sulfonic acid/sulfate, or unpaired formal charge (READER-1); physprop = labels_v2 sources contains OPERA (READER-2)",
+  "model_variant": "frozen_v4_struct_only"
+ },
+ "limitations_register": {
+  "path": "READER-2/limitations_register.md",
+  "run": "run3"
+ },
+ "data_priorities": {
+  "path": "READER-2/section8_data_priorities.md",
+  "run": "run3"
+ },
+ "eval_splits": {
+  "path": "W-SPACE/eval_splits_v3.csv",
+  "run": "run3",
+  "model": "structure-only LightGBM, W-MODEL S features, fixed hyper-parameters (W-SPACE)",
+  "paired": "W-SPACE/eval_splits_v3_paired.csv",
+  "summary_md": "W-SPACE/eval_splits_v3_summary.md"
+ },
+ "epi_rules": {
+  "path": "CRITIC/audit_epi_exclusion_sensitivity.csv",
+  "run": "run3",
+  "verdicts": "CRITIC/audit_epi_exclusion_verdicts.csv"
+ },
+ "second_source": {
+  "path": "CRITIC/second_source_logkow_dedup.json",
+  "run": "run3"
+ },
+ "wspace_fig5": {
+  "path": "W-SPACE/fig_undefined_vs_gap.png",
+  "run": "run3",
+  "caption": "W-SPACE/fig_undefined_vs_gap_caption.md"
+ },
+ "wspace_figsplit": {
+  "path": "W-SPACE/fig_split_comparison.png",
+  "run": "run3",
+  "caption": "W-SPACE/fig_split_comparison_caption.md"
+ },
+ "ablation_run2": {
+  "path": "W-MODEL/test_predictions_v3.parquet",
+  "run": "run2",
+  "format": "long",
+  "variants": [
+   "struct_only",
+   "struct_physics",
+   "struct_spectra",
+   "physics_spectra",
+   "fused"
+  ],
+  "reference": "struct_only",
+  "note": "Run-2 W-MODEL v3 five-variant ablation incl. pooled run-2 spectra (supplementary)"
+ },
+ "fate_sall": {
+  "path": "W-MODEL/v5_sall/test_predictions.parquet",
+  "run": "run3 (W-MODEL v5, structure-only on all defined rows incl. ions)"
+ },
+ "r2_figs": {
+  "path": "READER-2/",
+  "run": "run3",
+  "files": {
+   "figS10": [
+    "fig_vod_learning.png",
+    "vod_summary_A.csv",
+    "Value of data (READER-2): change in RMSE per doubling of randomly added training data, by nn_sim_train bin. More of the same data helps familiar compounds far more than novel ones."
+   ],
+   "figS11": [
+    "fig_vod_classes.png",
+    "vod_summary_B.csv",
+    "Value of data (READER-2): cost of a compound class being unseen (leave-class-out vs full training, same test compounds, with a random-removal control) and the share recovered by adding 5, 15 or 40 measurements of that class."
+   ],
+   "figS12": [
+    "fig_noise_panel.png",
+    "noise_panel.csv",
+    "Headroom against label noise (READER-2): model RMSE divided by the replicate standard deviation of the labels, per endpoint."
+   ]
+  }
+ },
+ "spectra_only_run2": {
+  "path": "W-UNKNOWN/test_predictions_spectra_only.parquet",
+  "run": "run2",
+  "levels": [
+   [
+    "p_a_precursor_mz",
+    "precursor m/z only",
+    "lo_a_precursor_mz",
+    "hi_a_precursor_mz"
+   ],
+   [
+    "p_b_mz_adduct_polarity",
+    "m/z + adduct + polarity",
+    "lo_b_mz_adduct_polarity",
+    "hi_b_mz_adduct_polarity"
+   ],
+   [
+    "p_c_full_spectral",
+    "full MS/MS spectrum",
+    "lo_c_full_spectral",
+    "hi_c_full_spectral"
+   ],
+   [
+    "p_struct_L1",
+    "known structure",
+    null,
+    null
+   ]
+  ],
+  "y": "y",
+  "nn": "fam"
+ },
+ "tp": {
+  "path": "W-TP/tp_pairs_control_v4r.json",
+  "run": "run3",
+  "eval": "W-TP/tp_pairs_eval_v4r.json",
+  "delta_conformal": "W-TP/tp_delta_conformal_v4r.json",
+  "model": "W-MODEL frozen_v4 struct_only (per tp_pairs_eval_v4r.json)"
+ },
+ "physics_pretest": {
+  "path": "W-PHYSICS/pretest_flex_shard0.json",
+  "run": "run3",
+  "card": "W-PHYSICS/DATASET_CARD_physics_inventory_v1.md",
+  "prereg": "W-PHYSICS/PREREG_P001_ensemble.md"
+ },
+ "paired_ci_v5": {
+  "path": "CRITIC/audit_wmodel_v5.csv",
+  "run": "run3 (CRITIC audit of W-MODEL v5)"
+ },
+ "tox_run2": {
+  "path": "W-TOX/classification_metrics.json",
+  "run": "run2"
+ },
+ "tox_r3": {
+  "path": "W-TOX/r3/results_hazard.json",
+  "run": "run3 (W-TOX r3)",
+  "preds": {
+   "er_active": "W-TOX/r3/preds_er_active.parquet",
+   "ar_active": "W-TOX/r3/preds_ar_active.parquet",
+   "er_potency": "W-TOX/r3/preds_er_potency.parquet",
+   "ar_potency": "W-TOX/r3/preds_ar_potency.parquet",
+   "rat_oral_ld50": "W-TOX/r3/preds_rat_oral_ld50.parquet"
+  },
+  "leak_free": "nn_sim_train < 0.40 (to the task's own training set; ChEMBL compounds are outside labels_v2 so the quarantine list does not apply)"
+ }
+}

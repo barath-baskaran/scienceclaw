@@ -1,0 +1,181 @@
+endpoint,compound_class,verdict,n_inventory,n_labelled,labelled_frac_of_inventory,reasoning
+henry,hydrolytically_labile,defined,3940,27,0.00685,no gas-phase or neutral-species requirement that this class fails
+henry,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+henry,neutral_organic,defined,202058,1528,0.00756,no gas-phase or neutral-species requirement that this class fails
+henry,organometal,not_assessed,4978,25,0.00502,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+henry,permanent_anion,undefined,283,0,0.0,the endpoint is a property of a gas-phase form of the species; an ion has none
+henry,permanent_cation,undefined,8099,1,0.00012,the endpoint is a property of a gas-phase form of the species; an ion has none
+henry,permanent_zwitterion,undefined,2002,1,0.0005,the endpoint is a property of a gas-phase form of the species; an ion has none
+henry,pfas,defined,23429,117,0.00499,no gas-phase or neutral-species requirement that this class fails
+henry,small_volatile,defined,14265,721,0.05054,no gas-phase or neutral-species requirement that this class fails
+henry,surfactant_like,defined,3914,7,0.00179,no gas-phase or neutral-species requirement that this class fails
+henry,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+henry,very_hydrophobic,defined,11268,159,0.01411,no gas-phase or neutral-species requirement that this class fails
+vapor_pressure,hydrolytically_labile,defined,3940,212,0.05381,no gas-phase or neutral-species requirement that this class fails
+vapor_pressure,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+vapor_pressure,neutral_organic,defined,202058,4291,0.02124,no gas-phase or neutral-species requirement that this class fails
+vapor_pressure,organometal,not_assessed,4978,216,0.04339,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+vapor_pressure,permanent_anion,undefined,283,4,0.01413,the endpoint is a property of a gas-phase form of the species; an ion has none
+vapor_pressure,permanent_cation,undefined,8099,61,0.00753,the endpoint is a property of a gas-phase form of the species; an ion has none
+vapor_pressure,permanent_zwitterion,undefined,2002,11,0.00549,the endpoint is a property of a gas-phase form of the species; an ion has none
+vapor_pressure,pfas,defined,23429,309,0.01319,no gas-phase or neutral-species requirement that this class fails
+vapor_pressure,small_volatile,defined,14265,1335,0.09359,no gas-phase or neutral-species requirement that this class fails
+vapor_pressure,surfactant_like,defined,3914,52,0.01329,no gas-phase or neutral-species requirement that this class fails
+vapor_pressure,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+vapor_pressure,very_hydrophobic,defined,11268,344,0.03053,no gas-phase or neutral-species requirement that this class fails
+boiling_point,hydrolytically_labile,defined,3940,273,0.06929,no gas-phase or neutral-species requirement that this class fails
+boiling_point,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+boiling_point,neutral_organic,defined,202058,4637,0.02295,no gas-phase or neutral-species requirement that this class fails
+boiling_point,organometal,not_assessed,4978,298,0.05986,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+boiling_point,permanent_anion,undefined,283,0,0.0,the endpoint is a property of a gas-phase form of the species; an ion has none
+boiling_point,permanent_cation,undefined,8099,29,0.00358,the endpoint is a property of a gas-phase form of the species; an ion has none
+boiling_point,permanent_zwitterion,undefined,2002,4,0.002,the endpoint is a property of a gas-phase form of the species; an ion has none
+boiling_point,pfas,defined,23429,499,0.0213,no gas-phase or neutral-species requirement that this class fails
+boiling_point,small_volatile,defined,14265,2232,0.15647,no gas-phase or neutral-species requirement that this class fails
+boiling_point,surfactant_like,defined,3914,53,0.01354,no gas-phase or neutral-species requirement that this class fails
+boiling_point,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+boiling_point,very_hydrophobic,defined,11268,132,0.01171,no gas-phase or neutral-species requirement that this class fails
+koh_gas,hydrolytically_labile,defined,3940,11,0.00279,no gas-phase or neutral-species requirement that this class fails
+koh_gas,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+koh_gas,neutral_organic,defined,202058,149,0.00074,no gas-phase or neutral-species requirement that this class fails
+koh_gas,organometal,not_assessed,4978,6,0.00121,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+koh_gas,permanent_anion,undefined,283,0,0.0,the endpoint is a property of a gas-phase form of the species; an ion has none
+koh_gas,permanent_cation,undefined,8099,0,0.0,the endpoint is a property of a gas-phase form of the species; an ion has none
+koh_gas,permanent_zwitterion,undefined,2002,0,0.0,the endpoint is a property of a gas-phase form of the species; an ion has none
+koh_gas,pfas,defined,23429,49,0.00209,no gas-phase or neutral-species requirement that this class fails
+koh_gas,small_volatile,defined,14265,395,0.02769,no gas-phase or neutral-species requirement that this class fails
+koh_gas,surfactant_like,defined,3914,0,0.0,no gas-phase or neutral-species requirement that this class fails
+koh_gas,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+koh_gas,very_hydrophobic,defined,11268,0,0.0,no gas-phase or neutral-species requirement that this class fails
+logkoa,hydrolytically_labile,defined,3940,0,0.0,no gas-phase or neutral-species requirement that this class fails
+logkoa,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+logkoa,neutral_organic,defined,202058,124,0.00061,no gas-phase or neutral-species requirement that this class fails
+logkoa,organometal,not_assessed,4978,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+logkoa,permanent_anion,undefined,283,0,0.0,the endpoint is a property of a gas-phase form of the species; an ion has none
+logkoa,permanent_cation,undefined,8099,0,0.0,the endpoint is a property of a gas-phase form of the species; an ion has none
+logkoa,permanent_zwitterion,undefined,2002,0,0.0,the endpoint is a property of a gas-phase form of the species; an ion has none
+logkoa,pfas,defined,23429,8,0.00034,no gas-phase or neutral-species requirement that this class fails
+logkoa,small_volatile,defined,14265,98,0.00687,no gas-phase or neutral-species requirement that this class fails
+logkoa,surfactant_like,defined,3914,0,0.0,no gas-phase or neutral-species requirement that this class fails
+logkoa,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+logkoa,very_hydrophobic,defined,11268,22,0.00195,no gas-phase or neutral-species requirement that this class fails
+logkow,hydrolytically_labile,defined,3940,96,0.02437,no gas-phase or neutral-species requirement that this class fails
+logkow,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+logkow,neutral_organic,defined,202058,8475,0.04194,no gas-phase or neutral-species requirement that this class fails
+logkow,organometal,not_assessed,4978,80,0.01607,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+logkow,permanent_anion,undefined,283,2,0.00707,K_OW is defined for the neutral species and this class has no uncharged microspecies; what is measurable instead is logD at a stated pH or an ion-pair Kow
+logkow,permanent_cation,undefined,8099,128,0.0158,K_OW is defined for the neutral species and this class has no uncharged microspecies; what is measurable instead is logD at a stated pH or an ion-pair Kow
+logkow,permanent_zwitterion,undefined,2002,21,0.01049,K_OW is defined for the neutral species and this class has no uncharged microspecies; what is measurable instead is logD at a stated pH or an ion-pair Kow
+logkow,pfas,defined,23429,350,0.01494,no gas-phase or neutral-species requirement that this class fails
+logkow,small_volatile,defined,14265,1190,0.08342,no gas-phase or neutral-species requirement that this class fails
+logkow,surfactant_like,defined,3914,59,0.01507,no gas-phase or neutral-species requirement that this class fails
+logkow,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+logkow,very_hydrophobic,defined,11268,241,0.02139,no gas-phase or neutral-species requirement that this class fails
+water_solubility,hydrolytically_labile,defined,3940,96,0.02437,no gas-phase or neutral-species requirement that this class fails
+water_solubility,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+water_solubility,neutral_organic,defined,202058,7174,0.0355,no gas-phase or neutral-species requirement that this class fails
+water_solubility,organometal,not_assessed,4978,100,0.02009,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+water_solubility,permanent_anion,defined,283,0,0.0,no gas-phase or neutral-species requirement that this class fails
+water_solubility,permanent_cation,defined,8099,116,0.01432,no gas-phase or neutral-species requirement that this class fails
+water_solubility,permanent_zwitterion,defined,2002,21,0.01049,no gas-phase or neutral-species requirement that this class fails
+water_solubility,pfas,defined,23429,260,0.0111,no gas-phase or neutral-species requirement that this class fails
+water_solubility,small_volatile,defined,14265,1044,0.07319,no gas-phase or neutral-species requirement that this class fails
+water_solubility,surfactant_like,defined,3914,90,0.02299,no gas-phase or neutral-species requirement that this class fails
+water_solubility,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+water_solubility,very_hydrophobic,defined,11268,342,0.03035,"defined, but measured values near the solubility limit carry large method uncertainty"
+melting_point,hydrolytically_labile,defined,3940,484,0.12284,no gas-phase or neutral-species requirement that this class fails
+melting_point,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+melting_point,neutral_organic,defined,202058,16262,0.08048,no gas-phase or neutral-species requirement that this class fails
+melting_point,organometal,not_assessed,4978,241,0.04841,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+melting_point,permanent_anion,defined,283,3,0.0106,no gas-phase or neutral-species requirement that this class fails
+melting_point,permanent_cation,defined,8099,280,0.03457,no gas-phase or neutral-species requirement that this class fails
+melting_point,permanent_zwitterion,defined,2002,19,0.00949,no gas-phase or neutral-species requirement that this class fails
+melting_point,pfas,defined,23429,785,0.03351,no gas-phase or neutral-species requirement that this class fails
+melting_point,small_volatile,defined,14265,1938,0.13586,no gas-phase or neutral-species requirement that this class fails
+melting_point,surfactant_like,defined,3914,186,0.04752,no gas-phase or neutral-species requirement that this class fails
+melting_point,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+melting_point,very_hydrophobic,defined,11268,680,0.06035,no gas-phase or neutral-species requirement that this class fails
+koc,hydrolytically_labile,defined,3940,3,0.00076,no gas-phase or neutral-species requirement that this class fails
+koc,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+koc,neutral_organic,defined,202058,517,0.00256,no gas-phase or neutral-species requirement that this class fails
+koc,organometal,not_assessed,4978,2,0.0004,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+koc,permanent_anion,defined,283,0,0.0,no gas-phase or neutral-species requirement that this class fails
+koc,permanent_cation,defined,8099,1,0.00012,no gas-phase or neutral-species requirement that this class fails
+koc,permanent_zwitterion,defined,2002,0,0.0,no gas-phase or neutral-species requirement that this class fails
+koc,pfas,defined,23429,31,0.00132,no gas-phase or neutral-species requirement that this class fails
+koc,small_volatile,defined,14265,68,0.00477,no gas-phase or neutral-species requirement that this class fails
+koc,surfactant_like,defined,3914,0,0.0,no gas-phase or neutral-species requirement that this class fails
+koc,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+koc,very_hydrophobic,defined,11268,13,0.00115,no gas-phase or neutral-species requirement that this class fails
+bcf,hydrolytically_labile,defined,3940,5,0.00127,no gas-phase or neutral-species requirement that this class fails
+bcf,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+bcf,neutral_organic,defined,202058,901,0.00446,no gas-phase or neutral-species requirement that this class fails
+bcf,organometal,not_assessed,4978,33,0.00663,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+bcf,permanent_anion,defined,283,2,0.00707,no gas-phase or neutral-species requirement that this class fails
+bcf,permanent_cation,defined,8099,12,0.00148,no gas-phase or neutral-species requirement that this class fails
+bcf,permanent_zwitterion,defined,2002,1,0.0005,no gas-phase or neutral-species requirement that this class fails
+bcf,pfas,defined,23429,107,0.00457,no gas-phase or neutral-species requirement that this class fails
+bcf,small_volatile,defined,14265,133,0.00932,no gas-phase or neutral-species requirement that this class fails
+bcf,surfactant_like,defined,3914,8,0.00204,no gas-phase or neutral-species requirement that this class fails
+bcf,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+bcf,very_hydrophobic,defined,11268,95,0.00843,"defined, but measured values near the solubility limit carry large method uncertainty"
+pka_acidic,hydrolytically_labile,defined_if_site,3940,2,0.00051,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_acidic,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+pka_acidic,neutral_organic,defined_if_site,202058,865,0.00428,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_acidic,organometal,not_assessed,4978,2,0.0004,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+pka_acidic,permanent_anion,defined_if_site,283,0,0.0,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_acidic,permanent_cation,defined_if_site,8099,10,0.00123,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_acidic,permanent_zwitterion,defined_if_site,2002,0,0.0,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_acidic,pfas,defined_if_site,23429,16,0.00068,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_acidic,small_volatile,defined_if_site,14265,123,0.00862,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_acidic,surfactant_like,defined_if_site,3914,9,0.0023,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_acidic,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+pka_acidic,very_hydrophobic,defined_if_site,11268,2,0.00018,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_basic,hydrolytically_labile,defined_if_site,3940,4,0.00102,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_basic,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+pka_basic,neutral_organic,defined_if_site,202058,888,0.00439,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_basic,organometal,not_assessed,4978,2,0.0004,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+pka_basic,permanent_anion,defined_if_site,283,0,0.0,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_basic,permanent_cation,defined_if_site,8099,2,0.00025,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_basic,permanent_zwitterion,defined_if_site,2002,0,0.0,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_basic,pfas,defined_if_site,23429,3,0.00013,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_basic,small_volatile,defined_if_site,14265,355,0.02489,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_basic,surfactant_like,defined_if_site,3914,3,0.00077,needs an ionisable site of that kind; handled as a separate not-applicable state
+pka_basic,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+pka_basic,very_hydrophobic,defined_if_site,11268,7,0.00062,needs an ionisable site of that kind; handled as a separate not-applicable state
+rat_oral_ld50,hydrolytically_labile,defined,3940,250,0.06345,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)"
+rat_oral_ld50,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+rat_oral_ld50,neutral_organic,defined,202058,8821,0.04366,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)"
+rat_oral_ld50,organometal,not_assessed,4978,237,0.04761,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+rat_oral_ld50,permanent_anion,defined,283,5,0.01767,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)"
+rat_oral_ld50,permanent_cation,defined,8099,244,0.03013,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)"
+rat_oral_ld50,permanent_zwitterion,defined,2002,37,0.01848,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)"
+rat_oral_ld50,pfas,defined,23429,424,0.0181,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)"
+rat_oral_ld50,small_volatile,defined,14265,899,0.06302,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)"
+rat_oral_ld50,surfactant_like,defined,3914,56,0.01431,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)"
+rat_oral_ld50,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+rat_oral_ld50,very_hydrophobic,defined,11268,242,0.02148,"defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)"
+er_potency,hydrolytically_labile,assay_unattainable,3940,1,0.00025,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested
+er_potency,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+er_potency,neutral_organic,defined,202058,5557,0.0275,"in-vitro potency is defined for any substance deliverable in assay medium, ions included"
+er_potency,organometal,not_assessed,4978,9,0.00181,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+er_potency,permanent_anion,defined,283,0,0.0,"in-vitro potency is defined for any substance deliverable in assay medium, ions included"
+er_potency,permanent_cation,defined,8099,61,0.00753,"in-vitro potency is defined for any substance deliverable in assay medium, ions included"
+er_potency,permanent_zwitterion,defined,2002,14,0.00699,"in-vitro potency is defined for any substance deliverable in assay medium, ions included"
+er_potency,pfas,defined,23429,636,0.02715,"in-vitro potency is defined for any substance deliverable in assay medium, ions included"
+er_potency,small_volatile,assay_unattainable,14265,6,0.00042,evaporates from an open microplate; nominal concentration is not delivered
+er_potency,surfactant_like,defined,3914,8,0.00204,"in-vitro potency is defined for any substance deliverable in assay medium, ions included"
+er_potency,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+er_potency,very_hydrophobic,assay_unattainable,11268,432,0.03834,clogP > 7: above its aqueous solubility at the usual test concentrations
+ar_potency,hydrolytically_labile,assay_unattainable,3940,2,0.00051,hydrolyses in aqueous assay medium before the readout; the parent is not what is tested
+ar_potency,inorganic,not_assessed,6186,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+ar_potency,neutral_organic,defined,202058,2594,0.01284,"in-vitro potency is defined for any substance deliverable in assay medium, ions included"
+ar_potency,organometal,not_assessed,4978,16,0.00321,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+ar_potency,permanent_anion,defined,283,0,0.0,"in-vitro potency is defined for any substance deliverable in assay medium, ions included"
+ar_potency,permanent_cation,defined,8099,26,0.00321,"in-vitro potency is defined for any substance deliverable in assay medium, ions included"
+ar_potency,permanent_zwitterion,defined,2002,8,0.004,"in-vitro potency is defined for any substance deliverable in assay medium, ions included"
+ar_potency,pfas,defined,23429,1612,0.0688,"in-vitro potency is defined for any substance deliverable in assay medium, ions included"
+ar_potency,small_volatile,assay_unattainable,14265,6,0.00042,evaporates from an open microplate; nominal concentration is not delivered
+ar_potency,surfactant_like,defined,3914,7,0.00179,"in-vitro potency is defined for any substance deliverable in assay medium, ions included"
+ar_potency,unparsed,not_assessed,437,0,0.0,ionic and covalent drawings of a metal-containing or inorganic substance give different answers; the rule refuses to decide
+ar_potency,very_hydrophobic,assay_unattainable,11268,89,0.0079,clogP > 7: above its aqueous solubility at the usual test concentrations

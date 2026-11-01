@@ -1,0 +1,6 @@
+[{"wait_ms":800,"eval":"document.body.innerText","name":"1_landing"},
+ {"js":"document.querySelectorAll('#exchips .chip')[0].click()","wait_ms":700,"eval":"document.getElementById('s-struct').innerText","name":"2_new_structure_result"},
+ {"js":"document.querySelector('tr.main[data-det]').click()","wait_ms":400,"eval":"document.querySelector('tr.det:not(.hid)').innerText","name":"3_first_row_details"},
+ {"js":"document.querySelectorAll('#exchips .chip')[3].click()","wait_ms":700,"eval":"document.getElementById('out').innerText","name":"4_quaternary_salt"},
+ {"js":"document.getElementById('m-spec').click();document.querySelectorAll('#specchips .chip')[0].click()","wait_ms":700,"eval":"document.getElementById('s-spec').innerText","name":"5_spectrum_only"},
+ {"js":"document.getElementById('m-good').click()","wait_ms":400,"eval":"document.getElementById('s-good').innerText.slice(0,6000)","name":"6_how_good"}]

@@ -1,0 +1,1149 @@
+{
+ "schema": "wtool_predictions/v2",
+ "created_utc": "2026-11-01T05:45:17Z",
+ "seconds_total": 37.32,
+ "models": [
+  {
+   "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+   "model_id": "W-MODEL_frozen_v5",
+   "endpoints": [
+    "logkoa",
+    "koh_gas",
+    "koc",
+    "pka_acidic",
+    "bcf",
+    "pka_basic",
+    "henry",
+    "vapor_pressure",
+    "boiling_point",
+    "water_solubility",
+    "logkow",
+    "melting_point"
+   ],
+   "feature_blocks": [
+    "struct",
+    "physics"
+   ],
+   "kind": "api",
+   "api_file": "fatev5.py",
+   "owner": "W-MODEL"
+  },
+  {
+   "model_dir": "<TEAM_ROOT>/agents/work/W-SPECTRA/spectrum_only_v31",
+   "model_id": "wspectra_spectrum_only_v31",
+   "endpoints": [],
+   "feature_blocks": [
+    "spectrum"
+   ],
+   "kind": "spectra_api",
+   "owner": "W-SPECTRA"
+  },
+  {
+   "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+   "model_id": "wtox_model_frozen_v3",
+   "endpoints": [
+    "rat_oral_ld50",
+    "er_potency",
+    "er_active",
+    "ar_potency",
+    "ar_active"
+   ],
+   "feature_blocks": [
+    "struct"
+   ],
+   "kind": "tox_api",
+   "owner": "W-TOX"
+  }
+ ],
+ "records": [
+  {
+   "input": {
+    "smiles": "OC(=O)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(F)(F)C(F)(F)F",
+    "has_spectrum": false,
+    "inchikey": "LAJBCLBUJYTYHV-UHFFFAOYSA-N",
+    "canonical_smiles": "O=C(O)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(F)(F)C(F)(F)F",
+    "n_heavy": 24,
+    "formula": "C7HF13O4",
+    "mw": 396.055,
+    "n_fragments": 1,
+    "formal_charge": 0,
+    "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 220\" width=\"320\" height=\"220\" role=\"img\" aria-label=\"2D structure of O=C(O)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(F)(F)C(F)(F)F\"><g stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\"><line x1=\"83.5\" y1=\"67.3\" x2=\"59.2\" y2=\"82.3\"/><line x1=\"60.8\" y1=\"79.2\" x2=\"35.5\" y2=\"65.4\"/><line x1=\"57.5\" y1=\"85.3\" x2=\"32.2\" y2=\"71.5\"/><line x1=\"59.2\" y1=\"82.3\" x2=\"60.2\" y2=\"120.7\"/><line x1=\"60.2\" y1=\"120.7\" x2=\"46.2\" y2=\"146.1\"/><line x1=\"60.2\" y1=\"120.7\" x2=\"31.3\" y2=\"121.4\"/><line x1=\"60.2\" y1=\"120.7\" x2=\"85.8\" y2=\"135.0\"/><line x1=\"102.0\" y1=\"134.9\" x2=\"127.3\" y2=\"120.4\"/><line x1=\"127.3\" y1=\"120.4\" x2=\"142.0\" y2=\"95.4\"/><line x1=\"127.3\" y1=\"120.4\" x2=\"113.4\" y2=\"95.7\"/><line x1=\"127.3\" y1=\"120.4\" x2=\"160.0\" y2=\"139.5\"/><line x1=\"160.0\" y1=\"139.5\" x2=\"173.9\" y2=\"164.4\"/><line x1=\"160.0\" y1=\"139.5\" x2=\"145.3\" y2=\"164.4\"/><line x1=\"160.0\" y1=\"139.5\" x2=\"185.4\" y2=\"124.9\"/><line x1=\"201.6\" y1=\"124.7\" x2=\"227.1\" y2=\"138.9\"/><line x1=\"227.1\" y1=\"138.9\" x2=\"242.2\" y2=\"163.6\"/><line x1=\"227.1\" y1=\"138.9\" x2=\"213.5\" y2=\"164.0\"/><line x1=\"227.1\" y1=\"138.9\" x2=\"259.8\" y2=\"119.2\"/><line x1=\"259.8\" y1=\"119.2\" x2=\"274.6\" y2=\"144.0\"/><line x1=\"259.8\" y1=\"119.2\" x2=\"288.7\" y2=\"118.8\"/><line x1=\"259.8\" y1=\"119.2\" x2=\"259.1\" y2=\"80.9\"/><line x1=\"259.1\" y1=\"80.9\" x2=\"288.1\" y2=\"80.4\"/><line x1=\"259.1\" y1=\"80.9\" x2=\"273.2\" y2=\"55.6\"/><line x1=\"259.1\" y1=\"80.9\" x2=\"233.8\" y2=\"66.8\"/></g><g font-family=\"Helvetica,Arial,sans-serif\" font-weight=\"600\" text-anchor=\"middle\" dominant-baseline=\"central\"><text x=\"91.4\" y=\"62.4\" font-size=\"15.0\" fill=\"#B03A00\">OH</text><text x=\"25.7\" y=\"64.0\" font-size=\"15.0\" fill=\"#B03A00\">O</text><text x=\"41.7\" y=\"154.3\" font-size=\"15.0\" fill=\"#2E6B30\">F</text><text x=\"22.0\" y=\"121.6\" font-size=\"15.0\" fill=\"#2E6B30\">F</text><text x=\"94.0\" y=\"139.5\" font-size=\"15.0\" fill=\"#B03A00\">O</text><text x=\"146.7\" y=\"87.4\" font-size=\"15.0\" fill=\"#2E6B30\">F</text><text x=\"108.8\" y=\"87.6\" font-size=\"15.0\" fill=\"#2E6B30\">F</text><text x=\"178.5\" y=\"172.5\" font-size=\"15.0\" fill=\"#2E6B30\">F</text><text x=\"140.5\" y=\"172.4\" font-size=\"15.0\" fill=\"#2E6B30\">F</text><text x=\"193.4\" y=\"120.2\" font-size=\"15.0\" fill=\"#B03A00\">O</text><text x=\"247.0\" y=\"171.6\" font-size=\"15.0\" fill=\"#2E6B30\">F</text><text x=\"209.1\" y=\"172.2\" font-size=\"15.0\" fill=\"#2E6B30\">F</text><text x=\"279.4\" y=\"152.0\" font-size=\"15.0\" fill=\"#2E6B30\">F</text><text x=\"298.0\" y=\"118.6\" font-size=\"15.0\" fill=\"#2E6B30\">F</text><text x=\"297.4\" y=\"80.3\" font-size=\"15.0\" fill=\"#2E6B30\">F</text><text x=\"277.8\" y=\"47.5\" font-size=\"15.0\" fill=\"#2E6B30\">F</text><text x=\"225.7\" y=\"62.3\" font-size=\"15.0\" fill=\"#2E6B30\">F</text></g></svg>"
+   },
+   "created_utc": "2026-11-01T05:44:39Z",
+   "stages": [
+    {
+     "stage": "physics",
+     "status": "ok",
+     "detail": "<TEAM_ROOT>/agents/work/W-PHYSICS/compute_physics.py",
+     "seconds": 32.38,
+     "n_features": 33,
+     "converged": true,
+     "source": "cpu_relax",
+     "fmax_eV_A": 0.009549793787300587,
+     "relax_wall_s": 32.38,
+     "n_steps": 225,
+     "n_rotatable": 7,
+     "notes": [
+      "physics approximate: flexible molecule (7 rotatable bonds), dipole/shape descriptors depend on the conformer found (OPS-2 CPU-vs-GPU parity: 12/18 molecules with >=4 rotatable bonds differed by >10% of training SD on these descriptors)"
+     ],
+     "parity": "CPU vs GPU table: median |dE| 2 meV, 40/40 converged (W-PHYSICS parity_cpu_gpu_v1.json); descriptors within 3% of training SD for <=3 rotatable bonds (OPS-2 cpu_parity_desc_summary.md)"
+    }
+   ],
+   "endpoints": {
+    "logkoa": {
+     "status": "undefined",
+     "kind": "defined_not_measurable_neutral_absent",
+     "headline": "Defined only for a neutral form that does not exist at environmental pH",
+     "reason": "DEFINED BUT NON-EQUIVALENT / NOT MEASURABLE BY THE STANDARD PROTOCOL (heuristic): defined only for a neutral microspecies that is essentially unpopulated at any environmental pH (strong acid pKa below ~1 or strong base pKa above ~12): in the environment the compound exists as a non-volatile ion, like a permanent ion. A value measured on the pure free acid/base is a property of a different species from the one in the environment. (Extension of BB note Q003, which groups sulfonate/sulfate salts with permanent ions; our derivation keeps them separate because a neutral form exists in principle.)",
+     "category": "B",
+     "subtype": "unpopulated_neutral:strong_acid_or_base",
+     "rule_source": "W-SPACE domain_rules.category (derived rule, BB expert note Q-003)",
+     "withheld_model_output": {
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": {
+      "value": 8.13286018371582,
+      "units": "log10",
+      "module": "KOAWIN",
+      "epi_has_experimental": false
+     }
+    },
+    "koh_gas": {
+     "status": "undefined",
+     "kind": "defined_not_measurable_neutral_absent",
+     "reason": "Current W-SPACE rule (v4.1): DEFINED BUT NON-EQUIVALENT / NOT MEASURABLE BY THE STANDARD PROTOCOL (heuristic): the value refers to the neat neutral free acid/base; in water at any environmental pH the compound is an ion (strong acid pKa below ~1 or strong base pKa above ~12) and does not volatilise from water, so do not combine this value with water solubility to infer air-water partitioning -- the property is defined for the neat neutral form, but the frozen model (W-MODEL frozen_v5) was built with an older rule that refused this class, so it gives no value. This is a gap in the model, not a property that does not exist.",
+     "rule_source": "W-MODEL_frozen_v5 definedness (W-SPACE rules)",
+     "model_id": "W-MODEL_frozen_v5",
+     "epi": {
+      "value": -12.283996672295027,
+      "units": "log10 cm3/(molecule s)",
+      "module": "AOPWIN",
+      "epi_has_experimental": false
+     },
+     "category": "B",
+     "subtype": "neat_only:strong_acid_or_base",
+     "headline": "No number: the frozen model withholds this class (its built-in rule predates the current one)",
+     "model_reason": "defined: kOH here is a gas-phase reaction rate constant; the species has a neutral form",
+     "model_gap": true
+    },
+    "koc": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 1.6429756686821093,
+     "units": "log10_L_per_kg_linear",
+     "interval": [
+      -3.011993253652814,
+      6.297944591017033
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.875,
+     "familiarity_bin": ">=0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)",
+      "interval_wider_than_typical"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.46,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "EXTRAPOLATING",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.393,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.7142857142857143,
+      "n": 7,
+      "median_width": 1.5300212802590893,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin >=0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.8285838273038164,
+      "physics": 0.17141617269618362,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_PEOE_VSA6",
+       "block": "structure",
+       "shap": -0.15772354686233367,
+       "note": ""
+      },
+      {
+       "name": "d_Chi4v",
+       "block": "structure",
+       "shap": -0.07388755181173685,
+       "note": ""
+      },
+      {
+       "name": "d_MolLogP",
+       "block": "structure",
+       "shap": 0.0635130684324483,
+       "note": "Crippen logP (structure-based estimate)"
+      },
+      {
+       "name": "d_SMR_VSA7",
+       "block": "structure",
+       "shap": -0.06053382709978567,
+       "note": ""
+      },
+      {
+       "name": "mc1380",
+       "block": "structure",
+       "shap": -0.059925299267873815,
+       "note": "Morgan count bit (absent in this molecule: its ABSENCE drove the prediction)"
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 104,
+       "rmse": 0.6042015477938838,
+       "rmse_naive": 1.1053879758780054,
+       "pct": 54.65968157596149,
+       "coverage": 0.8653846153846154,
+       "median_width": 2.476677434950458,
+       "rmse_pct_naive": 54.65968157596149,
+       "empirical_coverage": 0.8653846153846154
+      },
+      "this_bin": {
+       "n": 7,
+       "rmse": 0.771538211102022,
+       "rmse_naive": 1.6626044007569292,
+       "pct": 46.405399309106,
+       "coverage": 0.7142857142857143,
+       "median_width": 1.5300212802590893,
+       "rmse_pct_naive": 46.405399309106,
+       "empirical_coverage": 0.7142857142857143
+      },
+      "leak_free": {
+       "n": 27,
+       "rmse": 0.5697122575016839,
+       "rmse_naive": 1.099645320175737,
+       "pct": 51.808728418963014,
+       "coverage": 0.8518518518518519,
+       "median_width": 2.050506263797131,
+       "rmse_pct_naive": 51.808728418963014,
+       "empirical_coverage": 0.8518518518518519
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": 2.5008182525634766,
+      "units": "log10 L/kg",
+      "module": "KOCWIN",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "domain_reason": "similarity alone says familiar, but the model's own applicability check says EXTRAPOLATING; the stricter is shown",
+     "width_ratio_to_typical": 6.084842063826281
+    },
+    "pka_acidic": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 4.1706248568406,
+     "units": "log10",
+     "interval": [
+      3.137608207765598,
+      5.203641505915603
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.875,
+     "familiarity_bin": ">=0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)",
+      "OUTSIDE_TRAINING_DESCRIPTOR_RANGE: heavy atoms 24, Crippen logP 3.7; pka_acidic training 1st-99th percentile is 5-21 heavy atoms, Crippen logP -1.6 to 4.4. Similarity does not capture this; treat as extrapolation."
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.46,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "EXTRAPOLATING",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.393,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.875,
+      "n": 16,
+      "median_width": 3.4523416512912735,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin >=0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.7115633348370257,
+      "physics": 0.2884366651629742,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_fr_COO",
+       "block": "structure",
+       "shap": -0.4990502945388591,
+       "note": ""
+      },
+      {
+       "name": "phys_q_Hpolar_max_e",
+       "block": "physics",
+       "shap": -0.4647377368931133,
+       "note": "most positive H on N/O/S (H-bond donor / acidity proxy), e"
+      },
+      {
+       "name": "d_fr_COO2",
+       "block": "structure",
+       "shap": -0.40837321992033826,
+       "note": ""
+      },
+      {
+       "name": "d_MinEStateIndex",
+       "block": "structure",
+       "shap": -0.2657027792157006,
+       "note": ""
+      },
+      {
+       "name": "d_MinAbsPartialCharge",
+       "block": "structure",
+       "shap": -0.26428980606895075,
+       "note": ""
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 168,
+       "rmse": 2.157967849695771,
+       "rmse_naive": 3.3525667538661517,
+       "pct": 64.36763256711356,
+       "coverage": 0.9226190476190477,
+       "median_width": 5.866923027006042,
+       "rmse_pct_naive": 64.36763256711356,
+       "empirical_coverage": 0.9226190476190477
+      },
+      "this_bin": {
+       "n": 16,
+       "rmse": 1.2265598914700384,
+       "rmse_naive": 2.673728010996008,
+       "pct": 45.874520011971015,
+       "coverage": 0.875,
+       "median_width": 3.4523416512912735,
+       "rmse_pct_naive": 45.874520011971015,
+       "empirical_coverage": 0.875
+      },
+      "leak_free": {
+       "n": 38,
+       "rmse": 3.2649199654182177,
+       "rmse_naive": 3.3643021348289275,
+       "pct": 97.04597965854921,
+       "coverage": 0.9473684210526315,
+       "median_width": 15.266661367840054,
+       "rmse_pct_naive": 97.04597965854921,
+       "empirical_coverage": 0.9473684210526315
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "caveat": {
+      "headline": "Treated as a strong acid elsewhere on this card: the true pKa may be lower than this estimate",
+      "reason": "The rules that withhold logKow / vapour pressure for this compound class it as a strong acid (neutral form not populated at environmental pH; heuristic pKa below ~1). The model estimate here is higher than that. Measured pKa values for such acids are scarce and disputed, so read this number as an upper bound, not a measurement.",
+      "flags": [
+       "strong_acid_inconsistency"
+      ],
+      "source": "W-TOOL consistency rule (S-1 re-review)"
+     },
+     "domain_similarity": "in",
+     "domain_reason": "similarity alone says familiar, but the model's own applicability check says EXTRAPOLATING; the stricter is shown",
+     "width_ratio_to_typical": 0.5984440437339827
+    },
+    "bcf": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 0.877588486350677,
+     "units": "log10_L_per_kg_linear",
+     "interval": [
+      -0.7794290032904058,
+      2.53460597599176
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.875,
+     "familiarity_bin": ">=0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "in",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.46,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "IN_DOMAIN",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.593,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 1.0,
+      "n": 19,
+      "median_width": 3.3620009243395144,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin >=0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.554305937781133,
+      "physics": 0.44569406221886704,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "phys_sasa_polar_frac",
+       "block": "physics",
+       "shap": -0.1698501581786007,
+       "note": "polar fraction of the solvent-accessible surface"
+      },
+      {
+       "name": "phys_q_hetero_min_e",
+       "block": "physics",
+       "shap": -0.11187375939135487,
+       "note": "most negative heteroatom charge, e"
+      },
+      {
+       "name": "phys_q_std_e",
+       "block": "physics",
+       "shap": -0.10574590071869532,
+       "note": "spread (SD) of AIMNet2 atomic charges, e"
+      },
+      {
+       "name": "phys_q_min_e",
+       "block": "physics",
+       "shap": -0.08544945232278801,
+       "note": "most negative AIMNet2 atomic charge, e"
+      },
+      {
+       "name": "d_SlogP_VSA2",
+       "block": "structure",
+       "shap": -0.0806605581540379,
+       "note": ""
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 206,
+       "rmse": 0.8512998312725133,
+       "rmse_naive": 1.1842024430289817,
+       "pct": 71.88803200701376,
+       "coverage": 0.883495145631068,
+       "median_width": 3.2019480187311573,
+       "rmse_pct_naive": 71.88803200701376,
+       "empirical_coverage": 0.883495145631068
+      },
+      "this_bin": {
+       "n": 19,
+       "rmse": 0.694374928073232,
+       "rmse_naive": 1.2885182406161892,
+       "pct": 53.88941391634248,
+       "coverage": 1.0,
+       "median_width": 3.3620009243395144,
+       "rmse_pct_naive": 53.88941391634248,
+       "empirical_coverage": 1.0
+      },
+      "leak_free": {
+       "n": 52,
+       "rmse": 1.1225237800147607,
+       "rmse_naive": 1.2760335317949063,
+       "pct": 87.96977133005163,
+       "coverage": 0.9230769230769231,
+       "median_width": 3.7115259296390315,
+       "rmse_pct_naive": 87.96977133005163,
+       "empirical_coverage": 0.9230769230769231
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": 0.5,
+      "units": "log10 L/kg wet-wt",
+      "module": "BCFBAF (regression)",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "width_ratio_to_typical": 0.9857329173498749
+    },
+    "pka_basic": {
+     "status": "undefined",
+     "kind": "not_applicable",
+     "headline": "Does not apply: no basic ionisable site found (rule of thumb)",
+     "reason": "NOT MEASURABLE BY THE STANDARD (AQUEOUS) PROTOCOL (heuristic): no basic ionisable site found by the heuristic SMARTS list (aqueous pKa range); NOT the same as physically undefined. Every molecule has some extreme acidity/basicity, but outside roughly pKa -2..14 the aqueous value can only be extrapolated, so such labels are not comparable with titrated values",
+     "category": "B",
+     "subtype": "no_site_in_aqueous_window(heuristic)",
+     "rule_source": "W-SPACE domain_rules.category (no_site heuristic); withheld per S-1 usability review",
+     "withheld_model_output": {
+      "value": 6.474443296838692,
+      "interval": [
+       3.4536234413104565,
+       9.495263152366928
+      ],
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": null
+    },
+    "henry": {
+     "status": "undefined",
+     "kind": "defined_not_measurable_neutral_absent",
+     "headline": "Defined only for a neutral form that does not exist at environmental pH",
+     "reason": "DEFINED BUT NON-EQUIVALENT / NOT MEASURABLE BY THE STANDARD PROTOCOL (heuristic): defined only for a neutral microspecies that is essentially unpopulated at any environmental pH (strong acid pKa below ~1 or strong base pKa above ~12): in the environment the compound exists as a non-volatile ion, like a permanent ion. A value measured on the pure free acid/base is a property of a different species from the one in the environment. (Extension of BB note Q003, which groups sulfonate/sulfate salts with permanent ions; our derivation keeps them separate because a neutral form exists in principle.)",
+     "category": "B",
+     "subtype": "unpopulated_neutral:strong_acid_or_base",
+     "rule_source": "W-SPACE domain_rules.category (derived rule, BB expert note Q-003)",
+     "withheld_model_output": {
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": {
+      "value": -5.021603002741031,
+      "units": "log10 atm m3/mol",
+      "module": "HENRYWIN",
+      "epi_has_experimental": false
+     }
+    },
+    "vapor_pressure": {
+     "status": "undefined",
+     "kind": "defined_not_measurable_neutral_absent",
+     "reason": "Current W-SPACE rule (v4.1): DEFINED BUT NON-EQUIVALENT / NOT MEASURABLE BY THE STANDARD PROTOCOL (heuristic): the value refers to the neat neutral free acid/base; in water at any environmental pH the compound is an ion (strong acid pKa below ~1 or strong base pKa above ~12) and does not volatilise from water, so do not combine this value with water solubility to infer air-water partitioning -- the property is defined for the neat neutral form, but the frozen model (W-MODEL frozen_v5) was built with an older rule that refused this class, so it gives no value. This is a gap in the model, not a property that does not exist.",
+     "rule_source": "W-MODEL_frozen_v5 definedness (W-SPACE rules)",
+     "model_id": "W-MODEL_frozen_v5",
+     "epi": {
+      "value": 0.10311016413092686,
+      "units": "log10 mmHg",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "category": "B",
+     "subtype": "neat_only:strong_acid_or_base",
+     "headline": "No number: the frozen model withholds this class (its built-in rule predates the current one)",
+     "model_reason": "defined: vapour pressure is the pressure of the species in the gas phase over its condensed phase; the species has a neutral form",
+     "model_gap": true
+    },
+    "boiling_point": {
+     "status": "undefined",
+     "kind": "defined_not_measurable_neutral_absent",
+     "reason": "Current W-SPACE rule (v4.1): DEFINED BUT NON-EQUIVALENT / NOT MEASURABLE BY THE STANDARD PROTOCOL (heuristic): the value refers to the neat neutral free acid/base; in water at any environmental pH the compound is an ion (strong acid pKa below ~1 or strong base pKa above ~12) and does not volatilise from water, so do not combine this value with water solubility to infer air-water partitioning -- the property is defined for the neat neutral form, but the frozen model (W-MODEL frozen_v5) was built with an older rule that refused this class, so it gives no value. This is a gap in the model, not a property that does not exist.",
+     "rule_source": "W-MODEL_frozen_v5 definedness (W-SPACE rules)",
+     "model_id": "W-MODEL_frozen_v5",
+     "epi": {
+      "value": 174.35641479492188,
+      "units": "degC",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "category": "B",
+     "subtype": "neat_only:strong_acid_or_base",
+     "headline": "No number: the frozen model withholds this class (its built-in rule predates the current one)",
+     "model_reason": "defined: the boiling point is where the vapour pressure of the species reaches 1 atm; the species has a neutral form",
+     "model_gap": true
+    },
+    "water_solubility": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": -2.790072902807925,
+     "units": "log10_mol_per_L",
+     "interval": [
+      -5.69745918851183,
+      0.11731338289598003
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.875,
+     "familiarity_bin": ">=0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "in",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)",
+      "interval_wider_than_typical"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.46,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "IN_DOMAIN",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.5,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.9157894736842105,
+      "n": 95,
+      "median_width": 2.9107207138862643,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin >=0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.7742315588169448,
+      "physics": 0.22576844118305506,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "d_MolLogP",
+       "block": "structure",
+       "shap": -0.2623830671664446,
+       "note": "Crippen logP (structure-based estimate)"
+      },
+      {
+       "name": "phys_q_H_max_e",
+       "block": "physics",
+       "shap": 0.1873599879113993,
+       "note": "most positive H, e"
+      },
+      {
+       "name": "phys_q_Hpolar_max_e",
+       "block": "physics",
+       "shap": 0.17184936647328372,
+       "note": "most positive H on N/O/S (H-bond donor / acidity proxy), e"
+      },
+      {
+       "name": "d_MolMR",
+       "block": "structure",
+       "shap": 0.1544312966388675,
+       "note": ""
+      },
+      {
+       "name": "d_SlogP_VSA2",
+       "block": "structure",
+       "shap": 0.12596233650630903,
+       "note": ""
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 1408,
+       "rmse": 1.023138490560405,
+       "rmse_naive": 2.2434924187578353,
+       "pct": 45.604722441045325,
+       "coverage": 0.9190340909090909,
+       "median_width": 3.119085045158976,
+       "rmse_pct_naive": 45.604722441045325,
+       "empirical_coverage": 0.9190340909090909
+      },
+      "this_bin": {
+       "n": 95,
+       "rmse": 1.0279492889829396,
+       "rmse_naive": 2.6026278326224594,
+       "pct": 39.4965917177316,
+       "coverage": 0.9157894736842105,
+       "median_width": 2.9107207138862643,
+       "rmse_pct_naive": 39.4965917177316,
+       "empirical_coverage": 0.9157894736842105
+      },
+      "leak_free": {
+       "n": 405,
+       "rmse": 1.1329160239076481,
+       "rmse_naive": 2.23237640911474,
+       "pct": 50.7493279037522,
+       "coverage": 0.9111111111111111,
+       "median_width": 3.379750802738487,
+       "rmse_pct_naive": 50.7493279037522,
+       "empirical_coverage": 0.9111111111111111
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": -5.725606406554593,
+      "units": "log10 mol/L",
+      "module": "WSKOWWIN",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "width_ratio_to_typical": 1.9977088642229044
+    },
+    "logkow": {
+     "status": "undefined",
+     "kind": "defined_not_measurable_neutral_absent",
+     "headline": "Defined only for a neutral form that does not exist at environmental pH",
+     "reason": "DEFINED BUT NON-EQUIVALENT / NOT MEASURABLE BY THE STANDARD PROTOCOL (heuristic): no buffer pH exists at which a strong acid (pKa below ~1) is un-ionised, so OECD 107/117/123 return a distribution ratio D, not Kow",
+     "category": "B",
+     "subtype": "unpopulated_neutral:strong_acid",
+     "rule_source": "W-SPACE domain_rules.category (derived rule, BB expert note Q-003)",
+     "withheld_model_output": {
+      "model_id": "W-MODEL_frozen_v5"
+     },
+     "epi": {
+      "value": 4.7228003,
+      "units": "log10",
+      "module": "KOWWIN",
+      "epi_has_experimental": false
+     }
+    },
+    "melting_point": {
+     "status": "ok",
+     "model_id": "W-MODEL_frozen_v5",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5",
+     "owner": "W-MODEL",
+     "value": 73.94752744922914,
+     "units": "degC",
+     "interval": [
+      -3.966851380755571,
+      151.86190627921385
+     ],
+     "interval_level": 0.9,
+     "familiarity": 0.875,
+     "familiarity_bin": ">=0.7",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "in",
+     "flags": [
+      "physics_at_inference",
+      "physics computed at inference by CPU AIMNet2 relaxation (CPU-vs-GPU parity: see model.json physics_parity)"
+     ],
+     "blocks_used": [
+      "struct",
+      "physics"
+     ],
+     "seconds": 3.46,
+     "variant_used": "struct_physics",
+     "domain_flag_model": "IN_DOMAIN",
+     "physics_source": "computed (cpu_relax)",
+     "interval_method": "normalised Mondrian split-conformal (|r|/sigma(x), per nn_sim bin)",
+     "familiarity_endpoint": 0.593,
+     "measured_in_training_set": null,
+     "coverage": {
+      "empirical_coverage": 0.9069767441860465,
+      "n": 215,
+      "median_width": 111.92436305404547,
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/frozen_v5/model.json empirical_coverage_test_by_bin",
+      "scope": "test split, nn_sim_train bin >=0.7, variant struct_physics"
+     },
+     "attribution_blocks": {
+      "structure": 0.7798819494740042,
+      "physics": 0.22011805052599578,
+      "spectra": 0.0
+     },
+     "top_features": [
+      {
+       "name": "phys_sasa_polar_A2",
+       "block": "physics",
+       "shap": 14.076118333079556,
+       "note": "polar (N, O, polar-H) SASA of the relaxed geometry, A^2"
+      },
+      {
+       "name": "d_RingCount",
+       "block": "structure",
+       "shap": -11.215099760594311,
+       "note": ""
+      },
+      {
+       "name": "d_FpDensityMorgan3",
+       "block": "structure",
+       "shap": 7.870847805389133,
+       "note": ""
+      },
+      {
+       "name": "d_MaxPartialCharge",
+       "block": "structure",
+       "shap": -7.23568081195416,
+       "note": ""
+      },
+      {
+       "name": "mc1380",
+       "block": "structure",
+       "shap": -7.171111357164698,
+       "note": "Morgan count bit (absent in this molecule: its ABSENCE drove the prediction)"
+      }
+     ],
+     "top_features_note": "TreeSHAP (LightGBM pred_contrib), mean over the 3-seed bag; shares = |SHAP| fractions. phys_energy_per_atom_eV and phys_n_heavy are counted as composition, not physics.",
+     "skill_naive": {
+      "overall": {
+       "n": 3253,
+       "rmse": 47.646933803852136,
+       "rmse_naive": 97.30875468766229,
+       "pct": 48.964693831287164,
+       "coverage": 0.8970181371042115,
+       "median_width": 140.4738032476679,
+       "rmse_pct_naive": 48.964693831287164,
+       "empirical_coverage": 0.8970181371042115
+      },
+      "this_bin": {
+       "n": 215,
+       "rmse": 38.6354257592626,
+       "rmse_naive": 94.99697387387099,
+       "pct": 40.67016472604641,
+       "coverage": 0.9069767441860465,
+       "median_width": 111.92436305404547,
+       "rmse_pct_naive": 40.67016472604641,
+       "empirical_coverage": 0.9069767441860465
+      },
+      "leak_free": {
+       "n": 822,
+       "rmse": 55.11178198891257,
+       "rmse_naive": 103.75601453363049,
+       "pct": 53.11671061830267,
+       "coverage": 0.8978102189781022,
+       "median_width": 167.0344387767176,
+       "rmse_pct_naive": 53.11671061830267,
+       "empirical_coverage": 0.8978102189781022
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-MODEL/v5_main/test_predictions.parquet",
+      "variant": "struct_physics"
+     },
+     "epi": {
+      "value": 21.79363250732422,
+      "units": "degC",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "domain_similarity": "in",
+     "width_ratio_to_typical": 1.3922684338594236
+    },
+    "rat_oral_ld50": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "log10 mmol/kg bw",
+     "familiarity": 0.423,
+     "familiarity_bin": "0.3-0.5",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "edge",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.26,
+     "label_provenance": "MEASURED rat oral LD50 (CompTox hazards table, swarm copy), median over records; MW recomputed from the standardised structure; acute lethality only.",
+     "compound_class": "pfas",
+     "definedness_reason": "defined for the substance as administered, ions and salts included; note that the dose is of the salt while the modelled species is the desalted parent (species mismatch)",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "value": 0.469,
+     "interval": [
+      -0.449,
+      1.387
+     ],
+     "interval_level": 0.9,
+     "coverage": {
+      "empirical_coverage": 0.9,
+      "n": 1135,
+      "scope": "test, familiarity bin 0.3-0.5",
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/*_meta.json"
+     },
+     "skill_naive": {
+      "this_bin": {
+       "rmse_pct_naive": 81.9,
+       "n": 1135
+      },
+      "overall": {
+       "rmse_pct_naive": 81.8,
+       "n": 2017
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/rat_oral_ld50_meta.json measured_test_performance"
+     }
+    },
+    "er_potency": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "p_activity = -log10(M)",
+     "familiarity": 0.145,
+     "familiarity_bin": "<0.3",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "out",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.26,
+     "label_provenance": "MEASURED receptor potency, ChEMBL REST (CC BY-SA 3.0), primary literature; IC50/Ki/EC50/AC50/Kd pooled as p_activity = -log10(M). In-vitro potency only - not an in-vivo endocrine hazard call, and nothing about exposure or dose. NOT an OPERA consensus call.",
+     "compound_class": "pfas",
+     "definedness_reason": "in-vitro potency is defined for any substance deliverable in assay medium, ions included",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "value": 4.812,
+     "interval": [
+      3.43,
+      6.194
+     ],
+     "interval_level": 0.9,
+     "coverage": {
+      "empirical_coverage": 0.795,
+      "n": 78,
+      "scope": "test, familiarity bin <0.3",
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/*_meta.json"
+     },
+     "skill_naive": {
+      "this_bin": {
+       "rmse_pct_naive": 57.1,
+       "n": 78
+      },
+      "overall": {
+       "rmse_pct_naive": 58.4,
+       "n": 586
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/er_potency_meta.json measured_test_performance"
+     }
+    },
+    "er_active": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "binary: active = measured p_activity >= 6.0 (<= 1 uM)",
+     "familiarity": 0.178,
+     "familiarity_bin": "<0.3",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "out",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.26,
+     "label_provenance": "MEASURED receptor potency, ChEMBL REST (CC BY-SA 3.0), primary literature; IC50/Ki/EC50/AC50/Kd pooled as p_activity = -log10(M). In-vitro potency only - not an in-vivo endocrine hazard call, and nothing about exposure or dose. NOT an OPERA consensus call.",
+     "compound_class": "pfas",
+     "definedness_reason": "in-vitro potency is defined for any substance deliverable in assay medium, ions included",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "kind": "classifier",
+     "value": 0.0,
+     "interval": null,
+     "probability": 0.0,
+     "threshold": 0.09,
+     "call": "inactive",
+     "base_rate": 0.047,
+     "pr_auc": 0.329,
+     "note": "rare-positive label: judge PR-AUC against the base rate; accuracy is not skill",
+     "coverage": {
+      "empirical_coverage": null,
+      "scope": "classifier: no interval"
+     }
+    },
+    "ar_potency": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "p_activity = -log10(M)",
+     "familiarity": 0.143,
+     "familiarity_bin": "<0.3",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "out",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.26,
+     "label_provenance": "MEASURED receptor potency, ChEMBL REST (CC BY-SA 3.0), primary literature; IC50/Ki/EC50/AC50/Kd pooled as p_activity = -log10(M). In-vitro potency only - not an in-vivo endocrine hazard call, and nothing about exposure or dose. NOT an OPERA consensus call.",
+     "compound_class": "pfas",
+     "definedness_reason": "in-vitro potency is defined for any substance deliverable in assay medium, ions included",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "value": 6.878,
+     "interval": [
+      4.63,
+      9.126
+     ],
+     "interval_level": 0.9,
+     "coverage": {
+      "empirical_coverage": 0.921,
+      "n": 38,
+      "scope": "test, familiarity bin <0.3",
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/*_meta.json"
+     },
+     "skill_naive": {
+      "this_bin": {
+       "rmse_pct_naive": 95.1,
+       "n": 38
+      },
+      "overall": {
+       "rmse_pct_naive": 80.4,
+       "n": 462
+      },
+      "source": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3/ar_potency_meta.json measured_test_performance"
+     }
+    },
+    "ar_active": {
+     "status": "ok",
+     "model_id": "wtox_model_frozen_v3",
+     "model_dir": "<TEAM_ROOT>/agents/work/W-TOX/r3/model_frozen_v3",
+     "owner": "W-TOX",
+     "units": "binary: active = measured p_activity >= 6.0 (<= 1 uM)",
+     "familiarity": 0.178,
+     "familiarity_bin": "<0.3",
+     "familiarity_kind": "tanimoto_ecfp4",
+     "domain": "out",
+     "flags": [],
+     "blocks_used": [
+      "struct"
+     ],
+     "seconds": 0.26,
+     "label_provenance": "MEASURED receptor potency, ChEMBL REST (CC BY-SA 3.0), primary literature; IC50/Ki/EC50/AC50/Kd pooled as p_activity = -log10(M). In-vitro potency only - not an in-vivo endocrine hazard call, and nothing about exposure or dose. NOT an OPERA consensus call.",
+     "compound_class": "pfas",
+     "definedness_reason": "in-vitro potency is defined for any substance deliverable in assay medium, ions included",
+     "attribution_blocks": {
+      "structure": 1.0,
+      "physics": 0.0,
+      "spectra": 0.0
+     },
+     "top_features": [],
+     "top_features_note": "hazard model: per-prediction attributions not returned",
+     "kind": "classifier",
+     "value": 0.042,
+     "interval": null,
+     "probability": 0.042,
+     "threshold": 0.07,
+     "call": "inactive",
+     "base_rate": 0.114,
+     "pr_auc": 0.497,
+     "note": "rare-positive label: judge PR-AUC against the base rate; accuracy is not skill",
+     "coverage": {
+      "empirical_coverage": null,
+      "scope": "classifier: no interval"
+     }
+    }
+   },
+   "errors": [],
+   "species": {
+    "input": "OC(=O)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(F)(F)C(F)(F)F",
+    "species_class": "neutralisable",
+    "parent_smiles": "O=C(O)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(F)(F)C(F)(F)F",
+    "removed_fragments": [],
+    "net_charge": 0,
+    "n_permanent_pos": 0,
+    "n_permanent_neg": 0,
+    "notes": [],
+    "plain": "neutral compound (or a salt of one)"
+   },
+   "physics": {
+    "status": "ok",
+    "detail": "<TEAM_ROOT>/agents/work/W-PHYSICS/compute_physics.py",
+    "seconds": 32.38,
+    "n_features": 33,
+    "converged": true,
+    "source": "cpu_relax",
+    "fmax_eV_A": 0.009549793787300587,
+    "relax_wall_s": 32.38,
+    "n_steps": 225,
+    "n_rotatable": 7,
+    "notes": [
+     "physics approximate: flexible molecule (7 rotatable bonds), dipole/shape descriptors depend on the conformer found (OPS-2 CPU-vs-GPU parity: 12/18 molecules with >=4 rotatable bonds differed by >10% of training SD on these descriptors)"
+    ],
+    "parity": "CPU vs GPU table: median |dE| 2 meV, 40/40 converged (W-PHYSICS parity_cpu_gpu_v1.json); descriptors within 3% of training SD for <=3 rotatable bonds (OPS-2 cpu_parity_desc_summary.md)"
+   },
+   "epi": {
+    "status": "ok",
+    "fetched_now": false,
+    "cache": "<TEAM_ROOT>/agents/work/W-TOOL/epi_cache_wtool/LAJBCLBUJYTYHV-UHFFFAOYSA-N.json",
+    "returned_smiles": "OC(=O)C(F)(F)OC(F)(F)C(F)(F)OC(F)(F)C(F)(F)C(F)(F)F",
+    "stereo_exact": true,
+    "values": {
+     "logkow": {
+      "value": 4.7228003,
+      "units": "log10",
+      "module": "KOWWIN",
+      "epi_has_experimental": false
+     },
+     "melting_point": {
+      "value": 21.79363250732422,
+      "units": "degC",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "boiling_point": {
+      "value": 174.35641479492188,
+      "units": "degC",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "vapor_pressure": {
+      "value": 0.10311016413092686,
+      "units": "log10 mmHg",
+      "module": "MPBPVP",
+      "epi_has_experimental": false
+     },
+     "water_solubility": {
+      "value": -5.725606406554593,
+      "units": "log10 mol/L",
+      "module": "WSKOWWIN",
+      "epi_has_experimental": false
+     },
+     "henry": {
+      "value": -5.021603002741031,
+      "units": "log10 atm m3/mol",
+      "module": "HENRYWIN",
+      "epi_has_experimental": false
+     },
+     "koc": {
+      "value": 2.5008182525634766,
+      "units": "log10 L/kg",
+      "module": "KOCWIN",
+      "epi_has_experimental": false
+     },
+     "logkoa": {
+      "value": 8.13286018371582,
+      "units": "log10",
+      "module": "KOAWIN",
+      "epi_has_experimental": false
+     },
+     "koh_gas": {
+      "value": -12.283996672295027,
+      "units": "log10 cm3/(molecule s)",
+      "module": "AOPWIN",
+      "epi_has_experimental": false
+     },
+     "bcf": {
+      "value": 0.5,
+      "units": "log10 L/kg wet-wt",
+      "module": "BCFBAF (regression)",
+      "epi_has_experimental": false
+     }
+    },
+    "note": "EPI estimated values only; EPI training sets overlap CompTox data, so its errors on known compounds are optimistic"
+   },
+   "rule_source": "W-SPACE domain_rules.category",
+   "seconds_total": 37.32
+  }
+ ]
+}
