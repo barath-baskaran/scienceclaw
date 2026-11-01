@@ -59,8 +59,7 @@ This control tried to measure how much of the gap between the full and leak-free
 near neighbours in training ("neighbour recall"). It is **superseded** and should not be used: the
 graph-fold training set differs from the official training set by more than the removal of
 neighbours, so the control fails its own negative control (on boiling point). Use the near-neighbour
-recall control in `recall_control.md` instead (this is the shipped version of what the table below
-calls recall_control_summary.md). The ratio column was withdrawn after the critic agent's audit
+recall control in `recall_control.md` instead. The ratio column was withdrawn after the critic agent's audit
 (CRITIC, the agent that checked other agents' results; the time stamp in the note column marks that audit) because it
 was confounded.
 
@@ -76,28 +75,28 @@ neighbour to remove.
 
 | endpoint | rows | n | diff [95% CI] | full | leak-free | graph_on_test | note |
 |---|---|---|---|---|---|---|---|
-| bcf | all test | 206 | +3.2 [-5.2, +11.3] | 74.5 | 90.4 | 77.7 | see recall_control_summary.md (ratio withdrawn: confounded, CRITIC 21:18) |
+| bcf | all test | 206 | +3.2 [-5.2, +11.3] | 74.5 | 90.4 | 77.7 | see `recall_control.md` (ratio withdrawn: confounded, CRITIC 21:18) |
 | bcf | leak-free test | 52 | -1.1 [-16.9, +10.5] | | | | (expected ~0: these rows had no neighbour anyway) |
-| boiling_point | all test | 1293 | -1.0 [-4.2, +1.9] | 54.0 | 56.3 | 52.9 | see recall_control_summary.md (ratio withdrawn: confounded, CRITIC 21:18) |
+| boiling_point | all test | 1293 | -1.0 [-4.2, +1.9] | 54.0 | 56.3 | 52.9 | see `recall_control.md` (ratio withdrawn: confounded, CRITIC 21:18) |
 | boiling_point | leak-free test | 362 | -5.1 [-8.6, -1.8] | | | | (expected ~0: these rows had no neighbour anyway) |
-| henry | all test | 417 | +8.1 [+3.4, +12.6] | 51.3 | 60.1 | 59.4 | see recall_control_summary.md (ratio withdrawn: confounded, CRITIC 21:18) |
+| henry | all test | 417 | +8.1 [+3.4, +12.6] | 51.3 | 60.1 | 59.4 | see `recall_control.md` (ratio withdrawn: confounded, CRITIC 21:18) |
 | henry | leak-free test | 122 | +8.3 [-2.2, +15.4] | | | | (expected ~0: these rows had no neighbour anyway) |
-| koc | all test | 105 | +2.6 [-6.3, +12.6] | 55.0 | 53.2 | 57.6 | see recall_control_summary.md (ratio withdrawn: confounded, CRITIC 21:18) |
+| koc | all test | 105 | +2.6 [-6.3, +12.6] | 55.0 | 53.2 | 57.6 | see `recall_control.md` (ratio withdrawn: confounded, CRITIC 21:18) |
 | koc | leak-free test | 28 | -3.9 [-13.2, +4.8] | | | | (expected ~0: these rows had no neighbour anyway) |
-| koh_gas | all test | 101 | +9.6 [-6.4, +20.7] | 49.7 | 61.5 | 59.3 | see recall_control_summary.md (ratio withdrawn: confounded, CRITIC 21:18) |
+| koh_gas | all test | 101 | +9.6 [-6.4, +20.7] | 49.7 | 61.5 | 59.3 | see `recall_control.md` (ratio withdrawn: confounded, CRITIC 21:18) |
 | koh_gas | leak-free test | 30 | +0.1 [-12.4, +14.0] | | | | (expected ~0: these rows had no neighbour anyway) |
-| logkoa | all test | 36 | +9.2 [+1.6, +19.8] | 15.4 | 23.6 | 24.6 | see recall_control_summary.md (ratio withdrawn: confounded, CRITIC 21:18) |
-| logkow | all test | 1649 | +4.5 [+2.5, +6.3] | 42.3 | 52.2 | 46.8 | see recall_control_summary.md (ratio withdrawn: confounded, CRITIC 21:18) |
+| logkoa | all test | 36 | +9.2 [+1.6, +19.8] | 15.4 | 23.6 | 24.6 | see `recall_control.md` (ratio withdrawn: confounded, CRITIC 21:18) |
+| logkow | all test | 1649 | +4.5 [+2.5, +6.3] | 42.3 | 52.2 | 46.8 | see `recall_control.md` (ratio withdrawn: confounded, CRITIC 21:18) |
 | logkow | leak-free test | 444 | +2.0 [-1.2, +5.8] | | | | (expected ~0: these rows had no neighbour anyway) |
-| melting_point | all test | 3245 | +1.1 [-0.1, +2.4] | 51.9 | 56.2 | 53.0 | see recall_control_summary.md (ratio withdrawn: confounded, CRITIC 21:18) |
+| melting_point | all test | 3245 | +1.1 [-0.1, +2.4] | 51.9 | 56.2 | 53.0 | see `recall_control.md` (ratio withdrawn: confounded, CRITIC 21:18) |
 | melting_point | leak-free test | 813 | -2.3 [-4.8, +0.1] | | | | (expected ~0: these rows had no neighbour anyway) |
-| pka_acidic | all test | 171 | +6.2 [-3.6, +15.8] | 65.5 | 96.9 | 71.7 | see recall_control_summary.md (ratio withdrawn: confounded, CRITIC 21:18) |
+| pka_acidic | all test | 171 | +6.2 [-3.6, +15.8] | 65.5 | 96.9 | 71.7 | see `recall_control.md` (ratio withdrawn: confounded, CRITIC 21:18) |
 | pka_acidic | leak-free test | 39 | +8.1 [-8.4, +29.2] | | | | (expected ~0: these rows had no neighbour anyway) |
-| pka_basic | all test | 211 | +1.8 [-5.0, +9.1] | 69.6 | 81.3 | 71.4 | see recall_control_summary.md (ratio withdrawn: confounded, CRITIC 21:18) |
+| pka_basic | all test | 211 | +1.8 [-5.0, +9.1] | 69.6 | 81.3 | 71.4 | see `recall_control.md` (ratio withdrawn: confounded, CRITIC 21:18) |
 | pka_basic | leak-free test | 54 | -1.6 [-12.1, +9.3] | | | | (expected ~0: these rows had no neighbour anyway) |
-| vapor_pressure | all test | 1056 | -1.9 [-4.2, +0.8] | 44.8 | 48.4 | 42.8 | see recall_control_summary.md (ratio withdrawn: confounded, CRITIC 21:18) |
+| vapor_pressure | all test | 1056 | -1.9 [-4.2, +0.8] | 44.8 | 48.4 | 42.8 | see `recall_control.md` (ratio withdrawn: confounded, CRITIC 21:18) |
 | vapor_pressure | leak-free test | 304 | -2.0 [-7.3, +4.2] | | | | (expected ~0: these rows had no neighbour anyway) |
-| water_solubility | all test | 1374 | +5.2 [+2.8, +7.9] | 49.3 | 53.6 | 54.5 | see recall_control_summary.md (ratio withdrawn: confounded, CRITIC 21:18) |
+| water_solubility | all test | 1374 | +5.2 [+2.8, +7.9] | 49.3 | 53.6 | 54.5 | see `recall_control.md` (ratio withdrawn: confounded, CRITIC 21:18) |
 | water_solubility | leak-free test | 392 | +1.9 [-1.0, +4.9] | | | | (expected ~0: these rows had no neighbour anyway) |
 
 ## How similar is each test set to its training set? (graph_split_v3_bias.csv)
